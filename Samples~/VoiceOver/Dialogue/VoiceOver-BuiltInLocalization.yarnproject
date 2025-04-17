@@ -1,0 +1,28 @@
+{
+  "projectFileVersion": 2,
+  "sourceFiles": [
+    "**/*.yarn"
+  ],
+  "excludeFiles": [],
+  "localisation": {
+    "en": {
+      "assets": "en-assets"
+    },
+    "es": {
+      "assets": "es-assets/LipSync-es",
+      "strings": "VoiceOver - es.csv"
+    },
+    "zh-Hans": {
+      "strings": "VoiceOver - zh_Hans.csv"
+    },
+    "pt-BR": {
+      "strings": "VoiceOver - pt_BR.csv"
+    },
+    "de": {
+      "strings": "VoiceOver - de.csv"
+    }
+  },
+  "baseLanguage": "en",
+  "compilerOptions": {},
+  "definitionsFiles": []
+}
