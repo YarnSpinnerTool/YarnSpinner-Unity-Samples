@@ -1,5 +1,6 @@
 ﻿title: Capsley_Welcome
-position: -297,-523
+position: -825,-253
+group: Capsley
 ---
 <<declare $NPC_Variables_Name = "Ogbert">>
 <<declare $player_gold = 10>>
@@ -24,6 +25,60 @@ Capsley: And wander alone.
 Capsley: Just like the real world.
 Capsley: Anyway...
 Capsley: Have a lovely day!
+===
+title: Capsley_Room2
+position: -615,-253
+group: Capsley
+---
+Capsley: Hello again.
+Capsley: The pillbois in this room shows off the main elements of writing dialogue in Yarn Spinner.
+Capsley: Lines, options, nodes, and jumps.
+Capsley: see you soon.
+Capsley: really soon.
+===
+title: Capsley_Room3
+position: -825,-122
+group: Capsley
+---
+Capsley: well well well, if it isn't you.
+Capsley: This room shows off detours
+Capsley: which are similar to jumps
+Capsley: and are another way to structure your game.
+===
+title: Capsley_Room4
+position: -615,-122
+group: Capsley
+---
+Capsley: Fancy seeing you here
+Capsley: This room shows off using variables in Yarn
+Capsley: And also shows of enumerations, or enums
+Capsley: Which are another type of variable
+===
+title: Capsley_Room5
+position: -825,11
+group: Capsley
+---
+Capsley: Oh, you're still here?
+Capsley: Well then I guess you want to see how to do conditionals and branching in Yarn
+Capsley: Which is what this room is all about, using ifs, onces, and options to do branching
+===
+title: Capsley_Room6
+position: -615,11
+group: Capsley
+---
+Capsley: You've almost reached the end.
+Capsley: here we are showing off commands, functions, and smart variables.
+Capsley: all of which are more advanced elements of Yarn Spinner to give you more control and hooks
+Capsley: hooks both into Yarn and hooks into the other parts of your game.
+===
+title: Capsley_Room7
+position: -825,143
+group: Capsley
+---
+Capsley: The final room, or is it?
+Capsley: nah it is.
+Capsley: This room demonstrates storylets which are a new way of organising story content.
+Capsley: here we show off two variants of storylets, line groups and node groups.
 ===
 
 title: Room2_Nodes_and_Lines
