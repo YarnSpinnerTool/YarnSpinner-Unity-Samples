@@ -6,7 +6,7 @@
   "excludeFiles": [],
   "localisation": {
     "en": {
-      "assets": "en-assets"
+      "assets": "assets-en"
     },
     "es": {
       "assets": "es-assets/LipSync-es",
