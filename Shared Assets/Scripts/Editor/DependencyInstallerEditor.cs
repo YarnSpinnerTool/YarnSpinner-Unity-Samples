@@ -19,7 +19,7 @@ namespace Yarn.Unity.Samples.Editor
 
     public class DependenciesInstallerTool : EditorWindow
     {
-        public static IEnumerable<string> SampleLocaleIdentifiers => new[] { "en", "es" };
+        public static IEnumerable<string> SampleLocaleIdentifiers => new[] { "en", "es", "pt-BR", "de", "zh-Hans" };
 
         [InitializeOnLoadMethod]
         public static void AddOpenSceneHook()
