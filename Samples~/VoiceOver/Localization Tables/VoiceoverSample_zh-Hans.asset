@@ -1,0 +1,92 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: VoiceoverSample_zh-Hans
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: zh-Hans
+  m_SharedData: {fileID: 11400000, guid: 8e286ec56529f405ebb1933199177e8e, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 5812364763136
+    m_Localized: "Tom: \u5443\u2026\u2026\u6709\u4EBA\u5417\uFF1F "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5812394123264
+    m_Localized: "Tom: \u6709\u4EBA\u5728\u5417\uFF1F "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5812394123265
+    m_Localized: "Anne: \u55E8\uFF0C\u4F60\u597D\uFF01"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5812394123266
+    m_Localized: "Tom: \u4F60\u662F\u8C01\uFF1F "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5812398317568
+    m_Localized: "Tom: \u4F60\u5728\u54EA\u5462\uFF1F "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5812398317569
+    m_Localized: "Anne: \u6211\u662FAnne\uFF01\u6211\u5C31\u5728\u8FD9\uFF01 "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5812398317570
+    m_Localized: "Tom: \u8FD9\u662F\u54EA\u91CC\uFF1F"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5812398317571
+    m_Localized: "Anne: \u4F60\u6B63\u6F02\u6D6E\u5728\u6D69\u701A\u7684\u865A\u7A7A\u4E2D\uFF01"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5812398317572
+    m_Localized: "Tom: \u6211\u611F\u89C9\u4E5F\u662F\u2026\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5812398317573
+    m_Localized: "Tom: \u6211\u4E3A\u4EC0\u4E48\u5728\u8FD9\uFF1F "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5812398317574
+    m_Localized: "Anne: \u54E6\uFF0C\u662F\u4E00\u540D\u4F5C\u5BB6\u628A\u4F60\u653E\u5728\u8FD9\u7684\u3002\u8FD9\u662F\u4E3A
+      Yarn Spinner \u51C6\u5907\u7684\u6D4B\u8BD5\u5BF9\u8BDD\uFF01 "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5812398317575
+    m_Localized: "Tom: Yarn Spinner \u662F\u8C01\uFF1F "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5812398317576
+    m_Localized: "Anne: \u522B\u7BA1\u90A3\u4E2A\u4E86\uFF01 "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5812398317577
+    m_Localized: "Tom: \u8FD9\u91CC\u597D\u5947\u602A\uFF0CAnne\u3002"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5812398317578
+    m_Localized: "Tom: \u6211\u5B9E\u5728\u662F\u4E00\u5934\u96FE\u6C34\u3002 "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5812398317579
+    m_Localized: "Anne: \u6CA1\u5173\u7CFB\uFF01\u8FD9\u4E00\u5207\u5F88\u5FEB\u5C31\u4F1A\u7ED3\u675F\u7684\u3002 "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5812398317580
+    m_Localized: "Tom: \u4EC0\u4E48\u7ED3\u675F\uFF1F\uFF01"
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

@@ -102,53 +102,104 @@ MonoBehaviour:
         - m_KeyId: 450840485888
           m_TableCodes:
           - en
+          - zh-Hans
+          - de
+          - pt-BR
         - m_KeyId: 450869846016
           m_TableCodes:
           - en
+          - zh-Hans
+          - de
+          - pt-BR
         - m_KeyId: 450874040320
           m_TableCodes:
           - en
+          - zh-Hans
+          - de
+          - pt-BR
         - m_KeyId: 450874040321
           m_TableCodes:
           - en
+          - zh-Hans
+          - de
+          - pt-BR
         - m_KeyId: 450874040322
           m_TableCodes:
           - en
+          - zh-Hans
+          - de
+          - pt-BR
         - m_KeyId: 450874040323
           m_TableCodes:
           - en
+          - zh-Hans
+          - de
+          - pt-BR
         - m_KeyId: 450878234624
           m_TableCodes:
           - en
+          - zh-Hans
+          - de
+          - pt-BR
         - m_KeyId: 450878234625
           m_TableCodes:
           - en
+          - zh-Hans
+          - de
+          - pt-BR
         - m_KeyId: 450878234626
           m_TableCodes:
           - en
+          - zh-Hans
+          - de
+          - pt-BR
         - m_KeyId: 450878234627
           m_TableCodes:
           - en
+          - zh-Hans
+          - de
+          - pt-BR
         - m_KeyId: 450878234628
           m_TableCodes:
           - en
+          - zh-Hans
+          - de
+          - pt-BR
         - m_KeyId: 450878234629
           m_TableCodes:
           - en
+          - zh-Hans
+          - de
+          - pt-BR
         - m_KeyId: 450878234630
           m_TableCodes:
           - en
+          - zh-Hans
+          - de
+          - pt-BR
         - m_KeyId: 450878234631
           m_TableCodes:
           - en
+          - zh-Hans
+          - de
+          - pt-BR
         - m_KeyId: 450878234632
           m_TableCodes:
           - en
+          - zh-Hans
+          - de
+          - pt-BR
         - m_KeyId: 450878234633
           m_TableCodes:
           - en
+          - zh-Hans
+          - de
+          - pt-BR
         - m_KeyId: 450878234634
           m_TableCodes:
           - en
+          - zh-Hans
+          - de
+          - pt-BR
         m_TypeString: Yarn.Unity.Samples.LipSyncedVoiceLine, YarnSpinner.Unity.Samples,
-          Version=3.0.0.0, Culture=neutral, PublicKeyToken=null
+          Version=0.0.0.0, Culture=neutral, PublicKeyToken=null

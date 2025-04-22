@@ -1,0 +1,92 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: VoiceoverSample_pt-BR
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: pt-BR
+  m_SharedData: {fileID: 11400000, guid: 8e286ec56529f405ebb1933199177e8e, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 5812364763136
+    m_Localized: "Tom: Ahm\u2026 ol\xE1?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5812394123264
+    m_Localized: "Tom: Tem algu\xE9m a\xED?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5812394123265
+    m_Localized: 'Anne: Oi!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5812394123266
+    m_Localized: "Tom: Quem \xE9 voc\xEA?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5812398317568
+    m_Localized: "Tom: E onde voc\xEA est\xE1?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5812398317569
+    m_Localized: "Anne: Eu sou a Anne! Estou aqui, \xF3!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5812398317570
+    m_Localized: 'Tom: Onde eu estou?'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5812398317571
+    m_Localized: "Anne: Voc\xEA est\xE1 flutuando num completo vazio!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5812398317572
+    m_Localized: "Tom: \xC9\u2026 eu percebi\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5812398317573
+    m_Localized: 'Tom: Como eu vim parar aqui?'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5812398317574
+    m_Localized: "Anne: Ah, foi um escritor que colocou voc\xEA aqui. Isso \xE9 um
+      teste de conversa para o Yarn Spinner!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5812398317575
+    m_Localized: "Tom: O que \xE9 Yarn Spinner?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5812398317576
+    m_Localized: "Anne: N\xE3o esquenta com isso!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5812398317577
+    m_Localized: "Tom: Isso \xE9 estranho, Anne."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5812398317578
+    m_Localized: "Tom: \xC9 confuso, mesmo."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5812398317579
+    m_Localized: "Anne: T\xE1 tudo bem! Isso vai sumir num instante."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5812398317580
+    m_Localized: "Tom: O qu\xEA?!"
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []
