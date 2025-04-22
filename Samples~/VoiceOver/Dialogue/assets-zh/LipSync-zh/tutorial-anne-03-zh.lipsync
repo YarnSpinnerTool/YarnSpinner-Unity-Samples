@@ -1,0 +1,27 @@
+audio: 7eaafd17f22fe47b590ff63e5463acaf
+0.08	B	CNS: voiced alveolar nasal          # n	0.04
+0.12	E	                                    # i5	0.14
+0.26	E	                                    # tɕ	0.06
+0.32	E	                                    # ə5	0.06
+0.38	E	CNS: voiced velar nasal             # ŋ	0.06
+0.44	A	CNS: unvoiced bilabial plosive      # p	0.04
+0.48	E	CNS: voiced palatal approximant     # j	0.04
+0.52	E	                                    # iɑ5	0.12
+0.64	G	CNS: unvoiced labio-dental fricative # f	0.06
+0.7	E	                                    # u5	0.12
+0.82	E	                                    # ts	0.06
+0.88	E	                                    # ai5	0.12
+1.0	E	CNS: unvoiced velar fricative       # x	0.16
+1.16	E	CNS: unvoiced velar fricative       # x	0.06
+1.22	E	                                    # a5	0.08
+1.3	B	CNS: voiced alveolar nasal          # n	0.04
+1.34	B	CNS: unvoiced alveolar plosive      # t	0.02
+1.36	C	DPT: central mid into central open-mid # əɜ	0.12
+1.48	E	                                    # ɕ	0.06
+1.54	E	                                    # i5	0.12
+1.66	E	                                    # kh	0.06
+1.72	E	                                    # ə5	0.08
+1.8	E	CNS: voiced velar nasal             # ŋ	0.08
+1.88	E	                                    # ts	0.08
+1.96	E	                                    # onɡ5	0.344
+2.304	X	rest                               

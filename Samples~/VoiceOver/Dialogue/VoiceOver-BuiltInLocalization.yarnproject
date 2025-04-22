@@ -13,12 +13,15 @@
       "strings": "VoiceOver - es.csv"
     },
     "zh-Hans": {
+      "assets": "assets-zh",
       "strings": "VoiceOver - zh_Hans.csv"
     },
     "pt-BR": {
+      "assets": "assets-pt-BR",
       "strings": "VoiceOver - pt_BR.csv"
     },
     "de": {
+      "assets": "assets-de",
       "strings": "VoiceOver - de.csv"
     }
   },

@@ -1,0 +1,13 @@
+audio: e9ef8535bfe77495aa46e0dfc91ab339
+0.04	A	CNS: unvoiced bilabial plosive      # p	0.16
+0.2	E	                                    # iɛ5	0.16
+0.36	E	CNS: unvoiced velar plosive         # k	0.06
+0.42	A	CNS: voiced bilabial approximant    # w	0.02
+0.44	E	                                    # a5	0.12
+0.56	B	CNS: voiced alveolar nasal          # n	0.04
+0.6	B	CNS: voiced alveolar nasal          # n	0.06
+0.66	E	                                    # a5	0.14
+0.8	E	CNS: unvoiced velar plosive         # k	0.04
+0.84	C	DPT: central mid into central open-mid # əɜ	0.12
+0.96	H	CNS: voiced alveolar lateral-approximant # l	0.352
+1.312	X	rest                               

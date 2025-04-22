@@ -1,0 +1,10 @@
+audio: 4ad6304ca1f7d43198bcfeb98db070b3
+0.02	E	CNS: unvoiced velar plosive         # k	0.04
+0.06	E	VWL: front close                    # i	0.06
+0.12	E	CNS: voiced palatal nasal           # ɲ	0.04
+0.16	C	VWL: front close-mid                # e	0.1
+0.26	G	CNS: voiced labio-dental fricative  # v	0.04
+0.3	F	VWL: rounded back close-mid         # o	0.14
+0.44	B	CNS: unvoiced alveolar fricative    # s	0.06
+0.5	C	VWL: front close-mid                # e	0.225
+0.725	X	rest                               

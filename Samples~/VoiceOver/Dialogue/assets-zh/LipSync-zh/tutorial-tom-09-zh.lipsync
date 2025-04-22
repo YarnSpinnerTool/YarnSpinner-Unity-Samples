@@ -1,0 +1,16 @@
+audio: 9a157632f63a04be3ac9aa3537cc7c51
+0.1	E	                                    # ts.	0.04
+0.14	E	                                    # u5	0.06
+0.2	H	CNS: voiced alveolar lateral-approximant # l	0.04
+0.24	E	                                    # i5	0.1
+0.34	E	CNS: unvoiced velar fricative       # x	0.06
+0.4	E	                                    # ou5	0.16
+0.56	E	                                    # tɕ	0.08
+0.64	E	                                    # i5	0.1
+0.74	E	CNS: unvoiced velar plosive         # k	0.06
+0.8	A	CNS: voiced bilabial approximant    # w	0.02
+0.82	E	                                    # ɑ5	0.28
+1.1	E	                                    # a5	0.14
+1.24	B	CNS: voiced alveolar nasal          # n	0.06
+1.3	E	                                    # iɛ5	0.46
+1.76	X	rest                               

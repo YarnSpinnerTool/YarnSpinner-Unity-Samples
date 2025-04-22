@@ -1,0 +1,10 @@
+audio: 8246d3332b3054f37a567fad8dcdac74
+0.06	E	                                    # ts	0.04
+0.1	E	                                    # u5	0.1
+0.2	B	CNS: unvoiced alveolar fricative    # s	0.06
+0.26	E	                                    # u5	0.06
+0.32	B	CNS: voiced alveolar nasal          # n	0.06
+0.38	D	VWL: front open                     # aː	0.1
+0.48	H	CNS: voiced alveolar lateral-approximant # l	0.04
+0.52	E	                                    # i5	0.44
+0.96	X	rest                               

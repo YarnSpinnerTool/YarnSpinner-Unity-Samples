@@ -1,0 +1,10 @@
+audio: 704b2e8111b664b64a02dcf6f27cbae9
+0.04	B	CNS: voiced alveolar plosive        # d	0.06
+0.1	D	VWL: front open                     # a	0.22
+0.32	B	CNS: unvoiced alveolar fricative    # s	0.16
+0.48	B	CNS: voiced alveolar fricative      # z	0.08
+0.56	C	VWL: front close-mid                # eː	0.18
+0.74	E	SHW: schwa                          # ə	0.16
+0.9	E	VWL: near-front near-close          # ɪ	0.18
+1.08	E	CNS: unvoiced palatal fricative     # ç	0.3551
+1.435125	X	rest                               

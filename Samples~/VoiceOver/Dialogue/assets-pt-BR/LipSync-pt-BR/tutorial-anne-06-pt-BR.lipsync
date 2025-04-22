@@ -1,0 +1,31 @@
+audio: 69dab7c269ee14dcfa57568df2d73abb
+0.08	B	CNS: unvoiced alveolar plosive      # t	0.06
+0.14	D	VWL: front open                     # a	0.18
+0.4	B	CNS: unvoiced alveolar plosive      # t	0.04
+0.44	F	VWL: rounded back close             # u	0.14
+0.58	B	CNS: voiced alveolar plosive        # d	0.04
+0.62	F	VWL: rounded back close             # u	0.14
+0.76	A	CNS: voiced bilabial plosive        # b	0.06
+0.82	C	VWL: front close-mid                # e	0.14
+0.96	E	CNS: voiced velar nasal             # ŋ	0.128
+1.088	X	rest                                # 0.152
+1.24	E	VWL: front close                    # i	0.14
+1.38	B	CNS: unvoiced alveolar fricative    # s	0.04
+1.42	F	VWL: rounded back close             # u	0.08
+1.5	G	CNS: voiced labio-dental fricative  # v	0.04
+1.54	E	DPT: front open into near-front near-close # aɪ	0.14
+1.68	B	CNS: unvoiced alveolar fricative    # s	0.06
+1.74	F	VWL: rounded back close             # u	0.1
+1.84	A	CNS: voiced bilabial nasal          # m	0.04
+1.88	E	VWL: front close                    # i	0.18
+2.06	B	CNS: voiced alveolar nasal          # n	0.04
+2.1	F	VWL: rounded back close             # u	0.1
+2.2	E	VWL: front close                    # i	0.1
+2.3	B	CNS: unvoiced alveolar fricative    # s	0.04
+2.34	B	CNS: unvoiced alveolar fricative    # s	0.1
+2.44	B	CNS: unvoiced alveolar plosive      # t	0.06
+2.5	D	VWL: front open                     # a	0.14
+2.64	B	CNS: voiced alveolar nasal          # n	0.14
+2.78	E	                                    # tʃ	0.06
+2.84	E	VWL: front close                    # i	0.168
+3.008	X	rest                               
