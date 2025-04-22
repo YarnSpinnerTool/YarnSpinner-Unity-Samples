@@ -86,7 +86,7 @@ namespace Yarn.Unity.Samples.Editor
                         {
                             // we now have a valid settings, but we don't know
                             // if it has english locale support
-                            var localeID = new UnityEngine.Localization.LocaleIdentifier("en");
+                            var localeID = new UnityEngine.Localization.LocaleIdentifier(identifier);
                             if (UnityEngine.Localization.Settings.LocalizationSettings.AvailableLocales.GetLocale(localeID) == null)
                             {
                                 return true;
@@ -159,7 +159,7 @@ namespace Yarn.Unity.Samples.Editor
                                 foreach (var table in assetTableCollection.AssetTables)
                                 {
                                     var allEntries = new Dictionary<long, UnityEngine.Localization.Tables.AssetTableEntry>(table);
-                                    
+
                                     foreach (var entry in allEntries)
                                     {
                                         var assetPath = AssetDatabase.GUIDToAssetPath(entry.Value.Guid);
@@ -171,7 +171,7 @@ namespace Yarn.Unity.Samples.Editor
                         }
 
                         AssetDatabase.SaveAssets();
-                        
+
                     }
                 );
 #endif
