@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEditor;
 using UnityEditor.AssetImporters;
 using System.IO;
+using System.Linq;
 
 #nullable enable
 
@@ -77,7 +78,10 @@ namespace Yarn.Unity.Samples.Editor
                         }
                     }
 
-                    var lineData = line.Split('\t');
+                    // Trim comments
+                    var trimmedLine = System.Text.RegularExpressions.Regex.Replace(line, "#.*$", "");
+
+                    var lineData = trimmedLine.Split('\t').Select(t => t.Trim()).ToArray();
 
                     if (lineData.Length < 2)
                     {
