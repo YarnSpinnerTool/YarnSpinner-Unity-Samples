@@ -592,7 +592,7 @@ MonoBehaviour:
   yarnProject: {fileID: 7545569452688597077, guid: bd8098cd39fa348fd909a822e6b3fff9, type: 3}
   variableStorage: {fileID: 0}
   lineProvider: {fileID: 0}
-  dialogueViews:
+  dialoguePresenters:
   - {fileID: 1892563823}
   autoStart: 1
   startNode: Start
@@ -1054,10 +1054,10 @@ MonoBehaviour:
   optionsButtonPrefab: {fileID: 713221211308969231, guid: 0644bdaec768a40acaf8f960e1db9b93, type: 3}
   bubbleContainer: {fileID: 681416388}
   optionsContainer: {fileID: 1570465163}
+  delayAfterLine: 1
   minimumTypingDelay: 1
   maximumTypingDelay: 3
   typingDelayPerCharacter: 0.1
-  delayAfterLine: 1
   showTypingIndicators: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

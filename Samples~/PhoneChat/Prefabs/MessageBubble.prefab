@@ -232,7 +232,7 @@ MonoBehaviour:
   m_text: "\t"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a53ae1e4540dd41dabc340f5e6350c6f, type: 2}
-  m_sharedMaterial: {fileID: 5982238453527253428, guid: a53ae1e4540dd41dabc340f5e6350c6f, type: 2}
+  m_sharedMaterial: {fileID: -3709850356883901280, guid: a53ae1e4540dd41dabc340f5e6350c6f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

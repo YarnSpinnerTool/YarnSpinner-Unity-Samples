@@ -129,7 +129,14 @@ namespace Yarn.Unity.Samples
 
             // Calculate the maximum width available to us by getting our
             // parent's width
-            var parentWidth = RectTransform.parent.GetComponent<RectTransform>().rect.width;
+            // annoyingly in a prefab they don't have a parent
+            // which made tweaking the bubbles in-editor VERY annoying, hence this check
+            var parentWidth = minimumWidth;
+            var parentRect = RectTransform.parent?.GetComponent<RectTransform>();
+            if (parentRect != null)
+            {
+                parentWidth = parentRect.rect.width;
+            }
 
             // Get the left and right margins of the text component
             var xMargin = info.textComponent.margin.x + info.textComponent.margin.z;

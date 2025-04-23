@@ -100,25 +100,25 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2242511926064963228, guid: cb598d06b6fd244edba044dc4123a1b9, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2242511926064963228, guid: cb598d06b6fd244edba044dc4123a1b9, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2242511926064963228, guid: cb598d06b6fd244edba044dc4123a1b9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3501108876732121854, guid: cb598d06b6fd244edba044dc4123a1b9, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 2.000001
+      objectReference: {fileID: 0}
     - target: {fileID: 3501108876732121854, guid: cb598d06b6fd244edba044dc4123a1b9, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -25
-      objectReference: {fileID: 0}
-    - target: {fileID: 6253893943640187261, guid: cb598d06b6fd244edba044dc4123a1b9, type: 3}
-      propertyPath: m_text
-      value: And he lived happily ever after.
-      objectReference: {fileID: 0}
-    - target: {fileID: 6253893943640187261, guid: cb598d06b6fd244edba044dc4123a1b9, type: 3}
-      propertyPath: m_margin.x
-      value: 80
-      objectReference: {fileID: 0}
-    - target: {fileID: 6253893943640187261, guid: cb598d06b6fd244edba044dc4123a1b9, type: 3}
-      propertyPath: m_margin.z
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 6253893943640187261, guid: cb598d06b6fd244edba044dc4123a1b9, type: 3}
-      propertyPath: m_HorizontalAlignment
-      value: 1
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 7668079961890478167, guid: cb598d06b6fd244edba044dc4123a1b9, type: 3}
       propertyPath: m_Sprite
