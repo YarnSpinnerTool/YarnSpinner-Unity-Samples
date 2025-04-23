@@ -20,7 +20,7 @@ namespace Yarn.Unity.Samples
 
         public void SetValue(bool value)
         {
-            if (animator != null)
+            if (animator != null && animator.gameObject.activeSelf)
             {
                 animator.SetBool(parameter, value);
             }
