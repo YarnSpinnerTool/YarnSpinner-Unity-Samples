@@ -20,6 +20,7 @@ namespace Yarn.Unity.Samples.Editor
     public class DependenciesInstallerTool : EditorWindow
     {
         public static IEnumerable<string> SampleLocaleIdentifiers => new[] { "en", "es", "pt-BR", "de", "zh-Hans" };
+        public static IDictionary<string, string> SampleLocaleFallbacks => new Dictionary<string, string> { { "es", "en" } };
 
         [InitializeOnLoadMethod]
         public static void AddOpenSceneHook()
@@ -121,7 +122,7 @@ namespace Yarn.Unity.Samples.Editor
                         foreach (var identifier in SampleLocaleIdentifiers)
                         {
                             // we now have a valid settings, but we don't know
-                            // if it has english locale support
+                            // if it has the locales we need
                             var localeID = new LocaleIdentifier(identifier);
                             if (UnityEngine.Localization.Settings.LocalizationSettings.AvailableLocales.GetLocale(localeID) == null)
                             {
@@ -133,6 +134,21 @@ namespace Yarn.Unity.Samples.Editor
 
                                 UnityEditor.Localization.LocalizationEditorSettings.AddLocale(locale);
                             }
+                        }
+
+                        // Finally, ensure that the locales have their fallbacks configured correctly
+                        foreach (var (fromLocaleID, toLocaleID) in SampleLocaleFallbacks)
+                        {
+                            var fromLocale = UnityEditor.Localization.LocalizationEditorSettings.GetLocale(fromLocaleID);
+                            var toLocale = UnityEditor.Localization.LocalizationEditorSettings.GetLocale(toLocaleID);
+
+                            var fallbackMetadata = fromLocale.Metadata.GetMetadata<UnityEngine.Localization.Metadata.FallbackLocale>();
+                            if (fallbackMetadata == null)
+                            {
+                                fallbackMetadata = new UnityEngine.Localization.Metadata.FallbackLocale();
+                                fromLocale.Metadata.AddMetadata(fallbackMetadata);
+                            }
+                            fallbackMetadata.Locale = toLocale;
                         }
 
                         // Find all table collections, and make sure they (and
