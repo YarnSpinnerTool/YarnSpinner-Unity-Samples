@@ -9,19 +9,12 @@ namespace Yarn.Unity.Samples.Editor
     using UnityEngine;
     using UnityEditor.Callbacks;
     using System.IO;
-#if USE_UNITY_LOCALIZATION
-    using UnityEngine.Localization;
-    using UnityEditor.AddressableAssets;
-
-#endif
+    using Yarn.Unity.Editor;
 
 #nullable enable
 
     public class DependenciesInstallerTool : EditorWindow
     {
-        public static IEnumerable<string> SampleLocaleIdentifiers => new[] { "en", "es", "pt-BR", "de", "zh-Hans" };
-        public static IDictionary<string, string> SampleLocaleFallbacks => new Dictionary<string, string> { { "es", "en" } };
-
         [InitializeOnLoadMethod]
         public static void AddOpenSceneHook()
         {
@@ -45,24 +38,6 @@ namespace Yarn.Unity.Samples.Editor
             }
 
         }
-        private class PackageSetupStep
-        {
-            public string Description { get; }
-            public string PerformStepButtonLabel { get; }
-            public System.Func<bool> NeedsSetup { get; }
-            public System.Action RunSetup { get; }
-
-            public PackageSetupStep(string description,
-                                    string performStepButtonLabel,
-                                    System.Func<bool> needsSetup,
-                                    System.Action runSetup)
-            {
-                Description = description;
-                NeedsSetup = needsSetup;
-                RunSetup = runSetup;
-                PerformStepButtonLabel = performStepButtonLabel;
-            }
-        }
 
         private static PackageSetupStep? GetSetupStep(DependencyInstaller.DependencyPackage package)
         {
@@ -71,125 +46,7 @@ namespace Yarn.Unity.Samples.Editor
 #if !USE_UNITY_LOCALIZATION
                 return null;
 #else
-                return new PackageSetupStep(
-                    "Unity Localization is installed, but your project doesn't have a Localization Settings asset, and/or it lacks Locale assets that this sample needs.",
-                    "Create Localization Assets",
-                    static () =>
-                    {
-                        // Do we have settings?
-                        var settings = UnityEditor.Localization.LocalizationEditorSettings.ActiveLocalizationSettings;
-                        if (settings == null)
-                        {
-                            return true;
-                        }
-                        // Do we have the appropriate locales?
-                        foreach (var identifier in SampleLocaleIdentifiers)
-                        {
-                            // we now have a valid settings, but we don't know
-                            // if it has english locale support
-                            var localeID = new UnityEngine.Localization.LocaleIdentifier(identifier);
-                            if (UnityEngine.Localization.Settings.LocalizationSettings.AvailableLocales.GetLocale(localeID) == null)
-                            {
-                                return true;
-                            }
-                        }
-                        return false;
-                    },
-                    static () =>
-                    {
-                        var localizationAssetsPath = "Assets/Localization";
-                        // first we need to make a temporary folder to store all
-                        // these assets
-                        if (Directory.Exists(localizationAssetsPath) == false)
-                        {
-                            AssetDatabase.CreateFolder("Assets", "Localization");
-                        }
-
-                        var settings = UnityEditor.Localization.LocalizationEditorSettings.ActiveLocalizationSettings;
-                        if (settings == null)
-                        {
-                            // Create localization settings
-                            settings = CreateInstance<UnityEngine.Localization.Settings.LocalizationSettings>();
-                            settings.name = "Test Localization Settings";
-                            AssetDatabase.CreateAsset(settings, localizationAssetsPath + "/Localization Settings.asset");
-
-                            // setting this new settings object to be th global
-                            // settings for the project
-                            AssetDatabase.SaveAssets();
-                            UnityEditor.Localization.LocalizationEditorSettings.ActiveLocalizationSettings = settings;
-                        }
-
-                        foreach (var identifier in SampleLocaleIdentifiers)
-                        {
-                            // we now have a valid settings, but we don't know
-                            // if it has the locales we need
-                            var localeID = new LocaleIdentifier(identifier);
-                            if (UnityEngine.Localization.Settings.LocalizationSettings.AvailableLocales.GetLocale(localeID) == null)
-                            {
-                                // we need to make the asset and add it to the
-                                // settings and on disk
-                                var locale = Locale.CreateLocale(localeID);
-                                AssetDatabase.CreateAsset(locale, localizationAssetsPath + "/Locale " + identifier + ".asset");
-                                AssetDatabase.SaveAssets();
-
-                                UnityEditor.Localization.LocalizationEditorSettings.AddLocale(locale);
-                            }
-                        }
-
-                        // Finally, ensure that the locales have their fallbacks configured correctly
-                        foreach (var (fromLocaleID, toLocaleID) in SampleLocaleFallbacks)
-                        {
-                            var fromLocale = UnityEditor.Localization.LocalizationEditorSettings.GetLocale(fromLocaleID);
-                            var toLocale = UnityEditor.Localization.LocalizationEditorSettings.GetLocale(toLocaleID);
-
-                            var fallbackMetadata = fromLocale.Metadata.GetMetadata<UnityEngine.Localization.Metadata.FallbackLocale>();
-                            if (fallbackMetadata == null)
-                            {
-                                fallbackMetadata = new UnityEngine.Localization.Metadata.FallbackLocale();
-                                fromLocale.Metadata.AddMetadata(fallbackMetadata);
-                            }
-                            fallbackMetadata.Locale = toLocale;
-                        }
-
-                        // Find all table collections, and make sure they (and
-                        // their contents) are known to the addressable system
-                        // (which might have just been installed, so no assets
-                        // have any addresses)
-                        var allTableCollectionGUIDs = AssetDatabase.FindAssets("t:LocalizationTableCollection");
-
-                        foreach (var guid in allTableCollectionGUIDs)
-                        {
-                            var path = AssetDatabase.GUIDToAssetPath(guid);
-                            var localizationCollection = AssetDatabase.LoadAssetAtPath<UnityEditor.Localization.LocalizationTableCollection>(path);
-
-                            // Make sure the table collection's assets are all
-                            // addressable
-
-                            localizationCollection.RefreshAddressables();
-
-                            // If this is an asset table collection, make sure
-                            // that every asset in all of its tables is
-                            // addressable
-                            if (localizationCollection is UnityEditor.Localization.AssetTableCollection assetTableCollection)
-                            {
-                                foreach (var table in assetTableCollection.AssetTables)
-                                {
-                                    var allEntries = new Dictionary<long, UnityEngine.Localization.Tables.AssetTableEntry>(table);
-
-                                    foreach (var entry in allEntries)
-                                    {
-                                        var assetPath = AssetDatabase.GUIDToAssetPath(entry.Value.Guid);
-                                        var asset = AssetDatabase.LoadAssetAtPath<UnityEngine.Object>(assetPath);
-                                        assetTableCollection.AddAssetToTable(table, entry.Key, asset);
-                                    }
-                                }
-                            }
-                        }
-
-                        AssetDatabase.SaveAssets();
-
-                    }
-                );
+                return new UnityLocalizationSetupStep();
 #endif
             }
             else
@@ -220,7 +77,7 @@ namespace Yarn.Unity.Samples.Editor
             {
                 return true;
             }
-            return !setup.NeedsSetup();
+            return !setup.NeedsSetup;
         }
 
         public static bool CheckAssemblyLoaded(string name)
@@ -353,7 +210,7 @@ namespace Yarn.Unity.Samples.Editor
                 }
 
                 var setup = GetSetupStep(dependency);
-                if (setup != null && setup.NeedsSetup())
+                if (setup != null && setup.NeedsSetup)
                 {
                     EditorGUILayout.LabelField(setup.Description, wrap);
                     if (GUILayout.Button(setup.PerformStepButtonLabel))
