@@ -238,67 +238,67 @@ namespace Yarn.Unity.Samples
             switch (defaultOptionType)
             {
                 case TimeOutOptionType.VisibleDefault:
-                {
-                    // we are a default advancing case
-                    // this happens to be the same as the hidden fallback case from a "are we in the right state" perspective
-                    // so we will fallthrough to that case
-                    goto case TimeOutOptionType.HiddenFallback;
-                }
+                    {
+                        // we are a default advancing case
+                        // this happens to be the same as the hidden fallback case from a "are we in the right state" perspective
+                        // so we will fallthrough to that case
+                        goto case TimeOutOptionType.HiddenFallback;
+                    }
                 case TimeOutOptionType.HiddenFallback:
-                {
-                    // we are the hidden fallback case
-                    // this means we need to have only found one default tagged line 
-                    // and we need to have the defaultOption value be not null
-
-                    if (hasDefault != 1)
                     {
-                        Debug.LogError("Encountered more than one option with timeout tags");
+                        // we are the hidden fallback case
+                        // this means we need to have only found one default tagged line 
+                        // and we need to have the defaultOption value be not null
 
-                        // we turn off the auto complete flag just in case it was on
-                        // and return
-                        LastHighlightedOptionIsSelectedAfterDuration = false;
-                        return await DialogueRunner.NoOptionSelected;
-                    }
-                    if (defaultOption == null)
-                    {
-                        Debug.LogError("Encountered have an option tagged as a default but have no option value set.");
+                        if (hasDefault != 1)
+                        {
+                            Debug.LogError("Encountered more than one option with timeout tags");
 
-                        // we turn off the auto complete flag just in case it was on
-                        // and return
-                        LastHighlightedOptionIsSelectedAfterDuration = false;
-                        return await DialogueRunner.NoOptionSelected;
+                            // we turn off the auto complete flag just in case it was on
+                            // and return
+                            LastHighlightedOptionIsSelectedAfterDuration = false;
+                            return await DialogueRunner.NoOptionSelected;
+                        }
+                        if (defaultOption == null)
+                        {
+                            Debug.LogError("Encountered have an option tagged as a default but have no option value set.");
+
+                            // we turn off the auto complete flag just in case it was on
+                            // and return
+                            LastHighlightedOptionIsSelectedAfterDuration = false;
+                            return await DialogueRunner.NoOptionSelected;
+                        }
+
+                        // otherwise we are fine
+                        break;
                     }
-                    
-                    // otherwise we are fine
-                    break;
-                }
                 case TimeOutOptionType.LastHighlighted:
-                {
-                    // we are the last highlighted option is autoselected case
-                    // this means we need to not have a default option
-                    // and have no default tagged options
-
-                    if (hasDefault != 0)
                     {
-                        Debug.LogError("Asked to select the last highlighted option but also have tagged options");
+                        // we are the last highlighted option is autoselected case
+                        // this means we need to not have a default option
+                        // and have no default tagged options
 
-                        // we turn off the auto complete flag off
-                        // and return
-                        LastHighlightedOptionIsSelectedAfterDuration = false;
-                        return await DialogueRunner.NoOptionSelected;
+                        if (hasDefault != 0)
+                        {
+                            Debug.LogError("Asked to select the last highlighted option but also have tagged options");
+
+                            // we turn off the auto complete flag off
+                            // and return
+                            LastHighlightedOptionIsSelectedAfterDuration = false;
+                            return await DialogueRunner.NoOptionSelected;
+                        }
+                        if (defaultOption != null)
+                        {
+                            Debug.LogError("Asked to select the last highlighted option but somehow also have a default option set");
+
+                            // we turn off the auto complete flag off
+                            // and return
+                            LastHighlightedOptionIsSelectedAfterDuration = false;
+                            return await DialogueRunner.NoOptionSelected;
+                        }
+
+                        break;
                     }
-                    if (defaultOption != null)
-                    {
-                        Debug.LogError("Asked to select the last highlighted option but somehow also have a default option set");
-
-                        // we turn off the auto complete flag off
-                        // and return
-                        LastHighlightedOptionIsSelectedAfterDuration = false;
-                        return await DialogueRunner.NoOptionSelected;
-                    }
-
-                    break;
-                }
             }
 
             // A completion source that represents the selected option.
@@ -400,7 +400,7 @@ namespace Yarn.Unity.Samples
             {
                 optionViews[optionIndexToSelect].Select();
             }
-            
+
             // now we add in the timer bar if necessary or turn it off if it isn't needed
             if (defaultOptionType == TimeOutOptionType.None)
             {
@@ -434,20 +434,20 @@ namespace Yarn.Unity.Samples
             switch (defaultOptionType)
             {
                 case TimeOutOptionType.VisibleDefault:
-                {
-                    BeginDefaultSelectTimeout(selectedOptionCompletionSource, defaultOption, completionCancellationSource.Token).Forget();
-                    break;
-                }
+                    {
+                        BeginDefaultSelectTimeout(selectedOptionCompletionSource, defaultOption, completionCancellationSource.Token).Forget();
+                        break;
+                    }
                 case TimeOutOptionType.HiddenFallback:
-                {
-                    BeginDefaultSelectTimeout(selectedOptionCompletionSource, defaultOption, completionCancellationSource.Token).Forget();
-                    break;
-                }
+                    {
+                        BeginDefaultSelectTimeout(selectedOptionCompletionSource, defaultOption, completionCancellationSource.Token).Forget();
+                        break;
+                    }
                 case TimeOutOptionType.LastHighlighted:
-                {
-                    BeginLastSelectedOptionTimeout(selectedOptionCompletionSource, optionViews, completionCancellationSource.Token).Forget();
-                    break;
-                }
+                    {
+                        BeginLastSelectedOptionTimeout(selectedOptionCompletionSource, optionViews, completionCancellationSource.Token).Forget();
+                        break;
+                    }
             }
 
             // Wait for a selection to be made, or for the task to be completed.

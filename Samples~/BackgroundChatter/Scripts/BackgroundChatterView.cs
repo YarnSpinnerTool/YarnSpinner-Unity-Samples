@@ -14,11 +14,11 @@ namespace Yarn.Unity.Samples
     using Yarn.Unity;
     using System;
 
-    #if USE_TMP
+#if USE_TMP
     using TMPro;
-    #else
+#else
     using TMP_Text = Yarn.Unity.TMPShim;
-    #endif
+#endif
 
 
     public class BackgroundChatterView : DialoguePresenterBase

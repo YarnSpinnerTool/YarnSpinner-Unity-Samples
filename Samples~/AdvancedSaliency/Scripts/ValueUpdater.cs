@@ -34,51 +34,51 @@ namespace Yarn.Unity.Samples
             switch (observation)
             {
                 case ValueObserved.Primary:
-                {
-                    storage.Primary = IncrementCharacter(storage.Primary);
-                    
-                    break;
-                }
-                case ValueObserved.Secondary:
-                {
-                    storage.Secondary = IncrementCharacter(storage.Secondary);
+                    {
+                        storage.Primary = IncrementCharacter(storage.Primary);
 
-                    break;
-                }
+                        break;
+                    }
+                case ValueObserved.Secondary:
+                    {
+                        storage.Secondary = IncrementCharacter(storage.Secondary);
+
+                        break;
+                    }
 
                 case ValueObserved.Room:
-                {
-                    var allRooms = Enum.GetValues(typeof(Room));
-                    for (int i = 0; i < allRooms.Length; i++)
                     {
-                        var iRoom = (Room)allRooms.GetValue(i);
-                        if (iRoom == storage.Room)
+                        var allRooms = Enum.GetValues(typeof(Room));
+                        for (int i = 0; i < allRooms.Length; i++)
                         {
-                            var newRoom = (Room)allRooms.GetValue((i + 1) % allRooms.Length);
-                            storage.Room = newRoom;
-                            break;
+                            var iRoom = (Room)allRooms.GetValue(i);
+                            if (iRoom == storage.Room)
+                            {
+                                var newRoom = (Room)allRooms.GetValue((i + 1) % allRooms.Length);
+                                storage.Room = newRoom;
+                                break;
+                            }
                         }
-                    }
 
-                    break;
-                }
+                        break;
+                    }
 
                 case ValueObserved.Scenario:
-                {
-                    var allScenarios = Enum.GetValues(typeof(Scenario));
-                    for (int i = 0; i < allScenarios.Length; i++)
                     {
-                        var iScenario = (Scenario)allScenarios.GetValue(i);
-                        if (iScenario == storage.Scenario)
+                        var allScenarios = Enum.GetValues(typeof(Scenario));
+                        for (int i = 0; i < allScenarios.Length; i++)
                         {
-                            var newScenario = (Scenario)allScenarios.GetValue((i + 1) % allScenarios.Length);
-                            storage.Scenario = newScenario;
-                            break;
+                            var iScenario = (Scenario)allScenarios.GetValue(i);
+                            if (iScenario == storage.Scenario)
+                            {
+                                var newScenario = (Scenario)allScenarios.GetValue((i + 1) % allScenarios.Length);
+                                storage.Scenario = newScenario;
+                                break;
+                            }
                         }
-                    }
 
-                    break;
-                }
+                        break;
+                    }
             }
 
             UpdateLabels();

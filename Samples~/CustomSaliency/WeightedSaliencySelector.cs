@@ -57,7 +57,7 @@ namespace Yarn.Unity.Samples
             }
             runner.Dialogue.ContentSaliencyStrategy = this;
         }
-        
+
         // with this saliency selector we don't need to mutate any state so we can ignore this method
         public void ContentWasSelected(ContentSaliencyOption content)
         {
@@ -65,10 +65,10 @@ namespace Yarn.Unity.Samples
         }
 
         public ContentSaliencyOption QueryBestContent(IEnumerable<ContentSaliencyOption> content)
-        {   
+        {
             // keeps the range for each option
             List<(ContentSaliencyOption option, int min, int max)> ranges = new();
-            
+
             // determines the size of the dice
             int diceSize = 0;
 
@@ -121,7 +121,7 @@ namespace Yarn.Unity.Samples
                     diceSize += 1;
                 }
             }
-            
+
             // if we have no ranges it means there is no valid content
             // so we return null to indicate nothing should be run
             if (ranges.Count == 0)

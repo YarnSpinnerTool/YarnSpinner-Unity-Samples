@@ -49,7 +49,7 @@ namespace Yarn.Unity.Samples
 
             return ReplacementMarkupHandler.NoDiagnostics;
         }
-        
+
         protected void Start()
         {
             var lineProvider = (LineProviderBehaviour)GameObject.FindAnyObjectByType<DialogueRunner>().LineProvider;

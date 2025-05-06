@@ -10,13 +10,13 @@ using UnityEngine;
 
 namespace Yarn.Unity.Samples
 {
-    public class ObscurityMarkupProcessor: ReplacementMarkupHandler
+    public class ObscurityMarkupProcessor : ReplacementMarkupHandler
     {
         // matched replacement means all instances of the same character will replace with the same symbol
         public bool matchedReplacement = true;
-        
+
         public LineProviderBehaviour lineProvider;
-        
+
         void Start()
         {
             if (lineProvider == null)
@@ -33,7 +33,7 @@ namespace Yarn.Unity.Samples
             if (!marker.TryGetProperty("obscurity", out int value))
             {
                 var diagnostic = new LineParser.MarkupDiagnostic("Missing the obscurity property, we cannot continue without it.");
-                return new List<LineParser.MarkupDiagnostic>() {diagnostic};
+                return new List<LineParser.MarkupDiagnostic>() { diagnostic };
             }
 
             // we now change how much is obscured based on that property
@@ -44,24 +44,24 @@ namespace Yarn.Unity.Samples
             switch (value)
             {
                 case 0:
-                {
-                    // all of the line is hidden to the player
-                    Obscure(childBuilder, 1);
-                    break;
-                }
+                    {
+                        // all of the line is hidden to the player
+                        Obscure(childBuilder, 1);
+                        break;
+                    }
                 case 1:
-                {
-                    // roughly 2/3 is gibberish
-                    Obscure(childBuilder, 0.67f);
+                    {
+                        // roughly 2/3 is gibberish
+                        Obscure(childBuilder, 0.67f);
 
-                    break;
-                }
+                        break;
+                    }
                 case 2:
-                {
-                    // roughly 25% is gibberish
-                    Obscure(childBuilder, 0.25f);
-                    break;
-                }
+                    {
+                        // roughly 25% is gibberish
+                        Obscure(childBuilder, 0.25f);
+                        break;
+                    }
             }
 
             return ReplacementMarkupHandler.NoDiagnostics;

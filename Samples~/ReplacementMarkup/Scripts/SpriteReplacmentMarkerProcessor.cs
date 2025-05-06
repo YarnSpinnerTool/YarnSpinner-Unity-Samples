@@ -11,7 +11,7 @@ using Yarn.Markup;
 
 namespace Yarn.Unity.Samples
 {
-    public class SpriteReplacmentMarkerProcessor: ReplacementMarkupHandler
+    public class SpriteReplacmentMarkerProcessor : ReplacementMarkupHandler
     {
         public LineProviderBehaviour? lineProvider;
         public Color buff;

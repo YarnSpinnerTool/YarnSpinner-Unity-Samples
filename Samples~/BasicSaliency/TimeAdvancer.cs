@@ -45,13 +45,13 @@ namespace Yarn.Unity.Samples
                     day = "Wednesday";
                     break;
             }
-            
+
             string time = "evening";
             if (variableStore.Time == TimeOfDay.Morning)
             {
                 time = "morning";
             }
-            
+
             label.text = $"It is {day} {time}.";
         }
 
