@@ -1,5 +1,8 @@
 ﻿title: Explanation_BackgroundConversation
 tags:
+position: 567,395
+group: background-conversation
+color: red
 ---
 <<once if $explanations_heard == 0>>
     Capsley: Welcome to the background conversations demo! #line:bg_convs_welcome
@@ -21,6 +24,8 @@ Capsley: Take a look at ChatterGroupManager.cs and ChatterGroup.cs to learn more
 <<detour Demo_PostExplanation>>
 ===
 title: Demo_BackgroundConversation
+position: 564,552
+group: background-conversation
 ---
 BackgroundChatterA: Hey, I'm talking to you in the background!
 BackgroundChatterB: Whoa! So am I!
@@ -28,6 +33,9 @@ BackgroundChatterA: Who needs the player to come talk to us when we can do it on
 BackgroundChatterB: Yeah!!
 ===
 title: Explanation_CallAndResponse
+position: 222,119
+group: call and response
+color: red
 ---
 <<detour Demo_PreExplanation>>
 
@@ -42,6 +50,8 @@ Capsley: The content of the two line groups is written so that no matter what li
 <<detour Demo_PostExplanation>>
 ===
 title: Demo_CallAndResponse
+position: 219,276
+group: call and response
 ---
 => CallAndResponseA: When's lunch?
 => CallAndResponseA: When do we need to take the bins out?
@@ -61,6 +71,9 @@ title: Demo_CallAndResponse
 ===
 
 title: Explanation_Interruption
+position: 181,-1094
+group: interruption
+color: red
 ---
 <<detour Demo_PreExplanation>>
 
@@ -78,6 +91,8 @@ Capsley: When the primary dialogue runner finishes, the background conversation 
 <<detour Demo_PostExplanation>>
 ===
 title: Demo_Interruption
+position: 194,-779
+group: interruption
 ---
 InterruptionA: So I says to them, I says--
 InterruptionB: Whaddya say?
@@ -88,12 +103,17 @@ InterruptionB: I am lettin' you finish!
 ===
 
 title: Demo_Interruption_TalkTo
+position: 190,-936
+group: interruption
 ---
 InterruptionA: This is a private conversation!
 InterruptionB: Yeah! I wanna hear the end of this story!
 ===
 
 title: Explanation_WalkAway
+position: 198,-541
+group: walk-away
+color: red
 ---
 <<detour Demo_PreExplanation>>
 
@@ -112,6 +132,8 @@ Capsley: Try walking up to this character and then immediately walking away!
 ===
 
 title: Demo_WalkAway
+position: 203,-383
+group: walk-away
 ---
 WalkAway: Hey! What's your whole deal?
 Player: Who, me?
@@ -121,6 +143,8 @@ Player: I'm a protagonist.
 WalkAway: Oooh, we got a fancy-pants [b]player character[/b] over here.
 ===
 title: Demo_WalkAway_Interrupt
+position: 214,-227
+group: walk-away
 ---
 => Player: Gotta run!
 => Player: I gotta go!
@@ -128,6 +152,9 @@ title: Demo_WalkAway_Interrupt
 ===
 
 title: Explanation_Ongoing
+position: -144,-31
+group: ongoing
+color: red
 ---
 <<detour Demo_PreExplanation>>
 
@@ -151,6 +178,8 @@ Capsley: Try walking up to these characters a few times to hear the entire dialo
 
 title: Demo_Ongoing
 when: $ongoing_counter == 0
+position: -166,546
+group: ongoing
 ---
 <<declare $ongoing_counter = 0>>
 
@@ -162,6 +191,8 @@ OngoingA: Yeah!
 ===
 title: Demo_Ongoing
 when: $ongoing_counter == 1
+position: -168,723
+group: ongoing
 ---
 
 OngoingB: I'm a bit worried!
@@ -174,6 +205,8 @@ OngoingA: Relax. We've got plenty of time.
 ===
 title: Demo_Ongoing
 when: $ongoing_counter == 2
+position: -162,388
+group: ongoing
 ---
 
 OngoingA: Listen. If a player comes by, you just gotta act natural.
@@ -186,6 +219,8 @@ OngoingA: We got this.
 ===
 title: Demo_Ongoing
 when: always
+position: -163,208
+group: ongoing
 ---
 <<once>>
     OngoingB: Ooh, ooh! Here's one now! *ahem*
@@ -204,6 +239,7 @@ OngoingA: Anything at all.
 ===
 
 title: Explanation_EndOfDemo
+position: 562,182
 ---
 Capsley: And here we are - the end of the demos!
 => Capsley: And, I guess, the start of the demos, since you haven't spoken to me yet. <<once if $explanations_heard == 0>>
@@ -219,12 +255,15 @@ Capsley: Walk around and interact with the characters, and see if you can notice
 ===
 
 title: Demo_Variables
+position: 1394,-241
+color: blue
 ---
 <<declare $explanations_heard = 0 as number>>
 ===
 title: Demo_PostExplanation
 when: $explanations_heard == 2
 when: once
+position: 965,-267
 ---
 Player: Weren't you just in the other room?
 Capsley: No.
@@ -232,6 +271,7 @@ Capsley: No.
 title: Demo_PreExplanation
 when: $explanations_heard == 0
 when: once
+position: 1157,-575
 ---
 Capsley: Welcome to the background conversations demo! #shadow:bg_convs_welcome
 Capsley: I suggest you visit the first room before the others, so that you learn what's going on.
@@ -239,6 +279,7 @@ Capsley: I suggest you visit the first room before the others, so that you learn
 title: Demo_PostExplanation
 when: $explanations_heard == 4
 when: once
+position: 966,-113
 ---
 Player: So what do you do?
 Capsley: I explain Yarn.
