@@ -130,8 +130,8 @@ namespace Yarn.Unity.Samples
                 return YarnTask.CompletedTask;
             }
 
-            dialogueRunner.SetProject(dialogue.project);
-            dialogueRunner.StartDialogue(dialogue.nodeName);
+            dialogueRunner.SetProject(dialogue.project!);
+            dialogueRunner.StartDialogue(dialogue.nodeName!);
 
             return dialogueRunner.DialogueTask;
         }
@@ -189,8 +189,8 @@ namespace Yarn.Unity.Samples
 
                         if (outOfRangeDialogue != null && outOfRangeDialogue.IsValid)
                         {
-                            dialogueRunner.SetProject(outOfRangeDialogue.project);
-                            dialogueRunner.StartDialogue(outOfRangeDialogue.nodeName);
+                            dialogueRunner.SetProject(outOfRangeDialogue.project!);
+                            dialogueRunner.StartDialogue(outOfRangeDialogue.nodeName!);
                         }
                     }
                     break;

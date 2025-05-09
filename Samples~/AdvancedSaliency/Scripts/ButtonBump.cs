@@ -10,12 +10,10 @@ namespace Yarn.Unity.Samples
     {
         public void OnTriggerEnter(Collider other)
         {
-            var updater = other.GetComponent<Yarn.Unity.Samples.ValueUpdater>();
-            if (updater == null)
+            if (other.TryGetComponent<Yarn.Unity.Samples.ValueUpdater>(out var updater))
             {
-                return;
+                updater.UpdateValue();
             }
-            updater.UpdateValue();
         }
     }
 }

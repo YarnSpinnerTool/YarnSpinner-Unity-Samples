@@ -12,13 +12,10 @@ namespace Yarn.Unity.Samples.Editor
     {
         public void OnSceneGUI()
         {
-            var path = target as SimplePathMovement;
-            if (path == null)
+            if (target is SimplePathMovement path && path.path != null)
             {
-                return;
+                SimplePathEditor.DrawPath(path.path, showAddButtons: false);
             }
-
-            SimplePathEditor.DrawPath(path.path, showAddButtons: false);
         }
     }
 

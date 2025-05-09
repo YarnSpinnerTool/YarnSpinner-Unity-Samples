@@ -67,7 +67,7 @@ namespace Yarn.Unity.Samples
                     // information we have about what would happen if we were
                     // interacted with.
 
-                    if (dialogue == null || dialogue.IsValid == false)
+                    if (dialogue == null || dialogue.IsValid == false || dialogue.nodeName == null)
                     {
                         // We have no dialogue reference, so we can't be interacted with.
                         return;
@@ -86,7 +86,7 @@ namespace Yarn.Unity.Samples
                         dialogueRunner.Dialogue.ContentSaliencyStrategy = new Yarn.Saliency.FirstSaliencyStrategy();
                     }
 
-                    var runnableContent = dialogueRunner.Dialogue.GetSaliencyOptionsForNodeGroup(dialogue);
+                    var runnableContent = dialogueRunner.Dialogue.GetSaliencyOptionsForNodeGroup(dialogue.nodeName);
                     var content = dialogueRunner.Dialogue.ContentSaliencyStrategy.QueryBestContent(runnableContent);
 
                     if (content == null)
@@ -118,7 +118,7 @@ namespace Yarn.Unity.Samples
                 Debug.LogError($"Can't run dialogue {dialogue}: dialogue runner not set");
                 return;
             }
-            if (!dialogue.IsValid)
+            if (!dialogue.IsValid || dialogue.nodeName == null)
             {
                 Debug.LogError($"Can't run dialogue {dialogue}: not a valid dialogue reference");
                 return;
@@ -131,7 +131,7 @@ namespace Yarn.Unity.Samples
 
             onInteractionStarted?.Invoke();
 
-            dialogueRunner.StartDialogue(dialogue);
+            dialogueRunner.StartDialogue(dialogue.nodeName);
 
             if (turnsToInteractor && TryGetComponent<SimpleCharacter>(out var character))
             {

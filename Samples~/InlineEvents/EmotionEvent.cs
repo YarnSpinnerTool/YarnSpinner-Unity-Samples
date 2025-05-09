@@ -14,12 +14,14 @@ using TMPro;
 using TMP_Text = Yarn.Unity.TMPShim;
 #endif
 
+#nullable enable
+
 namespace Yarn.Unity.Samples
 {
     public class EmotionEvent : ActionMarkupHandler
     {
-        private SimpleCharacter target;
-        Dictionary<int, string> emotions;
+        private SimpleCharacter? target;
+        Dictionary<int, string> emotions = new();
 
         public override void OnLineDisplayComplete()
         {
@@ -70,7 +72,7 @@ namespace Yarn.Unity.Samples
                     continue;
                 }
 
-                if (!attribute.TryGetProperty("emotion", out string emotionKey))
+                if (!attribute.TryGetProperty("emotion", out string? emotionKey))
                 {
                     continue;
                 }

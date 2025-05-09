@@ -1,15 +1,23 @@
 using UnityEngine;
 using TMPro;
 
+#nullable enable
+
 namespace Yarn.Unity.Samples
 {
     public class TimeAdvancer : MonoBehaviour
     {
-        public BasicSaliencyVariableStorage variableStore;
-        public TMP_Text label;
+        public BasicSaliencyVariableStorage? variableStore;
+        public TMP_Text? label;
 
         private void AdvanceTime()
         {
+            if (variableStore == null)
+            {
+                Debug.Log($"Can't advance time: {nameof(variableStore)} is not set");
+                return;
+            }
+
             // if it is morning we move to evening and stop there
             if (variableStore.Time == TimeOfDay.Morning)
             {
@@ -35,6 +43,18 @@ namespace Yarn.Unity.Samples
         }
         private void UpdateLabel()
         {
+            if (label == null)
+            {
+                Debug.LogWarning($"Can't update label: {nameof(label)} is not set");
+                return;
+            }
+
+            if (variableStore == null)
+            {
+                Debug.LogWarning($"Can't update label: {nameof(variableStore)} is not set");
+                return;
+            }
+
             string day = "Monday";
             switch (variableStore.Day)
             {

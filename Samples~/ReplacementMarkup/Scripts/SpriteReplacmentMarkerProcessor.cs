@@ -14,8 +14,8 @@ namespace Yarn.Unity.Samples
     public class SpriteReplacmentMarkerProcessor : ReplacementMarkupHandler
     {
         public LineProviderBehaviour? lineProvider;
-        public Color buff;
-        public Color debuff;
+        public Color buff = Color.green;
+        public Color debuff = Color.red;
         public override List<LineParser.MarkupDiagnostic> ProcessReplacementMarker(MarkupAttribute marker, StringBuilder childBuilder, List<MarkupAttribute> childAttributes, string localeCode)
         {
             bool addedSprite = true;

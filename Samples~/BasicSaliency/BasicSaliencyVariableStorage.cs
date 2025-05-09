@@ -6,7 +6,7 @@ namespace Yarn.Unity.Samples {
     /// Day
     /// </summary>
     /// <remarks>
-    /// Automatically generated from Yarn project at Packages/dev.yarnspinner.unity.samples/BasicSaliency/BasicSaliency.yarnproject.
+    /// Automatically generated from Yarn project at Assets/SamplesPackage/BasicSaliency/BasicSaliency.yarnproject.
     /// </remarks>
     [System.CodeDom.Compiler.GeneratedCode("YarnSpinner", "3.0.0.235")]
     public enum Day {
@@ -31,7 +31,7 @@ namespace Yarn.Unity.Samples {
     /// TimeOfDay
     /// </summary>
     /// <remarks>
-    /// Automatically generated from Yarn project at Packages/dev.yarnspinner.unity.samples/BasicSaliency/BasicSaliency.yarnproject.
+    /// Automatically generated from Yarn project at Assets/SamplesPackage/BasicSaliency/BasicSaliency.yarnproject.
     /// </remarks>
     [System.CodeDom.Compiler.GeneratedCode("YarnSpinner", "3.0.0.235")]
     public enum TimeOfDay {

@@ -8,6 +8,8 @@ using System.Text;
 using Yarn.Markup;
 using UnityEngine;
 
+#nullable enable
+
 namespace Yarn.Unity.Samples
 {
     public class ObscurityMarkupProcessor : ReplacementMarkupHandler
@@ -15,13 +17,17 @@ namespace Yarn.Unity.Samples
         // matched replacement means all instances of the same character will replace with the same symbol
         public bool matchedReplacement = true;
 
-        public LineProviderBehaviour lineProvider;
+        public LineProviderBehaviour? lineProvider;
 
         void Start()
         {
             if (lineProvider == null)
             {
                 lineProvider = GameObject.FindAnyObjectByType<LineProviderBehaviour>();
+                if (lineProvider == null)
+                {
+                    throw new InvalidOperationException($"Failed to find a {nameof(LineProviderBehaviour)} in the scene");
+                }
             }
             lineProvider.RegisterMarkerProcessor("obscurity", this);
         }

@@ -8,6 +8,8 @@ using Yarn.Markup;
 using Yarn.Unity;
 using UnityEngine;
 
+#nullable enable
+
 namespace Yarn.Unity.Samples
 {
     [System.Serializable]
@@ -20,7 +22,7 @@ namespace Yarn.Unity.Samples
     // also make a basic replacer that automatically replaces [i] and [b] with <i> and <b>
     public class EntityColourer : Yarn.Unity.ReplacementMarkupHandler
     {
-        public EntityMap[] entities;
+        public EntityMap[] entities = System.Array.Empty<EntityMap>();
         public override List<LineParser.MarkupDiagnostic> ProcessReplacementMarker(MarkupAttribute marker, StringBuilder childBuilder, List<MarkupAttribute> childAttributes, string localeCode)
         {
             // this works in one of two ways
@@ -28,7 +30,7 @@ namespace Yarn.Unity.Samples
             // otherwise read the contents of the text within the marker
 
             string nameText = string.Empty;
-            if (marker.TryGetProperty("name", out string value))
+            if (marker.TryGetProperty("name", out string? value))
             {
                 nameText = value.ToLower();
             }

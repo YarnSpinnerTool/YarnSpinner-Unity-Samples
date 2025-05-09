@@ -420,8 +420,11 @@ namespace Yarn.Unity.Samples
                 }
             }
 
-            // fade up the UI now
-            await Effects.FadeAlphaAsync(canvasGroup, 0, 1, fadeUpDuration, cancellationToken);
+            if (canvasGroup != null)
+            {
+                // fade up the UI now
+                await Effects.FadeAlphaAsync(canvasGroup, 0, 1, fadeUpDuration, cancellationToken);
+            }
 
             // allow interactivity and wait for an option to be selected
             if (canvasGroup != null)
@@ -464,8 +467,12 @@ namespace Yarn.Unity.Samples
             // disable the last highlighted selection flag, just in case it was set
             LastHighlightedOptionIsSelectedAfterDuration = false;
 
-            // fade down
-            await Effects.FadeAlphaAsync(canvasGroup, 1, 0, fadeDownDuration, cancellationToken);
+            if (canvasGroup != null)
+            {
+
+                // fade down
+                await Effects.FadeAlphaAsync(canvasGroup, 1, 0, fadeDownDuration, cancellationToken);
+            }
 
             // disabling ALL the options views now
             foreach (var optionView in optionViews)

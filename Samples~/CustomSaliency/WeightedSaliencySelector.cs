@@ -7,6 +7,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using Yarn.Saliency;
 
+#nullable enable
+
 namespace Yarn.Unity.Samples
 {
     /// <summary>
@@ -43,7 +45,7 @@ namespace Yarn.Unity.Samples
     /// </remarks>
     public class WeightedSaliencySelector : MonoBehaviour, IContentSaliencyStrategy
     {
-        public DialogueRunner runner;
+        public DialogueRunner? runner;
 
         const string WeightKey = "weight";
 
@@ -54,6 +56,10 @@ namespace Yarn.Unity.Samples
             if (runner == null)
             {
                 runner = FindAnyObjectByType<Yarn.Unity.DialogueRunner>();
+                if (runner == null)
+                {
+                    throw new InvalidOperationException($"Failed to find a {nameof(DialogueRunner)} in the scene!");
+                }
             }
             runner.Dialogue.ContentSaliencyStrategy = this;
         }
@@ -64,7 +70,7 @@ namespace Yarn.Unity.Samples
             return;
         }
 
-        public ContentSaliencyOption QueryBestContent(IEnumerable<ContentSaliencyOption> content)
+        public ContentSaliencyOption? QueryBestContent(IEnumerable<ContentSaliencyOption> content)
         {
             // keeps the range for each option
             List<(ContentSaliencyOption option, int min, int max)> ranges = new();
@@ -81,23 +87,35 @@ namespace Yarn.Unity.Samples
                     continue;
                 }
 
-                string weightString = null;
+                string? weightString = null;
 
                 if (element.ContentType == ContentSaliencyContentType.Node)
                 {
                     // if we are a node group we get the weight from the headers on the node
                     // if there is no weight header that is fine, this will be null and it will be given an implict weight of 1
-                    weightString = runner.Dialogue.GetHeaderValue(element.ContentID, WeightKey);
+                    if (runner != null)
+                    {
+                        weightString = runner.Dialogue.GetHeaderValue(element.ContentID, WeightKey);
+                    }
                 }
                 else
                 {
                     // if we are a line group we get the weight from the line metadata
                     var lineKey = WeightKey + ':';
-                    foreach (var metadata in runner.YarnProject.lineMetadata.GetMetadata(element.ContentID))
+
+                    string[]? metadata = null;
+                    if (runner != null && runner.YarnProject != null)
                     {
-                        if (metadata.StartsWith(lineKey))
+                        metadata = runner.YarnProject.lineMetadata?.GetMetadata(element.ContentID);
+                    }
+
+                    metadata ??= Array.Empty<string>();
+
+                    foreach (var tag in metadata)
+                    {
+                        if (tag.StartsWith(lineKey))
                         {
-                            weightString = metadata.Substring(lineKey.Length).Trim();
+                            weightString = tag.Substring(lineKey.Length).Trim();
                             break;
                         }
                     }

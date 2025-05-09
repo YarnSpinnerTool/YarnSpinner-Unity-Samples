@@ -75,7 +75,10 @@ namespace Yarn.Unity.Samples
 
         void Start()
         {
-            runner.AddCommandHandler("start_level", SpawnLevel);
+            if (runner != null)
+            {
+                runner.AddCommandHandler("start_level", SpawnLevel);
+            }
         }
     }
 

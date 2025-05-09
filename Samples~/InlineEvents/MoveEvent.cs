@@ -13,6 +13,8 @@ using TMPro;
 using TMP_Text = Yarn.Unity.TMPShim;
 #endif
 
+#nullable enable
+
 namespace Yarn.Unity.Samples
 {
     public class MoveEvent : ActionMarkupHandler
@@ -25,7 +27,7 @@ namespace Yarn.Unity.Samples
             movements.Clear();
         }
 
-        public SimpleCharacter playerCharacter;
+        public SimpleCharacter? playerCharacter;
 
         void Start()
         {
@@ -45,7 +47,7 @@ namespace Yarn.Unity.Samples
             {
                 if (attribute.Name == "move")
                 {
-                    if (attribute.TryGetProperty("name", out string namedPos))
+                    if (attribute.TryGetProperty("name", out string? namedPos))
                     {
                         var position = GameObject.Find(namedPos);
                         if (position != null)
@@ -59,7 +61,7 @@ namespace Yarn.Unity.Samples
 
         public override async YarnTask OnCharacterWillAppear(int currentCharacterIndex, MarkupParseResult line, CancellationToken cancellationToken)
         {
-            if (movements.TryGetValue(currentCharacterIndex, out var position))
+            if (playerCharacter != null && movements.TryGetValue(currentCharacterIndex, out var position))
             {
                 await playerCharacter.MoveTo(position, cancellationToken);
             }
@@ -69,6 +71,10 @@ namespace Yarn.Unity.Samples
         {
             var position = GameObject.Find(endMarker);
             if (position == null)
+            {
+                return;
+            }
+            if (playerCharacter == null)
             {
                 return;
             }

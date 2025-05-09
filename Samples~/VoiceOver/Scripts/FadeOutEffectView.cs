@@ -5,15 +5,20 @@ Yarn Spinner is licensed to you under the terms found in the file LICENSE.md.
 using UnityEngine;
 using UnityEngine.UI;
 
+#nullable enable
+
 namespace Yarn.Unity.Samples
 {
     public class FadeOutEffectView : MonoBehaviour
     {
-        Image Image => GetComponent<Image>();
+        Image? Image => GetComponent<Image>();
 
         protected void Awake()
         {
-            Image.color = Color.clear;
+            if (Image != null)
+            {
+                Image.color = Color.clear;
+            }
         }
 
         [YarnCommand("set_fade_color")]
@@ -42,6 +47,12 @@ namespace Yarn.Unity.Samples
             if (view == null)
             {
                 Debug.LogError($"Can't fade: no active fade view in the scene!");
+                return;
+            }
+
+            if (view.Image == null)
+            {
+                Debug.LogWarning($"Can't fade: fade view {view.name} has no {nameof(Image)}", view);
                 return;
             }
 
