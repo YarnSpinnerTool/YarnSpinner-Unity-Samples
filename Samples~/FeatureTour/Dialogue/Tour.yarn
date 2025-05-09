@@ -40,45 +40,45 @@ title: Capsley_Room3
 position: -825,-122
 group: Capsley
 ---
-Capsley: well well well, if it isn't you.
-Capsley: This room shows off detours
-Capsley: which are similar to jumps
-Capsley: and are another way to structure your game.
+Capsley: Well, well, well, if it isn't you.
+Capsley: This room shows off detours!
+Capsley: Which are similar to jumps...
+Capsley: And are another way to structure your game!
 ===
 title: Capsley_Room4
 position: -615,-122
 group: Capsley
 ---
-Capsley: Fancy seeing you here
-Capsley: This room shows off using variables in Yarn
-Capsley: And also shows of enumerations, or enums
-Capsley: Which are another type of variable
+Capsley: Fancy seeing you here!
+Capsley: This room shows off using variables in Yarn!
+Capsley: And also shows off enumerations, or enums!
+Capsley: Which are another type of variable!
 ===
 title: Capsley_Room5
 position: -825,11
 group: Capsley
 ---
 Capsley: Oh, you're still here?
-Capsley: Well then I guess you want to see how to do conditionals and branching in Yarn
-Capsley: Which is what this room is all about, using ifs, onces, and options to do branching
+Capsley: Well then! I guess you want to see how to do conditionals and branching in Yarn.
+Capsley: Which is what this room is all about, using ifs, onces, and options to do branching!
 ===
 title: Capsley_Room6
 position: -615,11
 group: Capsley
 ---
 Capsley: You've almost reached the end.
-Capsley: here we are showing off commands, functions, and smart variables.
-Capsley: all of which are more advanced elements of Yarn Spinner to give you more control and hooks
-Capsley: hooks both into Yarn and hooks into the other parts of your game.
+Capsley: Here, we're showing off commands, functions, and smart variables.
+Capsley: All of these are more advanced elements of Yarn Spinner to give you more control and hooks!
+Capsley: Hooks both into Yarn, and hooks into the other parts of your game!
 ===
 title: Capsley_Room7
 position: -825,143
 group: Capsley
 ---
 Capsley: The final room, or is it?
-Capsley: nah it is.
-Capsley: This room demonstrates storylets which are a new way of organising story content.
-Capsley: here we show off two variants of storylets, line groups and node groups.
+Capsley: Nah, it is.
+Capsley: This room demonstrates storylets, which are a new way of organising story content.
+Capsley: Here, we show off two variants of storylets: line groups, and node groups.
 ===
 
 title: Room2_Nodes_and_Lines
@@ -89,7 +89,7 @@ Bob: Hello. I'm Bob.
 Bob: I'm talking to you from my very own node.
 Bob: Each each of these lines...
 Bob: ... is a line!
-Bob: Yarn Spinner scripts made up of Nodes and Lines.
+Bob: Yarn Spinner scripts are made up of Nodes and Lines.
 Bob: Neat, huh?
 ===
 
@@ -133,7 +133,7 @@ group: Room3
 position: -299,292
 ---
 Bruce: I'm Bruce. My single purpose in life...
-Bruce: My raison d'être. 
+Bruce: My raison d'être...
 Bruce: My whole reason to get up in the morning...
 Bruce: .. is to tell you about detours.
 <<detour Room3_Detours_2>>
@@ -150,7 +150,7 @@ group: Room3
 position: -244,538
 ---
 Bruce: This is a detour. Right now. We just detoured to a whole different node.
-Bruce: Amazing right?
+Bruce: Amazing, right?
 Bruce: And when we're done here...
 ===
 
@@ -274,7 +274,7 @@ Derek: YOU!
     -> Me?
 Derek: Yes, you!
 <<wait 2>>
-Derek: Dramatic pause, right?
+Derek: That was a dramatic pause, right?
 Derek: I did that with a Command! The Wait Command!
 Derek: You can make your own Commands to let Yarn Spinner Scripts control Unity Scripts.
 Derek: So you can use them to make things happen in the game world, from Yarn Spinner.
@@ -311,7 +311,7 @@ group: Room6
 position: -147,906
 ---
 Reginald: Did you know that Variables can also be Smart?
-Reginald: When they're Smart, we call them Smart Variables
+Reginald: When they're Smart, we call them Smart Variables.
 Reginald: We're proud of our evocative naming choices.
 <<if $player_can_afford_bribe>>
     Reginald: Anyway.
@@ -347,7 +347,7 @@ when: !visited("Room7_NodeGroups_1")
 Dr Node: Hi, I'm Doctor Node.
 Dr Node: I'm here to show you how Node Groups work.
 Dr Node: Node Groups let you create a collection of Nodes that share the same name.
-Dr Node: Each Node that's part of the group has a when condition in its header... and that when condition dictates when it's shown.
+Dr Node: Each Node that's part of the group has a "when" condition in its header... and that when condition dictates when it's shown.
 Dr Node: You're seeing these lines because this node in the Node Group has its when condition set to once.
 Dr Node: Which means you'll see it once.
 Dr Node: Try speaking to me again.

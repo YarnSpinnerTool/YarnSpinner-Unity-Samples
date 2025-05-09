@@ -93,7 +93,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000000, guid: ab1f7ee8dacb943d9bcefcf466218be5, type: 2}
+  m_LightingDataAsset: {fileID: 112000000, guid: 5dca53615ce6b4800b4d29de2bad7780, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -25789,6 +25789,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _textLocaleCode: en
   _assetLocaleCode: en
+  _useFallback: 0
+  _fallbackLocaleCode: en
 --- !u!4 &1065725167 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 056b72c6dd3af4b3eb64fe19aaa9f37e, type: 3}

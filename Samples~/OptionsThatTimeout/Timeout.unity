@@ -93,7 +93,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 20201, guid: 0000000000000000f000000000000000, type: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 6371d8fbaaede413d83bb98d0c766e64, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -405,7 +405,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8e756c36b9f6449f9b84464fa1b7f51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duration: 1
   bar: {fileID: 981519741}
 --- !u!224 &981519741
 RectTransform:
@@ -1791,7 +1790,7 @@ MonoBehaviour:
   yarnProject: {fileID: 7545569452688597077, guid: 0b541e98bacbe48c6aed45c54009c3cb, type: 3}
   variableStorage: {fileID: 7300885744757786424}
   lineProvider: {fileID: 0}
-  dialogueViews:
+  dialoguePresenters:
   - {fileID: 4290189804079117169}
   - {fileID: 1318446284}
   - {fileID: 2813361728379396884}
