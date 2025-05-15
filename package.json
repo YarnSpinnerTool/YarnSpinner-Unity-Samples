@@ -6,7 +6,7 @@
   "unity": "2022.3",
   "dependencies": {
     "dev.yarnspinner.unity": "3.*",
-    "com.unity.shadergraph": "14.*"
+    "com.unity.shadergraph": "14.0.0"
   },
   "keywords": [
     "Dialogue",
