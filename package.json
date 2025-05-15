@@ -2,7 +2,7 @@
   "name": "dev.yarnspinner.unity.samples",
   "version": "3.0.0-beta2",
   "displayName": "Yarn Spinner Samples",
-  "description": "The samples for Yarn Spinner for Unity, huzzah!",
+  "description": "Example scenes and tutorial content for Yarn Spinner. To install the samples, click on the Samples tab in the Package Manager window.",
   "unity": "2022.3",
   "dependencies": {
     "dev.yarnspinner.unity": "3.*"
