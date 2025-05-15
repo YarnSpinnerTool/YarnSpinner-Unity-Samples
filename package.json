@@ -16,9 +16,9 @@
     "name": "Yarn Spinner Pty Ltd",
     "url": "https://yarnspinner.dev"
   },
-  "changelogUrl": "https://docs.yarnspinner.dev/changelog",
+  "changelogUrl": "https://docs.yarnspinner.dev/yarn-spinner-for-unity/samples",
   "documentationUrl": "https://docs.yarnspinner.dev/yarn-spinner-for-unity/samples",
-  "licensesUrl": "https://docs.yarnspinner.dev/branding",
+  "licensesUrl": "https://docs.yarnspinner.dev/yarn-spinner-for-unity/samples",
   "hideInEditor": false,
   "type": "tool",
   "samples": [
