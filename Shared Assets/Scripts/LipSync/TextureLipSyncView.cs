@@ -24,7 +24,6 @@ namespace Yarn.Unity.Samples
         [SerializeField] VoiceOverPresenter? voiceOverView;
         [SerializeField] TMP_Text? debugView;
 
-
         private readonly Dictionary<string, MouthView?> _cachedMouthViews = new();
 
         public override YarnTask OnDialogueStartedAsync()

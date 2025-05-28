@@ -19,7 +19,6 @@ namespace Yarn.Unity.Samples
 
         public CancellationTokenSource? walkCTS = null;
 
-
         [YarnCommand("pause_walking")]
         public void PauseWalking()
         {
@@ -53,7 +52,6 @@ namespace Yarn.Unity.Samples
                 this.transform.rotation = rotation;
             }
         }
-
 
         public void StartWalking()
         {
@@ -151,19 +149,16 @@ namespace Yarn.Unity.Samples
 
                 }
 
-
                 transform.position = Vector3.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
 
                 await YarnTask.Yield();
 
             } while (Vector3.Distance(transform.position, targetPosition) > 0.05f);
 
-
             if (animator != null)
             {
                 animator.SetFloat(speedParameter, 0f);
             }
-
 
         }
     }

@@ -99,7 +99,6 @@ namespace Yarn.Unity.Samples
             dialogueRunner.Dialogue.ContentSaliencyStrategy = strategy;
         }
 
-
         public void OnDrawGizmosSelected()
         {
             var color = Color.yellow;

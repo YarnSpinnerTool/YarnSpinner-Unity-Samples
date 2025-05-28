@@ -21,7 +21,6 @@ namespace Yarn.Unity.Samples
         [SerializeField] Color fadeColor = Color.red;
         [SerializeField] Color baseColor = Color.yellow;
 
-
         const float simpleTintSaturationOffset = -0.3f;
         const float simpleTintValueOffset = 0.25f;
 

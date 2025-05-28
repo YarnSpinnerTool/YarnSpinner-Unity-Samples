@@ -25,7 +25,6 @@ namespace Yarn.Unity.Samples
         public GameObject? environmentPrefab;
     }
 
-
 #if UNITY_EDITOR
 
     namespace Editor

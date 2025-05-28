@@ -171,8 +171,6 @@ namespace Yarn.Unity.Samples.Editor
                 return;
             }
 
-
-
             if (AreDependenciesReady(dependencies))
             {
                 string message;
@@ -219,7 +217,6 @@ namespace Yarn.Unity.Samples.Editor
                     }
                 }
             }
-
 
             if (PackageInstaller.IsInstallationInProgress)
             {

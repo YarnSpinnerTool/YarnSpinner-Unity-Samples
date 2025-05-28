@@ -27,7 +27,6 @@ namespace Yarn.Unity.Samples
         [SerializeField] List<GameObject> projectionItems = new();
         [SerializeField] float delayBeforeShowingNewSlide = 0.5f;
 
-
         [SerializeField] List<DialoguePresenterBase> overrideDialogueViews = new();
 
         [SerializeField] bool startOff = true;
@@ -35,7 +34,6 @@ namespace Yarn.Unity.Samples
         bool isRunningSlideshow = false;
 
         private AudioSource? AudioSource => GetComponent<AudioSource>();
-
 
         protected void Awake()
         {
@@ -80,8 +78,6 @@ namespace Yarn.Unity.Samples
             {
                 overriddenView.enabled = false;
             }
-
-
 
             foreach (var element in slideshow.projectionItems)
             {

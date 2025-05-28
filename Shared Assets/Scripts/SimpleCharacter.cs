@@ -55,7 +55,6 @@ namespace Yarn.Unity.Samples
         private int currentDestinationPathIndex = -1;
         private float remainingPathWaitTime = 0f;
 
-
         private Quaternion targetRotation;
 
         public float CurrentSpeedFactor { get; private set; } = 0f;
@@ -69,7 +68,6 @@ namespace Yarn.Unity.Samples
         private Vector3 lastGroundedPosition;
 
         #endregion
-
 
         #region Animation Variables
         [Group("Animation")]
@@ -118,7 +116,6 @@ namespace Yarn.Unity.Samples
 
         #endregion
 
-
         #region Interaction Variables
         [Group("Interaction")]
         [ShowIf(nameof(isPlayerControlled))]
@@ -136,8 +133,6 @@ namespace Yarn.Unity.Samples
         private Interactable? currentInteractable = null;
 
         #endregion
-
-
 
         #region Animation Commands
 
@@ -701,8 +696,6 @@ namespace Yarn.Unity.Samples
         }
 
         #endregion
-
-
 
         #region Core Logic
 

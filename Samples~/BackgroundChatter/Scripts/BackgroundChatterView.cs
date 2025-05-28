@@ -20,7 +20,6 @@ namespace Yarn.Unity.Samples
     using TMP_Text = Yarn.Unity.TMPShim;
 #endif
 
-
     public class BackgroundChatterView : DialoguePresenterBase
     {
         [SerializeField] TMP_Text? text;
@@ -34,7 +33,6 @@ namespace Yarn.Unity.Samples
         Canvas? canvas;
 
         Transform? attachmentTarget;
-
 
         // Update is called once per frame
         void LateUpdate()
@@ -69,7 +67,6 @@ namespace Yarn.Unity.Samples
                 text.enabled = false;
             }
         }
-
 
         public override async YarnTask RunLineAsync(LocalizedLine line, LineCancellationToken token)
         {

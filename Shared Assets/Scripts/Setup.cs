@@ -6,8 +6,6 @@ namespace Yarn.Unity.Samples
     using UnityEngine;
     using UnityEngine.Events;
 
-
-
     public static class Setup
     {
         [RuntimeInitializeOnLoadMethod]
