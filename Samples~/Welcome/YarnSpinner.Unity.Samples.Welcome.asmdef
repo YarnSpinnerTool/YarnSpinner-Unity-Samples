@@ -3,7 +3,8 @@
     "rootNamespace": "",
     "references": [
         "YarnSpinner.Unity",
-        "Unity.TextMeshPro"
+        "Unity.TextMeshPro",
+        "UniTask"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
