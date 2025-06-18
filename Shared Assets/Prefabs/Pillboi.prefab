@@ -83,6 +83,13 @@ MonoBehaviour:
   outOfBoundsYPosition: -5
   followPath: {fileID: 0}
   pathDestinationTolerance: 0.1
+  movementInput:
+    inputActionReference: {fileID: 0}
+    legacyInputHorizontalAxis: Horizontal
+    legacyInputVerticalAxis: Vertical
+  interactInput:
+    inputActionReference: {fileID: 0}
+    legacyInputAxis: Jump
   animator: {fileID: 6638091402538635223}
   facialExpressions:
     m_keys:

@@ -52,6 +52,14 @@ namespace Yarn.Unity.Samples
         [HideIf(nameof(isPlayerControlled))]
         [SerializeField] float pathDestinationTolerance = 0.1f;
 
+        [Group("Movement")]
+        [ShowIf(nameof(isPlayerControlled))]
+        [SerializeField] InputAxisVector2 movementInput;
+
+        [Group("Movement")]
+        [ShowIf(nameof(isPlayerControlled))]
+        [SerializeField] InputAxisButton interactInput;
+
         private int currentDestinationPathIndex = -1;
         private float remainingPathWaitTime = 0f;
 
@@ -415,6 +423,12 @@ namespace Yarn.Unity.Samples
 
             lastFrameWorldPosition = transform.position;
             lastGroundedPosition = transform.position;
+
+            if (isPlayerControlled)
+            {
+                movementInput.Enable();
+                interactInput.Enable();
+            }
         }
 
         protected void UpdateMovement()
@@ -422,10 +436,7 @@ namespace Yarn.Unity.Samples
 
             if (isPlayerControlled && Mode == CharacterMode.PlayerControlledMovement)
             {
-                Vector2 input = new(
-                    Input.GetAxisRaw("Horizontal"),
-                    Input.GetAxisRaw("Vertical")
-                );
+                Vector2 input = movementInput.Value;
 
                 ApplyMovement(input);
             }
@@ -660,7 +671,7 @@ namespace Yarn.Unity.Samples
                 currentInteractable = nearest.Interactable;
             }
 
-            if (Input.GetButtonDown("Jump") && currentInteractable != null)
+            if (interactInput.WasPressedThisFrame && currentInteractable != null)
             {
                 async YarnTask RunInteraction(Interactable interactable, CancellationToken cancellationToken)
                 {
@@ -677,6 +688,12 @@ namespace Yarn.Unity.Samples
 
                     onInteracting?.Invoke(interactable);
                     await interactable.Interact(gameObject);
+
+                    // Wait a frame so that if 'advance dialogue' is the same
+                    // button as 'interact', we don't accidentally trigger a new
+                    // dialogue with the same input as leaving the previous
+                    // dialogue (i.e. we'd never leave dialogue)
+                    await YarnTask.Yield();
 
                     if (cancellationToken.IsCancellationRequested)
                     {

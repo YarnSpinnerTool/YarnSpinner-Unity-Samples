@@ -52,6 +52,14 @@ PrefabInstance:
       propertyPath: isPlayerControlled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 793312023099668125, guid: 8ee6a05cc2c944cb2a5c63c42fe1f9f0, type: 3}
+      propertyPath: interactInput.inputActionReference
+      value: 
+      objectReference: {fileID: -6966891696229643446, guid: 5b991f93b283a4285bc1a7ca5f4a8919, type: 3}
+    - target: {fileID: 793312023099668125, guid: 8ee6a05cc2c944cb2a5c63c42fe1f9f0, type: 3}
+      propertyPath: movementInput.inputActionReference
+      value: 
+      objectReference: {fileID: -3730999773910534552, guid: 5b991f93b283a4285bc1a7ca5f4a8919, type: 3}
     - target: {fileID: 1671993865347793199, guid: 8ee6a05cc2c944cb2a5c63c42fe1f9f0, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
