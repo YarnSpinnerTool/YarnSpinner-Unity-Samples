@@ -54,11 +54,11 @@ namespace Yarn.Unity.Samples
 
         [Group("Movement")]
         [ShowIf(nameof(isPlayerControlled))]
-        [SerializeField] InputAxisVector2 movementInput;
+        [SerializeField] InputAxisVector2 movementInput = new();
 
         [Group("Movement")]
         [ShowIf(nameof(isPlayerControlled))]
-        [SerializeField] InputAxisButton interactInput;
+        [SerializeField] InputAxisButton interactInput = new();
 
         private int currentDestinationPathIndex = -1;
         private float remainingPathWaitTime = 0f;
