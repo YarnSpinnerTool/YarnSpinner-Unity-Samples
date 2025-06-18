@@ -8,11 +8,11 @@ namespace Yarn.Unity.Samples
     public abstract class InputAxisBase
     {
 #if USE_INPUTSYSTEM && ENABLE_INPUT_SYSTEM
-        [SerializeField] UnityEngine.InputSystem.InputActionReference? inputActionReference;
+        [SerializeField] protected UnityEngine.InputSystem.InputActionReference? inputActionReference;
 #else
         // If the input system isn't available, don't drop the reference to any
         // previously-configured input action
-        [SerializeField] ScriptableObject? inputActionReference;
+        [SerializeField] protected ScriptableObject? inputActionReference;
 #endif
 
         public void Enable()
