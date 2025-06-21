@@ -63,7 +63,6 @@ namespace Yarn.Unity.Samples
     [System.Serializable]
     public class InputAxisButton : InputAxisBase
     {
-
         [SerializeField] string? legacyInputAxis = "Jump";
 
         public bool WasPressedThisFrame
@@ -80,6 +79,26 @@ namespace Yarn.Unity.Samples
                 if (!string.IsNullOrEmpty(legacyInputAxis))
                 {
                     return Input.GetButtonDown(legacyInputAxis);
+                }
+#endif
+                return false;
+            }
+        }
+
+        public bool IsPressed
+        {
+            get
+            {
+#if USE_INPUTSYSTEM && ENABLE_INPUT_SYSTEM
+                if (inputActionReference != null && inputActionReference.action != null)
+                {
+                    return inputActionReference.action.IsPressed();
+                }
+#endif
+#if ENABLE_LEGACY_INPUT_MANAGER
+                if (!string.IsNullOrEmpty(legacyInputAxis))
+                {
+                    return Input.GetButton(legacyInputAxis);
                 }
 #endif
                 return false;
