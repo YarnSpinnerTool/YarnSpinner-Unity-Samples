@@ -26,10 +26,10 @@ namespace Yarn.Unity.Samples.Editor
 
                 if (animator == null)
                 {
-                    using (new EditorGUI.DisabledScope())
-                    {
-                        EditorGUI.Popup(position, label, 0, new GUIContent[] { });
-                    }
+                    // No known animator to get states from, so just show
+                    // the text field
+                    var text = EditorGUI.TextField(position, label, property.stringValue);
+                    property.stringValue = text;
                     return;
                 }
 
