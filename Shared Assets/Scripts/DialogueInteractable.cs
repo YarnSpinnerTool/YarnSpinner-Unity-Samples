@@ -133,9 +133,16 @@ namespace Yarn.Unity.Samples
 
             dialogueRunner.StartDialogue(dialogue.nodeName);
 
-            if (turnsToInteractor && TryGetComponent<SimpleCharacter>(out var character))
+            if (turnsToInteractor)
             {
-                character.lookTarget = interactor.transform;
+                if (TryGetComponent<SimpleCharacter>(out var character))
+                {
+                    character.lookTarget = interactor.transform;
+                }
+                if (TryGetComponent<SimpleCharacter2D>(out var character2D))
+                {
+                    character2D.lookTarget = interactor.transform;
+                }
             }
 
             var destroyCancellation = destroyCancellationToken;
@@ -147,9 +154,16 @@ namespace Yarn.Unity.Samples
                 return;
             }
 
-            if (turnsToInteractor && TryGetComponent<SimpleCharacter>(out character))
+            if (turnsToInteractor)
             {
-                character.lookTarget = null;
+                if (TryGetComponent<SimpleCharacter>(out var character))
+                {
+                    character.lookTarget = null;
+                }
+                if (TryGetComponent<SimpleCharacter2D>(out var character2D))
+                {
+                    character2D.lookTarget = null;
+                }
             }
         }
     }
