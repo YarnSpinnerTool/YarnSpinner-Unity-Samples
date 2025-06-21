@@ -8,11 +8,19 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ### Added
 
-- Added support for Unity Input System for player movement
+## [Unreleased]
 
 ### Changed
 
 ### Removed
+
+## [3.0.3] 2025-06-21
+
+### Added
+
+- Added support for Unity Input System for player movement
+- Added SampleInputActions and configured scenes to use them (they'll fall back to the keyboard if the Input System isn't installed)
+- Added additional outdoor environment props
 
 ## [3.0.2] 2025-06-13
 
