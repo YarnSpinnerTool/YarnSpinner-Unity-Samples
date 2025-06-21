@@ -12,6 +12,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ### Changed
 
+- Fixed compiler warnings in SimpleCharacterInputAxis
+
 ### Removed
 
 ## [3.0.3] 2025-06-21

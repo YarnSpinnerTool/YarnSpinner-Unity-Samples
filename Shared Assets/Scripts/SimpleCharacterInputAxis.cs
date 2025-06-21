@@ -2,6 +2,10 @@ using UnityEngine;
 
 #nullable enable
 
+// Disable this warning, because depending on the compiler defines, certain
+// variables may not end up getting accessed
+#pragma warning disable CS0414 // The field 'X' is assigned but its value is never used
+
 namespace Yarn.Unity.Samples
 {
 
