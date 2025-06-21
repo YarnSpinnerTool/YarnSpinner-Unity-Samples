@@ -189,46 +189,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2148436417722125083, guid: 64d4aee0be836422ebc2c5aaf352a02d, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 1.45
-      objectReference: {fileID: 0}
-    - target: {fileID: 2148436417722125083, guid: 64d4aee0be836422ebc2c5aaf352a02d, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -8.52
-      objectReference: {fileID: 0}
-    - target: {fileID: 2148436417722125083, guid: 64d4aee0be836422ebc2c5aaf352a02d, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.08715588
-      objectReference: {fileID: 0}
-    - target: {fileID: 2148436417722125083, guid: 64d4aee0be836422ebc2c5aaf352a02d, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.9961947
-      objectReference: {fileID: 0}
-    - target: {fileID: 2148436417722125083, guid: 64d4aee0be836422ebc2c5aaf352a02d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 170
-      objectReference: {fileID: 0}
-    - target: {fileID: 2578865976144883198, guid: 64d4aee0be836422ebc2c5aaf352a02d, type: 3}
-      propertyPath: dialogueRunner
-      value: 
-      objectReference: {fileID: 1171387221}
-    - target: {fileID: 2578865976144883198, guid: 64d4aee0be836422ebc2c5aaf352a02d, type: 3}
-      propertyPath: dialogue.project
-      value: 
-      objectReference: {fileID: 7545569452688597077, guid: 68108cc818f1a402fa0a0ebc6bd72743, type: 3}
-    - target: {fileID: 2578865976144883198, guid: 64d4aee0be836422ebc2c5aaf352a02d, type: 3}
-      propertyPath: dialogue.nodeName
-      value: RoomSetup
-      objectReference: {fileID: 0}
-    - target: {fileID: 3245717818505251307, guid: 64d4aee0be836422ebc2c5aaf352a02d, type: 3}
-      propertyPath: m_Name
-      value: Explanation Character
-      objectReference: {fileID: 0}
-    - target: {fileID: 7977143759189813674, guid: 64d4aee0be836422ebc2c5aaf352a02d, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1256999087083618722, guid: 0b3eff3c7e4554fa9beeeed968894f36, type: 3}
       propertyPath: m_LocalPosition.x
       value: -8.334122e-10
@@ -305,6 +265,46 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: ba3b80bee56844e399f88f4ed59a287a, type: 2}
+    - target: {fileID: 2148436417722125083, guid: 64d4aee0be836422ebc2c5aaf352a02d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 2148436417722125083, guid: 64d4aee0be836422ebc2c5aaf352a02d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -8.52
+      objectReference: {fileID: 0}
+    - target: {fileID: 2148436417722125083, guid: 64d4aee0be836422ebc2c5aaf352a02d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.08715588
+      objectReference: {fileID: 0}
+    - target: {fileID: 2148436417722125083, guid: 64d4aee0be836422ebc2c5aaf352a02d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.9961947
+      objectReference: {fileID: 0}
+    - target: {fileID: 2148436417722125083, guid: 64d4aee0be836422ebc2c5aaf352a02d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 170
+      objectReference: {fileID: 0}
+    - target: {fileID: 2578865976144883198, guid: 64d4aee0be836422ebc2c5aaf352a02d, type: 3}
+      propertyPath: dialogueRunner
+      value: 
+      objectReference: {fileID: 1171387221}
+    - target: {fileID: 2578865976144883198, guid: 64d4aee0be836422ebc2c5aaf352a02d, type: 3}
+      propertyPath: dialogue.project
+      value: 
+      objectReference: {fileID: 7545569452688597077, guid: 68108cc818f1a402fa0a0ebc6bd72743, type: 3}
+    - target: {fileID: 2578865976144883198, guid: 64d4aee0be836422ebc2c5aaf352a02d, type: 3}
+      propertyPath: dialogue.nodeName
+      value: RoomSetup
+      objectReference: {fileID: 0}
+    - target: {fileID: 3245717818505251307, guid: 64d4aee0be836422ebc2c5aaf352a02d, type: 3}
+      propertyPath: m_Name
+      value: Explanation Character
+      objectReference: {fileID: 0}
+    - target: {fileID: 7977143759189813674, guid: 64d4aee0be836422ebc2c5aaf352a02d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -839,6 +839,14 @@ PrefabInstance:
       propertyPath: 'm_ActiveFontFeatures.Array.data[0]'
       value: 1801810542
       objectReference: {fileID: 0}
+    - target: {fileID: 3859336324316773513, guid: 52571f68872914e24837210513edea1d, type: 3}
+      propertyPath: inputMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3859336324316773513, guid: 52571f68872914e24837210513edea1d, type: 3}
+      propertyPath: hurryUpLineAction
+      value: 
+      objectReference: {fileID: -6966891696229643446, guid: 5b991f93b283a4285bc1a7ca5f4a8919, type: 3}
     - target: {fileID: 7262066351540048079, guid: 52571f68872914e24837210513edea1d, type: 3}
       propertyPath: m_Name
       value: Dialogue System
@@ -1051,6 +1059,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7262066351540048079, guid: 52571f68872914e24837210513edea1d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1260914828}
+    - targetCorrespondingSourceObject: {fileID: 9078442560890639579, guid: 52571f68872914e24837210513edea1d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 52571f68872914e24837210513edea1d, type: 3}
 --- !u!1001 &462874230
 PrefabInstance:

@@ -951,10 +951,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   runner: {fileID: 7050024644613556015}
+  presenter: {fileID: 4290189804079117169}
   multiAdvanceIsCancel: 0
   advanceRequestsBeforeCancellingLine: 2
   inputMode: 0
-  hurryUpLineAction: {fileID: 0}
+  hurryUpLineAction: {fileID: -6966891696229643446, guid: 5b991f93b283a4285bc1a7ca5f4a8919, type: 3}
   nextLineAction: {fileID: 0}
   cancelDialogueAction: {fileID: 0}
   enableActions: 1
@@ -1601,7 +1602,7 @@ MonoBehaviour:
   autoAdvanceDelay: 1
   useTypewriterEffect: 1
   typewriterEffectSpeed: 60
-  actionMarkupHandlers:
+  eventHandlers:
   - {fileID: 7615738316696263050}
 --- !u!114 &4290189804079117176
 MonoBehaviour:
@@ -1740,26 +1741,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &5617870087096472233
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8032476762120031046}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SendPointerHoverToParent: 1
-  m_HorizontalAxis: Horizontal
-  m_VerticalAxis: Vertical
-  m_SubmitButton: Submit
-  m_CancelButton: Cancel
-  m_InputActionsPerSecond: 10
-  m_RepeatDelay: 0.5
-  m_ForceModuleActive: 0
 --- !u!4 &6009832363797303753
 Transform:
   m_ObjectHideFlags: 0
@@ -1790,6 +1771,7 @@ MonoBehaviour:
   yarnProject: {fileID: 7545569452688597077, guid: 0b541e98bacbe48c6aed45c54009c3cb, type: 3}
   variableStorage: {fileID: 7300885744757786424}
   lineProvider: {fileID: 0}
+  saliencyStrategy: 0
   dialoguePresenters:
   - {fileID: 4290189804079117169}
   - {fileID: 1318446284}
@@ -1891,7 +1873,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6009832363797303753}
   - component: {fileID: 2633712023609565982}
-  - component: {fileID: 5617870087096472233}
+  - component: {fileID: 8032476762120031047}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -1899,6 +1881,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &8032476762120031047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8032476762120031046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ef056dd5667f4dfaac1bb553498afa2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8524195584629706578
 GameObject:
   m_ObjectHideFlags: 0
