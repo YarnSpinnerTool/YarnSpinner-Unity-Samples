@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: PillCharacter-Red
+  m_Controller: {fileID: 9100000, guid: 7b9aadac36b354756871e740905c91a3, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 9605e5eaa69e647439a6378a27421f0b, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: f44b92108ba9040a88ce190c5b3f5987, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: b8aaeea7098124944814be5dafad7c67, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 3877631f155b545b08995cd3a72d5cb7, type: 2}
