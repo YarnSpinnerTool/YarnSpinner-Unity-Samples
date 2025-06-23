@@ -14,6 +14,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ### Changed
 
 - Fixed compiler warnings in SimpleCharacterInputAxis
+- DialogueInteractable no longer throws 'X is not a valid node name' if the dialogue runner has no Yarn Project
 
 ### Removed
 

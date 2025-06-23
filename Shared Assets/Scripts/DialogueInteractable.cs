@@ -80,6 +80,14 @@ namespace Yarn.Unity.Samples
                         return;
                     }
 
+                    if (dialogueRunner.YarnProject == null)
+                    {
+                        // The dialogue runner has no Yarn Project. We can't ask
+                        // it for saliency info.
+                        onActiveChanged?.Invoke(false);
+                        return;
+                    }
+
                     // TODO: remove this once YS core is updated
                     if (dialogueRunner.Dialogue.ContentSaliencyStrategy == null)
                     {
