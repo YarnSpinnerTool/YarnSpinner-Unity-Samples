@@ -135,7 +135,24 @@ namespace Yarn.Unity.Samples
 
         private List<Interactable> interactables = new();
 
-        private Interactable? currentInteractable = null;
+        private Interactable? _currentInteractable = null;
+        private Interactable? CurrentInteractable
+        {
+            get => _currentInteractable;
+            set
+            {
+                var prev = _currentInteractable;
+                var next = value;
+                _currentInteractable = value;
+
+                if (prev != value)
+                {
+                    if (prev != null) { prev.IsCurrent = false; }
+                    if (next != null) { next.IsCurrent = true; }
+                }
+            }
+        }
+
 
         #endregion
 
@@ -453,7 +470,7 @@ namespace Yarn.Unity.Samples
                 return;
             }
 
-            var previousInteractable = currentInteractable;
+            var previousInteractable = CurrentInteractable;
 
             (float Distance, Interactable? Interactable) nearest = (float.PositiveInfinity, null);
 
@@ -493,12 +510,10 @@ namespace Yarn.Unity.Samples
 
             if (previousInteractable != nearest.Interactable)
             {
-                if (previousInteractable != null) { previousInteractable.IsCurrent = false; }
-                if (nearest.Interactable != null) { nearest.Interactable.IsCurrent = true; }
-                currentInteractable = nearest.Interactable;
+                CurrentInteractable = nearest.Interactable;
             }
 
-            if (interactInput.WasPressedThisFrame && currentInteractable != null)
+            if (interactInput.WasPressedThisFrame && CurrentInteractable != null)
             {
                 async YarnTask RunInteraction(Interactable interactable, CancellationToken cancellationToken)
                 {
@@ -511,7 +526,7 @@ namespace Yarn.Unity.Samples
                     }
 
                     interactable.IsCurrent = false;
-                    currentInteractable = null;
+                    CurrentInteractable = null;
 
                     onInteracting?.Invoke(interactable);
                     await interactable.Interact(gameObject);
@@ -535,8 +550,7 @@ namespace Yarn.Unity.Samples
                     Mode = previousMode;
 
                 }
-
-                RunInteraction(currentInteractable, this.destroyCancellationToken).Forget();
+                RunInteraction(CurrentInteractable, this.destroyCancellationToken).Forget();
             }
         }
 
