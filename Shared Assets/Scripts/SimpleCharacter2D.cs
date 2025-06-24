@@ -153,17 +153,11 @@ namespace Yarn.Unity.Samples
             }
         }
 
+        private TriggerArea? currentTriggerArea;
 
         #endregion
 
         #region Animation Commands
-        [YarnCommand("set_alive")]
-        public void SetAlive(bool alive, bool immediate = false)
-        {
-            this.IsAlive = alive;
-
-            // TODO: change alive sprite
-        }
 
         public void SetFacingDirection(FacingDirection direction)
         {
@@ -513,6 +507,47 @@ namespace Yarn.Unity.Samples
                 CurrentInteractable = nearest.Interactable;
             }
 
+            if (this.capsuleCollider != null)
+            {
+                // If we have a collider, check to see if we're in a trigger
+                // area. If we are, and weren't before, then run code to handle
+                // entering this area.
+
+                // Overlap our capsule with colliders.
+                TriggerArea? hitTriggerArea = null;
+                int hits = Physics2D.OverlapCapsule(
+                    point: this.capsuleCollider.offset + (Vector2)transform.position,
+                    size: capsuleCollider.size,
+                    direction: CapsuleDirection2D.Vertical,
+                    angle: 0,
+                    contactFilter: new() { useTriggers = true },
+                    results: overlaps);
+
+                // Are we overlapping a trigger area?
+                for (int i = 0; i < hits; i++)
+                {
+                    var collider = overlaps[i];
+                    if (collider.TryGetComponent<TriggerArea>(out hitTriggerArea))
+                    {
+                        break;
+                    }
+                }
+
+                if (this.currentTriggerArea != hitTriggerArea)
+                {
+                    this.currentTriggerArea = hitTriggerArea;
+                    if (this.currentTriggerArea != null)
+                    {
+                        // We entered a trigger area.
+                        this.OnEnteredTriggerArea(this.currentTriggerArea);
+                    }
+                    else
+                    {
+                        // We exited a trigger area.
+                    }
+                }
+            }
+
             if (interactInput.WasPressedThisFrame && CurrentInteractable != null)
             {
                 async YarnTask RunInteraction(Interactable interactable, CancellationToken cancellationToken)
@@ -552,6 +587,19 @@ namespace Yarn.Unity.Samples
                 }
                 RunInteraction(CurrentInteractable, this.destroyCancellationToken).Forget();
             }
+        }
+
+        private void OnEnteredTriggerArea(TriggerArea currentTriggerArea)
+        {
+            async YarnTask RunEnter()
+            {
+                this.CurrentInteractable = null;
+                var previousMode = this.Mode;
+                this.Mode = CharacterMode.Interact;
+                await currentTriggerArea.OnPlayerEntered();
+                this.Mode = previousMode;
+            }
+            RunEnter().Forget();
         }
 
         #endregion
