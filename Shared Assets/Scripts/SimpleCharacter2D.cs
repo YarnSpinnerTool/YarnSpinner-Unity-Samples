@@ -386,10 +386,14 @@ namespace Yarn.Unity.Samples
             {
                 Physics2D.SyncTransforms();
 
-                Vector2 collisionSize = capsuleCollider.size;
-
                 // Retrieve all colliders we have intersected after velocity has been applied.
-                int hits = Physics2D.OverlapCapsule(this.capsuleCollider.offset + (Vector2)transform.position, collisionSize, CapsuleDirection2D.Vertical, 0, new() { useTriggers = false }, overlaps);
+                int hits = Physics2D.OverlapCapsule(
+                    point: this.capsuleCollider.offset + (Vector2)transform.position,
+                    size: capsuleCollider.size,
+                    direction: CapsuleDirection2D.Vertical,
+                    angle: 0,
+                    contactFilter: new() { useTriggers = false },
+                    results: overlaps);
 
                 for (int hitIndex = 0; hitIndex < hits; hitIndex++)
                 {
