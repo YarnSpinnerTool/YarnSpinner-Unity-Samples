@@ -304,6 +304,8 @@ namespace Yarn.Unity.Samples
             if (Mode == CharacterMode.Interact)
             {
                 // No movement at all; stay in place
+                this.movementState.velocity = Vector2.zero;
+                this.movementState.input = Vector2.zero;
                 return;
             }
 
