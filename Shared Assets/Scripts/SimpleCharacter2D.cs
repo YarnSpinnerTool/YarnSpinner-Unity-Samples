@@ -28,8 +28,6 @@ namespace Yarn.Unity.Samples
 
         [SerializeField] FacingDirection initialFacingDirection = FacingDirection.Left;
 
-        public bool IsAlive { get; private set; } = true;
-
         #region Movement Variables
 
         [Group("Movement")]
@@ -308,13 +306,6 @@ namespace Yarn.Unity.Samples
             {
                 ApplyMovement(Vector2.zero);
             }
-
-
-            if (this.IsAlive)
-            {
-                // TODO: Rotate towards our current look direction if we're alive
-            }
-
         }
 
         private void ApplyMovement(Vector2 input)
