@@ -6,7 +6,8 @@
         "Unity.TextMeshPro",
         "Unity.InputSystem",
         "Unity.Localization",
-        "UniTask"
+        "UniTask",
+        "Unity.Cinemachine"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
@@ -35,6 +36,11 @@
             "name": "com.unity.localization",
             "expression": "1.0.0",
             "define": "USE_UNITY_LOCALIZATION"
+        },
+        {
+            "name": "com.unity.cinemachine",
+            "expression": "3.0.0",
+            "define": "USE_CINEMACHINE"
         }
     ],
     "noEngineReferences": false
