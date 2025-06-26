@@ -102,16 +102,16 @@ namespace Yarn.Unity.Samples
         #region Animation Variables
 
         [Group("Animation")]
-        [SerializeField] Animator animator;
+        [SerializeField] Animator? animator;
         [Group("Animation")]
         [AnimationParameter(nameof(animator), AnimatorControllerParameterType.Float)]
-        [SerializeField] string speedParameter;
+        [SerializeField] string? speedParameter;
         [Group("Animation")]
         [AnimationParameter(nameof(animator), AnimatorControllerParameterType.Int)]
-        [SerializeField] string directionParameter;
+        [SerializeField] string? directionParameter;
         [Group("Animation")]
         [AnimationState(nameof(animator))]
-        [SerializeField] string initialState;
+        [SerializeField] string? initialState;
         [Group("Animation")]
         [AnimationParameter(nameof(animator), AnimatorControllerParameterType.Float)]
         [SerializeField] string cycleOffsetParameter = "Cycle Offset";
