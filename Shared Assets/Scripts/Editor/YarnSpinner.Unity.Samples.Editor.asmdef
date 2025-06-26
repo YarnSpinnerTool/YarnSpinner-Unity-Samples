@@ -30,6 +30,11 @@
             "name": "com.unity.ugui",
             "expression": "2",
             "define": "USE_TMP"
+        },
+        {
+            "name": "com.unity.textmeshpro",
+            "expression": "1",
+            "define": "USE_TMP"
         }
     ],
     "noEngineReferences": false
