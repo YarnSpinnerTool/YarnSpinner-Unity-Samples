@@ -10,6 +10,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 - Added AnimationState attribute, which allows choosing an animation state from a dropdown
 - Added SimpleCharacter2D character controller
+- Added 2D sprites
+- Added scifi models
 
 ### Changed
 
