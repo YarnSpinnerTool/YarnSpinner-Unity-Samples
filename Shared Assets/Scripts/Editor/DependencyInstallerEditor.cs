@@ -49,6 +49,14 @@ namespace Yarn.Unity.Samples.Editor
                 return new UnityLocalizationSetupStep();
 #endif
             }
+            else if (package.PackageName == "com.unity.ugui")
+            {
+#if !USE_TMP
+                return null;
+#else
+                return new TextMeshProSetupStep();
+#endif
+            }
             else
             {
                 return null;
@@ -264,4 +272,24 @@ namespace Yarn.Unity.Samples.Editor
             }
         }
     }
+
+#if USE_TMP
+    public class TextMeshProSetupStep : PackageSetupStep
+    {
+        public override string PerformStepButtonLabel => "Import TMP Essential Resources";
+
+        public override string Description => "TextMeshPro Essential Resources needs to be installed.";
+
+        public override bool NeedsSetup => Resources.Load<TMPro.TMP_Settings>("TMP Settings") == null;
+
+        public override void RunSetup()
+        {
+            TMPro.TMP_PackageResourceImporter.ImportResources(
+                importEssentials: true,
+                importExamples: false,
+                interactive: false
+            );
+        }
+    }
+#endif
 }

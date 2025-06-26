@@ -7,7 +7,9 @@
         "Unity.Localization.Editor",
         "Unity.Localization",
         "Unity.Addressables",
-        "Unity.Addressables.Editor"
+        "Unity.Addressables.Editor",
+        "Unity.TextMeshPro",
+        "Unity.TextMeshPro.Editor"
     ],
     "includePlatforms": [
         "Editor"
@@ -23,6 +25,11 @@
             "name": "com.unity.localization",
             "expression": "1.0",
             "define": "USE_UNITY_LOCALIZATION"
+        },
+        {
+            "name": "com.unity.ugui",
+            "expression": "2",
+            "define": "USE_TMP"
         }
     ],
     "noEngineReferences": false
