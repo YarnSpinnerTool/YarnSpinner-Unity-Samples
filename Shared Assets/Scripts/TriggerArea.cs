@@ -7,13 +7,13 @@ namespace Yarn.Unity.Samples
     [RequireComponent(typeof(Collider2D))]
     public class TriggerArea : MonoBehaviour
     {
-        [SerializeField] DialogueRunner dialogueRunner;
+        [SerializeField] DialogueRunner? dialogueRunner;
 
-        [SerializeField] DialogueReference dialogue;
+        [SerializeField] DialogueReference? dialogue;
 
         public async YarnTask OnPlayerEntered()
         {
-            if (dialogueRunner == null || dialogue.IsValid == false)
+            if (dialogueRunner == null || dialogue == null || dialogue.IsValid == false)
             {
                 return;
             }
