@@ -8,6 +8,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ### Added
 
+### Changed
+
+### Removed
+
+## [3.0.4] 2025-06-27
+
+### Added
+
 - Added AnimationState attribute, which allows choosing an animation state from a dropdown
 - Added SimpleCharacter2D character controller
 - Added 2D sprites
@@ -17,8 +25,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 - Fixed compiler warnings in SimpleCharacterInputAxis
 - DialogueInteractable no longer throws 'X is not a valid node name' if the dialogue runner has no Yarn Project
-
-### Removed
 
 ## [3.0.3] 2025-06-21
 
