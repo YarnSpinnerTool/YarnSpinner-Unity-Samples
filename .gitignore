@@ -126,3 +126,5 @@ crashlytics-build.properties
 # Symlink to Samples~ (development environments use this so we can work with the samples all at once, but we don't want to ship the symlink)
 Samples
 Samples.meta
+
+Art-Source~
