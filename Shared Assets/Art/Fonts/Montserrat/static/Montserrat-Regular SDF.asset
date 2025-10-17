@@ -73,9 +73,9 @@ Material:
     - _OutlineWidth: 0
     - _PerspectiveFilter: 0.875
     - _Reflectivity: 10
-    - _ScaleRatioA: 1
-    - _ScaleRatioB: 1
-    - _ScaleRatioC: 1
+    - _ScaleRatioA: 0.9
+    - _ScaleRatioB: 0.73125
+    - _ScaleRatioC: 0.73125
     - _ScaleX: 1
     - _ScaleY: 1
     - _ShaderFlags: 0
@@ -125,8 +125,7 @@ MonoBehaviour:
   materialHashCode: -1542015459
   m_Version: 1.1.0
   m_SourceFontFileGUID: 9e128d1ac22b34bc68a1abee557492c7
-  m_SourceFontFile_EditorRef: {fileID: 12800000, guid: 9e128d1ac22b34bc68a1abee557492c7,
-    type: 3}
+  m_SourceFontFile_EditorRef: {fileID: 12800000, guid: 9e128d1ac22b34bc68a1abee557492c7, type: 3}
   m_SourceFontFile: {fileID: 12800000, guid: 9e128d1ac22b34bc68a1abee557492c7, type: 3}
   m_AtlasPopulationMode: 1
   m_FaceInfo:
@@ -197,7 +196,8 @@ MonoBehaviour:
   m_FontFeatureTable:
     m_GlyphPairAdjustmentRecords: []
   fallbackFontAssets: []
-  m_FallbackFontAssetTable: []
+  m_FallbackFontAssetTable:
+  - {fileID: 11400000, guid: c650173c60297416181ddf7a303a403a, type: 2}
   m_CreationSettings:
     sourceFontFileName: 
     sourceFontFileGUID: 9e128d1ac22b34bc68a1abee557492c7

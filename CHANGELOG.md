@@ -10,6 +10,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ### Changed
 
+- Fixed an issue where fallback fonts were not configured correctly
+
 ### Removed
 
 ## [3.0.4] 2025-06-27
