@@ -16,7 +16,7 @@ namespace Yarn.Unity.Samples
         public LineProviderBehaviour? lineProvider;
         public Color buff = Color.green;
         public Color debuff = Color.red;
-        public override List<LineParser.MarkupDiagnostic> ProcessReplacementMarker(MarkupAttribute marker, StringBuilder childBuilder, List<MarkupAttribute> childAttributes, string localeCode)
+        public override ReplacementMarkerResult ProcessReplacementMarker(MarkupAttribute marker, StringBuilder childBuilder, List<MarkupAttribute> childAttributes, string localeCode)
         {
             bool addedSprite = true;
 
@@ -49,7 +49,7 @@ namespace Yarn.Unity.Samples
             if (!addedSprite)
             {
                 var diagnostic = new LineParser.MarkupDiagnostic($"was unable to find a matching sprite for {marker.Name}");
-                return new List<LineParser.MarkupDiagnostic>() { diagnostic };
+                return new ReplacementMarkerResult(new List<LineParser.MarkupDiagnostic>() { diagnostic }, 0);
             }
 
             // we now need to move any children attributes down by two characters
@@ -60,7 +60,8 @@ namespace Yarn.Unity.Samples
                 childAttributes[i] = childAttributes[i].Shift(2);
             }
 
-            return ReplacementMarkupHandler.NoDiagnostics;
+            // TODO: Calculate the number of invisible characters and return
+            return new ReplacementMarkerResult(0);
         }
 
         void Start()
