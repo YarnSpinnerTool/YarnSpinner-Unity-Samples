@@ -1458,6 +1458,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9c1f487b798d402db42bc11cee5b810, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stringsTable:
+    m_TableReference:
+      m_TableCollectionName: GUID:8e286ec56529f405ebb1933199177e8e
+  assetTable:
+    m_TableReference:
+      m_TableCollectionName: GUID:64bbf71c048364f9e8706925bb5ae463
 --- !u!224 &3339818925569063415 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8020628925107869966, guid: 52571f68872914e24837210513edea1d, type: 3}
