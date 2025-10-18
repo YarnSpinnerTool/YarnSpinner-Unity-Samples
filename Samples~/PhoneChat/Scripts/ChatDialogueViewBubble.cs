@@ -59,6 +59,7 @@ namespace Yarn.Unity.Samples
         /// <param name="text">The text to show.</param>
         public void ShowText(string text)
         {
+            TextView.SetTextWrapping(true);
             if (typingIndicator != null)
             {
                 typingIndicator.SetActive(false);
