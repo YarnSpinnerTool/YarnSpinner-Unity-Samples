@@ -45,6 +45,15 @@ namespace Yarn.Unity.Samples
                     item.SetActive(false);
                 }
             }
+
+            if (headerText != null)
+            {
+                headerText.SetTextWrapping(true);
+            }
+            if (bodyText != null)
+            {
+                bodyText.SetTextWrapping(true);
+            }
         }
 
         public override YarnTask OnDialogueStartedAsync()

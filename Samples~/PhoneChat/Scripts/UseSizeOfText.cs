@@ -44,7 +44,7 @@ namespace Yarn.Unity.Samples
         float ILayoutElement.preferredWidth => minWidth;
 
         /// <summary>
-        /// The fraction of flexible width that the item consumes. 
+        /// The fraction of flexible width that the item consumes.
         /// </summary>
         /// <remarks>
         /// This is always zero - we don't want to take up any space we don't
@@ -53,7 +53,7 @@ namespace Yarn.Unity.Samples
         float ILayoutElement.flexibleWidth => 0f;
 
         /// <summary>
-        /// The fraction of flexible height that the item consumes. 
+        /// The fraction of flexible height that the item consumes.
         /// </summary>
         /// <remarks>
         /// This is always zero - we don't want to take up any space we don't
@@ -126,6 +126,8 @@ namespace Yarn.Unity.Samples
                 minWidth = minimumWidth;
                 return;
             }
+
+            info.textComponent.SetTextWrapping(true);
 
             // Calculate the maximum width available to us by getting our
             // parent's width

@@ -177,7 +177,7 @@ namespace Yarn.Unity.Samples
         public override YarnTask<DialogueOption?> RunOptionsAsync(DialogueOption[] dialogueOptions, CancellationToken cancellationToken)
         {
             // The lip sync view doesn't handle options.
-            return YarnTask.FromResult<DialogueOption?>(null);
+            return DialogueRunner.NoOptionSelected;
         }
     }
 }
