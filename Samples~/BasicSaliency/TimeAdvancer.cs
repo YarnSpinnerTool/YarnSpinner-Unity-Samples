@@ -84,7 +84,6 @@ namespace Yarn.Unity.Samples
         {
             AdvanceTime();
             UpdateLabel();
-            Debug.Log("updated");
         }
     }
 }

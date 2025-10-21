@@ -1,11 +1,14 @@
-﻿title: Alice
+﻿title: AliceIntro
+when: once
+---
+Alice: I am showing off a custom saliency solution.
+Player: Oh?
+Alice: Yep, checkout out WeightedSaliencySelector.cs to see how it works.
+===
+title: Alice
 when: always
 ---
-<<if !visited("Alice")>>
-    Alice: I am showing off a custom saliency solution.
-    Player: Oh?
-    Alice: Yep, checkout out WeightedSaliencySelector.cs to see how it works.
-<<endif>>
+<<detour AliceIntro>>
 
 Alice: This node only has one chance of being selected.
 Alice: You should revisit me to see if I show another.
@@ -16,11 +19,7 @@ title: Alice
 when: always
 weight: 2
 ---
-<<if !visited("Alice")>>
-    Alice: I am showing off a custom saliency solution.
-    Player: Oh?
-    Alice: Yep, checkout out WeightedSaliencySelector.cs to see how it works.
-<<endif>>
+<<detour AliceIntro>>
 
 Alice: This node has two chances of being selected
 Alice: You should revisit me to see if I show another.
@@ -31,11 +30,7 @@ title: Alice
 when: always
 weight: 3
 ---
-<<if !visited("Alice")>>
-    Alice: I am showing off a custom saliency solution.
-    Player: Oh?
-    Alice: Yep, checkout out WeightedSaliencySelector.cs to see how it works.
-<<endif>>
+<<detour AliceIntro>>
 
 Alice: This node has three chances of being selected
 Alice: You should revisit me to see if I show another.
@@ -46,11 +41,7 @@ title: Alice
 when: always
 weight: 4
 ---
-<<if !visited("Alice")>>
-    Alice: I am showing off a custom saliency solution.
-    Player: Oh?
-    Alice: Yep, checkout out WeightedSaliencySelector.cs to see how it works.
-<<endif>>
+<<detour AliceIntro>>
 
 Alice: This node has four chances of being selected
 Alice: You should revisit me to see if I show another.
@@ -61,11 +52,7 @@ title: Alice
 when: always
 weight: 5
 ---
-<<if !visited("Alice")>>
-    Alice: I am showing off a custom saliency solution.
-    Player: Oh?
-    Alice: Yep, checkout out WeightedSaliencySelector.cs to see how it works.
-<<endif>>
+<<detour AliceIntro>>
 
 Alice: This node has five chances of being selected
 Alice: You should revisit me to see if I show another.

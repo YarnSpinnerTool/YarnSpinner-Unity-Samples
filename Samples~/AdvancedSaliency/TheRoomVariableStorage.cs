@@ -6,9 +6,9 @@ namespace Yarn.Unity.Samples {
     /// Character
     /// </summary>
     /// <remarks>
-    /// Automatically generated from Yarn project at Packages/dev.yarnspinner.unity.samples/AdvancedSaliency/AdvancedSaliency.yarnproject.
+    /// Automatically generated from Yarn project at Packages/dev.yarnspinner.unity.samples/Samples/AdvancedSaliency/AdvancedSaliency.yarnproject.
     /// </remarks>
-    [System.CodeDom.Compiler.GeneratedCode("YarnSpinner", "3.0.0.235")]
+    [System.CodeDom.Compiler.GeneratedCode("YarnSpinner", "3.0.3.0")]
     public enum Character {
 
         /// <summary>
@@ -52,9 +52,9 @@ namespace Yarn.Unity.Samples {
     /// Scenario
     /// </summary>
     /// <remarks>
-    /// Automatically generated from Yarn project at Packages/dev.yarnspinner.unity.samples/AdvancedSaliency/AdvancedSaliency.yarnproject.
+    /// Automatically generated from Yarn project at Packages/dev.yarnspinner.unity.samples/Samples/AdvancedSaliency/AdvancedSaliency.yarnproject.
     /// </remarks>
-    [System.CodeDom.Compiler.GeneratedCode("YarnSpinner", "3.0.0.235")]
+    [System.CodeDom.Compiler.GeneratedCode("YarnSpinner", "3.0.3.0")]
     public enum Scenario {
 
         /// <summary>
@@ -98,9 +98,9 @@ namespace Yarn.Unity.Samples {
     /// Room
     /// </summary>
     /// <remarks>
-    /// Automatically generated from Yarn project at Packages/dev.yarnspinner.unity.samples/AdvancedSaliency/AdvancedSaliency.yarnproject.
+    /// Automatically generated from Yarn project at Packages/dev.yarnspinner.unity.samples/Samples/AdvancedSaliency/AdvancedSaliency.yarnproject.
     /// </remarks>
-    [System.CodeDom.Compiler.GeneratedCode("YarnSpinner", "3.0.0.235")]
+    [System.CodeDom.Compiler.GeneratedCode("YarnSpinner", "3.0.3.0")]
     public enum Room {
 
         /// <summary>
@@ -144,9 +144,9 @@ namespace Yarn.Unity.Samples {
     /// ScenarioState
     /// </summary>
     /// <remarks>
-    /// Automatically generated from Yarn project at Packages/dev.yarnspinner.unity.samples/AdvancedSaliency/AdvancedSaliency.yarnproject.
+    /// Automatically generated from Yarn project at Packages/dev.yarnspinner.unity.samples/Samples/AdvancedSaliency/AdvancedSaliency.yarnproject.
     /// </remarks>
-    [System.CodeDom.Compiler.GeneratedCode("YarnSpinner", "3.0.0.235")]
+    [System.CodeDom.Compiler.GeneratedCode("YarnSpinner", "3.0.3.0")]
     public enum ScenarioState {
 
         /// <summary>
@@ -165,7 +165,7 @@ namespace Yarn.Unity.Samples {
         Complete = 2,
     }
 
-    [System.CodeDom.Compiler.GeneratedCode("YarnSpinner", "3.0.0.235")]
+    [System.CodeDom.Compiler.GeneratedCode("YarnSpinner", "3.0.3.0")]
     internal static class TheRoomVariableStorageTypeExtensions {
         internal static string GetBackingValue(this Character enumValue) {
             switch (enumValue) {
@@ -222,7 +222,7 @@ namespace Yarn.Unity.Samples {
             }
         }
     }
-    [System.CodeDom.Compiler.GeneratedCode("YarnSpinner", "3.0.0.235")]
+    [System.CodeDom.Compiler.GeneratedCode("YarnSpinner", "3.0.3.0")]
     public partial class TheRoomVariableStorage : Yarn.Unity.InMemoryVariableStorage, Yarn.Unity.IGeneratedVariableStorage {
         // Accessor for Character $primary
         public Character Primary {

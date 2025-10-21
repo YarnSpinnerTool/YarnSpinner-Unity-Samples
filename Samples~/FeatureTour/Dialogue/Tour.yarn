@@ -184,7 +184,8 @@ Sally: They don't have to be strings of text.
 Sally: They can also be numbers.
 Sally: For example, you have {$player_gold} pieces of gold.
 Sally: I know that because there's a Variable that tracks it.
-Sally: I'm also setting a variable that indicates you've spoken to me.
+Sally: I'm also setting a boolean variable that indicates you've spoken to me.
+Sally: Booleans are just a fancy word for something that is true or false.
 <<set $player_spoke_to_sally = true>>
 Sally: Bye now!
 ===
