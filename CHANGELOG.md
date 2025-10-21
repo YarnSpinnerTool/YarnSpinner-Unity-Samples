@@ -8,12 +8,19 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ### Added
 
+- `LinkMarkupHandler` provides a way for TMP links to open content inside of samples
+    - Added links throughout various samples in the Yarn.
+- `SetAppearance` to the `CharacterAppearance` class, allowing overriding the default colours on the fly
+
 ### Changed
 
 - Fixed an issue where fallback fonts were not configured correctly
 - DialogueInteractable now attempts to pre-warm some state to avoid framerate hitching that can occur when the interaction indicator first appears.
 - Fixed an issue where the Unity Localization sample was missing table references.
 - Fixed an issue where the font assets were not configured to use the correct fallback font for Simplified Chinese characters.
+- Renamed the misspelt `SpriteReplacmentMarkerProcessor` to `SpriteReplacementMarkerProcessor`
+- `TriggerArea` now is aware starting dialogue is asynchronous
+- `DialogueInteractable` is now aware starting dialogue is asynchronous
 
 ### Removed
 

@@ -7,7 +7,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using Yarn.Markup;
 using Yarn.Unity;
-using System.Threading.Tasks;
 
 
 #if USE_TMP
