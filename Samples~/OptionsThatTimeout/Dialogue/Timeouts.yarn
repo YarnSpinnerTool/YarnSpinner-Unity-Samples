@@ -1,6 +1,7 @@
 ﻿title: FallbackExample
 ---
-Alice: This is the fallback timeout sample
+Alice: In this example if no option is chosen before time runs out we chose the option with the fallback metadata.
+Alice: This differs from the default example as the fallback option is hidden from the user.
 
 -> Option 1?
     Alice: option 1 was selected
@@ -12,7 +13,8 @@ Alice: This is the fallback timeout sample
 
 title: DefaultExample
 ---
-Alice: This is the default timeout sample
+Alice: In this example if no option is chosen before time runs out we chose the option with the default metadata.
+Alice: this differs from the fallback example as the default is visible to the user.
 
 -> Option 1? #default
     Alice: option 1 was selected
@@ -22,7 +24,8 @@ Alice: This is the default timeout sample
 
 title: LastHighlightExample
 ---
-Alice: This is the highlight timeout sample
+Alice: In this example if no option is selected the last option that is highlighted will be selected.
+Alice: Unlike the default or fallback approaches this one requires a command to toggle the mode, but needs no metadata.
 
 <<auto_opt>>
 -> Option 1?
@@ -33,12 +36,14 @@ Alice: This is the highlight timeout sample
 
 title: Alice
 ---
-Alice: what do you want to see?
+Alice: This sample shows off three different ways of having an option be selected automatically after a fixed amount of time.
+Alice: To see how this was done check out [link="40e88b7d0079743cb9bac976b32e0c71"]the custom presenter[/link].
+Alice: Which would you like to see?
 
--> Fallback?
+-> Hidden fallback option?
     <<jump FallbackExample>>
--> Default?
+-> Default option?
     <<jump DefaultExample>>
--> Last highlight?
+-> Last highlighted option?
     <<jump LastHighlightExample>>
 ===

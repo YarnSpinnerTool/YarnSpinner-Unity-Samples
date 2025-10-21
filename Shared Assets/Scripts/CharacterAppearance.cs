@@ -57,6 +57,13 @@ namespace Yarn.Unity.Samples
             renderer.SetPropertyBlock(materialPropertyBlock);
         }
 
+        public void SetAppearance(Color baseColour, Color fadeColour)
+        {
+            fadeColor = fadeColour;
+            baseColor = baseColour;
+            ApplyAppearance();
+        }
+
         protected void OnEnable()
         {
             ApplyAppearance();

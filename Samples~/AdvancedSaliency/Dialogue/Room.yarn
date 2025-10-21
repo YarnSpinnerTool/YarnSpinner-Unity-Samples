@@ -43,6 +43,9 @@ title: RoomSetup
 <<once>>
     Explainer: Hello and welcome to the Advanced Saliency demo.
     Explainer: This shows off how you can use storylets and saliency to create vignettes that are configured based on world state.
+    Explainer: You can configure what changes inside the next room by interacting with the various buttons around the space.
+    Explainer: This sample works by using a [link="2fd23e486981c473981cfeb413019c94"]generated custom variable storage system[/link] to build up the world.
+    Explainer: And then makes heavy use storylets and interpolated variables in the [link="81268abfac7b3439a8c2ebe74bc1de52"]Yarn[/link] to change the room conversations based on your decisions out here.
 <<endonce>>
 
 Explainer: Do you want to see your current configuration?

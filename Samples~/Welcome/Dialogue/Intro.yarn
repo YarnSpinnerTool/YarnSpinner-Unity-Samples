@@ -1,6 +1,6 @@
 ﻿title: Start
 ---
-Capsley: Hello and welcome to the Yarn Spinner for Unity samples
+Capsley: Hello and welcome to the [b]Yarn Spinner for Unity[/b] samples
 
 <<start_slide>>
 SlideHeader: Agenda
@@ -16,8 +16,9 @@ Capsley: Let's get cracking!
 SlideImage: code-1
 <<end_slide>>
 
-Capsley: In case you haven't seen it, this is what Yarn looks like
-Capsley: For a full syntax guide please see the website
+Capsley: In case you haven't seen it, this is what [b]Yarn[/b] looks like
+Capsley: For a full syntax guide please see the [link="docs.yarnspinner.dev/write-yarn-scripts/scripting-fundamentals" external=true]website[/link].
+Capsely: The Yarn file for this sample is [link="b7d73fefd4204491eb9898889427a0f6"]here[/link].
 
 <<clear_slide>>
 <<start_slide>>
@@ -57,8 +58,8 @@ SlideHeader: Thanks
 <<end_slide>>
 
 Capsley: Thanks for coming to my talk
-Capsley: Enjoy the Yarn Spinner samples
-Capsley: and please give us money
+Capsley: Enjoy the [b]Yarn Spinner[/b] samples
+Capsley: and please give us [link="yarnspinner.itch.io" external=true]money.[/link]
 ===
 
 title: BasicSamples
@@ -89,7 +90,7 @@ SlideHeader: Feature Tour
 SlideImage: gauntlet
 <<end_slide>>
 
-Capsley: The feature tour shows off a wide range of Yarn Spinner features
+Capsley: The feature tour shows off a wide range of [b]Yarn Spinner[/b] features
 Capsley: If you want to get a quick look at what Yarn Spinner can do, check it out
 
 <<clear_slide>>
@@ -152,7 +153,7 @@ SlideBullet: Inline Events
 SlideBullet: Replacement Markup
 <<end_slide>>
 
-Capsley: We have four samples on extending Yarn Spinner to create specific looks and feels
+Capsley: We have four samples on extending [b]Yarn Spinner[/b] to create specific looks and feels
 
 <<clear_slide>>
 <<start_slide>>
@@ -185,7 +186,8 @@ SlideHeader: Replacement Markup
 SlideImage: replacement-markers
 <<end_slide>>
 
-Capsley: Replacement Markup shows off using the markup system to rethem and adjust partial elements of a line
+Capsley: Replacement Markup shows off using the markup system to retheme and adjust partial elements of a line.
+Capsely: This sample shows off using the built-in replacement markup systems as well as how to make custom ones.
 ===
 
 title: AdvancedSamples

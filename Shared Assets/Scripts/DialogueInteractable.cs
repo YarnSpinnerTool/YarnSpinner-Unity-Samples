@@ -162,7 +162,7 @@ namespace Yarn.Unity.Samples
 
             onInteractionStarted?.Invoke();
 
-            dialogueRunner.StartDialogue(dialogue.nodeName);
+            await dialogueRunner.StartDialogue(dialogue.nodeName);
 
             if (turnsToInteractor)
             {

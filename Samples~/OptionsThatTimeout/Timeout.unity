@@ -149,17 +149,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Version: 3
   m_UsePipelineSettings: 1
   m_AdditionalLightsShadowResolutionTier: 2
-  m_LightLayerMask: 1
-  m_RenderingLayers: 1
   m_CustomShadowLayers: 0
-  m_ShadowLayerMask: 1
-  m_ShadowRenderingLayers: 1
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
+  m_RenderingLayersMask:
+    serializedVersion: 0
+    m_Bits: 1
+  m_ShadowRenderingLayersMask:
+    serializedVersion: 0
+    m_Bits: 1
+  m_Version: 4
+  m_LightLayerMask: 1
+  m_ShadowLayerMask: 1
+  m_RenderingLayers: 1
+  m_ShadowRenderingLayers: 1
 --- !u!108 &203844588
 Light:
   m_ObjectHideFlags: 0
@@ -1008,6 +1014,7 @@ GameObject:
   - component: {fileID: 2813361729951000645}
   - component: {fileID: 2813361729951000644}
   - component: {fileID: 2813361729951000646}
+  - component: {fileID: 2813361729951000647}
   m_Layer: 0
   m_Name: Markup Processors
   m_TagString: Untagged
@@ -1057,6 +1064,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lineProvider: {fileID: 0}
+--- !u!114 &2813361729951000647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2813361729951000642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fecab73d8e85427ba730bfc98f83cdd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: YarnSpinner.Unity.Samples::Yarn.Unity.Samples.LinkMarkupHandler
+  text: {fileID: 4290189803165161669}
+  runner: {fileID: 7050024644613556015}
 --- !u!224 &3615230986976323878
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1592,7 +1613,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvasGroup: {fileID: 4290189804079117178}
   lineText: {fileID: 4290189803165161669}
-  showCharacterNameInLineView: 1
+  showCharacterNameInLine: 1
   characterNameText: {fileID: 4290189802343547051}
   characterNameContainer: {fileID: 0}
   useFadeEffect: 1
@@ -1600,8 +1621,10 @@ MonoBehaviour:
   fadeDownDuration: 0.1
   autoAdvance: 0
   autoAdvanceDelay: 1
-  useTypewriterEffect: 1
-  typewriterEffectSpeed: 60
+  typewriterStyle: 1
+  lettersPerSecond: 60
+  wordsPerSecond: 10
+  CustomTypewriter: {fileID: 0}
   eventHandlers:
   - {fileID: 7615738316696263050}
 --- !u!114 &4290189804079117176
@@ -1779,6 +1802,7 @@ MonoBehaviour:
   autoStart: 0
   startNode: Start
   runSelectedOptionAsLine: 0
+  allowOptionFallthrough: 1
   onNodeStart:
     m_PersistentCalls:
       m_Calls: []

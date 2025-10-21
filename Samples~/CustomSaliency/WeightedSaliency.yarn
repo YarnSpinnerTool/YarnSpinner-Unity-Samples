@@ -3,7 +3,8 @@ when: once
 ---
 Alice: I am showing off a custom saliency solution.
 Player: Oh?
-Alice: Yep, checkout out WeightedSaliencySelector.cs to see how it works.
+Alice: Yep, I let you set a custom chance for each node in my node group.
+Alice: Checkout out [link="6ec709ebde00a4bf0b6a4fda5550476c"]WeightedSaliencySelector.cs[/link] to see how it works.
 ===
 title: Alice
 when: always
@@ -64,8 +65,9 @@ when: always
 ---
 <<if !visited("Barry")>>
     Barry: I am showing off custom weighted saliency.
-    Barry: But doing it through line groups instead of nodes.
-    Barry: See WeightedSaliencySelector.cs to see how it works.
+    => Barry: But doing it through line groups instead of nodes. <<if visited("Alice")>>
+    => Barry: where each line in the line group has it's own weighting. <<if !visited("Alice")>>
+    Barry: See [link="6ec709ebde00a4bf0b6a4fda5550476c"]WeightedSaliencySelector.cs[/link] to see how it works.
 <<endif>>
 
 => Barry: This line has a weight of 1 #weight:1

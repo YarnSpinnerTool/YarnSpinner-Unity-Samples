@@ -1,3 +1,13 @@
+title: Explanation
+when: once
+---
+Capsley: Hello and welcome to the Basic Saliency sample.
+Capsley: Here we show off the basics of creating and using salient content in [b]Yarn Spinner[/b].
+Capsley: In the room is a big switch that when walked into updates the time of day, and the day itself.
+Capsley: There are also four different people who change what they say based on the current day and time of day.
+Capsley: They do this through both node groups and line groups in the [link="6383f1ac71a0e4ef78304ec1675ee0b4"]Yarn[/link].
+Capsley: If you are after more information on Salient content checkout the [link="docs.yarnspinner.dev/write-yarn-scripts/advanced-scripting/storylets-and-saliency-a-primer" external=true]docs[/link].
+===
 title: Setup
 ---
 <<enum Day>>

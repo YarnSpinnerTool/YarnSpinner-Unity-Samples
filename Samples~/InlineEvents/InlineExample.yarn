@@ -5,7 +5,7 @@ Alice: Hey what's up?
 Player: Just wondering what this demo is about.
 Alice: It's showing off how you can do events with markup now.
 Player: Oh? How does it work?
-Alice: Easy, you just do it now with ActionMarkupHandler's.
+Alice: Easy, you just do it now with [link="docs.yarnspinner.dev/yarn-spinner-for-unity/samples/inline-events" external=true]ActionMarkupHandler's[/link].
 Player: So what, just part way through I stop talking... [move name="far" /] ...and move on over?
 Alice: Yeah you did
 
@@ -16,8 +16,9 @@ Player: is it just for movement?
 
 Alice: nope you can use it for practically any...
 Player: like changing emotions?!
-Alice: Yes... which I would have shown [emotion="angry" /] had [b]you[/b] not interrupted me.
+Alice: Yes... which I would have shown had [b]you[emotion="angry" /] [/b] not interrupted me.
 Player: oh sorry
-Alice: [i]sigh[/i][emotion="neutral" /]  it's ok.
+Alice: [i]sigh[/i] [emotion="neutral" /]it's ok.
 Alice: Checkout out the [b]Event Handlers[/b] in this scene to see how they work.
+Alice: There are two, [link="db64840ec0c36401f873b24dff0af213"]Move Event[/link] and [link="2fbf06e014a6c439db5d81b0ca68b128"]Emotion Event[/link].
 ===

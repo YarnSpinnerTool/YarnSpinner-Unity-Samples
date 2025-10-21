@@ -23,7 +23,7 @@ namespace Yarn.Unity.Samples
             }
 
             dialogueRunner.SetProject(dialogue.project);
-            dialogueRunner.StartDialogue(dialogue.nodeName);
+            await dialogueRunner.StartDialogue(dialogue.nodeName);
 
             while (dialogueRunner.IsDialogueRunning)
             {

@@ -15,7 +15,7 @@ Capsley: Rather than sending lines to the usual line view and option view, the D
 Capsley: Because background conversations don't have any player participation, the dialogue view doesn't need to handle any options.
 Capsley: The conversations are triggered by a special manager class that periodically starts a background conversation based on how close the player is to the characters
 Capsley: It also stops those conversations if the player walks too far away.
-Capsley: Take a look at ChatterGroupManager.cs and ChatterGroup.cs to learn more!
+Capsley: Take a look at [link="1c1f9dfbed45547219884d72079ffc09"]ChatterGroupManager.cs[/link] and [link="a7f9541281303451ab23e56f27501c7a"]ChatterGroup.cs[/link] to learn more!
 
 <<once>>
     <<set $explanations_heard += 1>>
@@ -282,6 +282,6 @@ when: once
 position: 966,-113
 ---
 Player: So what do you do?
-Capsley: I explain Yarn Spinner.
+Capsley: I explain [b]Yarn Spinner[/b].
 Capsley: I feel like this was pretty self-evident?
 ===

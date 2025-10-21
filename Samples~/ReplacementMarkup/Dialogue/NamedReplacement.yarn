@@ -2,8 +2,13 @@
 ---
 Alice: Hey there [name]Player[/name].
 Player: Hey there [name]Alice[/name], what up?
-Alice: Just wondering what [name]Bob[/name] is up to.
+Alice: I show off how you can use markup to flag important elements based on contents.
+Player: oh?
+Alice: yes, so for example I am just wondering what [name]Bob[/name] is up to.
 Bob: Why are [name=alice]you[/name] wondering what [name=bob]I[/name] am up to?
 Player: I think [name=alice]she's[/name] just being nice [name]Bob[/name]!
 Bob: oh, ok.
+
+=> Alice: If you are curious to see how this works, checkout out the [link="37f2809848ac74a49898f04465fdd7b2"]markup processor[/link] that enables it. <<if !visited("Anika")>>
+=> Alice: If you are curious to see how this differs from markup palettes, checkout out the [link="37f2809848ac74a49898f04465fdd7b2"]markup processor[/link] that enables it. <<if visited("Anika")>>
 ===

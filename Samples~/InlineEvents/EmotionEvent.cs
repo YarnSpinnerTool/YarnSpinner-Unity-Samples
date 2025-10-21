@@ -7,6 +7,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using Yarn.Markup;
 using Yarn.Unity;
+using System.Threading.Tasks;
+
 
 #if USE_TMP
 using TMPro;
@@ -80,19 +82,38 @@ namespace Yarn.Unity.Samples
             }
         }
 
-        public override YarnTask OnCharacterWillAppear(int currentCharacterIndex, MarkupParseResult line, CancellationToken cancellationToken)
+        public override async YarnTask OnCharacterWillAppear(int currentCharacterIndex, MarkupParseResult line, CancellationToken cancellationToken)
         {
             if (target == null)
             {
-                return YarnTask.CompletedTask;
+                return;
             }
 
             if (emotions.TryGetValue(currentCharacterIndex, out var emotion))
             {
                 target.SetFacialExpression(emotion);
-            }
+                if (target.TryGetComponent<CharacterAppearance>(out var appearance))
+                {
+                    if (emotion == "angry")
+                    {
+                        // make them angry looking
+                        var fadeColour = new Color(0.943f, 0.2315789f, 0);
+                        var baseColour = new Color(0.8867924f, 0.5030531f, 0.489409f);
+                        appearance.SetAppearance(baseColour, fadeColour);
 
-            return YarnTask.CompletedTask;
+                        // after becoming angry we wait a brief moment
+                        // just to make it clear
+                        await YarnTask.Delay(300, cancellationToken);
+                    }
+                    else
+                    {
+                        // reset them back
+                        var fadeColour = new Color(0.4039216f, 0.5803922f, 0.8509804f);
+                        var baseColour = new Color(0.3411765f, 0.3372549f, 0.7411765f);
+                        appearance.SetAppearance(baseColour, fadeColour);
+                    }
+                }
+            }
         }
 
         public override void OnLineWillDismiss()
