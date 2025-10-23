@@ -21,6 +21,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Renamed the misspelt `SpriteReplacmentMarkerProcessor` to `SpriteReplacementMarkerProcessor`
 - `TriggerArea` now is aware starting dialogue is asynchronous
 - `DialogueInteractable` is now aware starting dialogue is asynchronous
+- NPC in Feature Tour now has the correct node
+    - was running a commands explanation
+    - now runs a functions explanation
 
 ### Removed
 
