@@ -102,9 +102,9 @@ namespace Yarn.Unity.Samples
             try
             {
                 text.enabled = true;
-                await YarnTask.Delay(TimeSpan.FromMilliseconds(durationMilliseconds), token.NextLineToken);
+                await YarnTask.Delay(TimeSpan.FromMilliseconds(durationMilliseconds), token.NextContentToken);
                 text.enabled = false;
-                await YarnTask.Delay(TimeSpan.FromMilliseconds(this.delayAfterLines), token.NextLineToken);
+                await YarnTask.Delay(TimeSpan.FromMilliseconds(this.delayAfterLines), token.NextContentToken);
             }
             catch (System.OperationCanceledException)
             {
@@ -115,11 +115,6 @@ namespace Yarn.Unity.Samples
                 text.enabled = false;
                 attachmentTarget = null;
             }
-        }
-
-        public override YarnTask<DialogueOption?> RunOptionsAsync(DialogueOption[] dialogueOptions, CancellationToken cancellationToken)
-        {
-            throw new InvalidOperationException($"Background chatter does not support options");
         }
 
         public override YarnTask OnDialogueStartedAsync()

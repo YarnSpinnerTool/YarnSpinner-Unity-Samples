@@ -77,11 +77,6 @@ namespace Yarn.Unity.Samples
             return YarnTask.CompletedTask;
         }
 
-        public override YarnTask<DialogueOption?> RunOptionsAsync(DialogueOption[] dialogueOptions, CancellationToken cancellationToken)
-        {
-            return DialogueRunner.NoOptionSelected;
-        }
-
         public override async YarnTask OnDialogueStartedAsync()
         {
             // When dialogue starts, check to see if the current dialogue has a

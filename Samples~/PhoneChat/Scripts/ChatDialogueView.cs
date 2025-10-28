@@ -202,7 +202,7 @@ namespace Yarn.Unity.Samples
         /// <returns>A task that completes with the option that the user
         /// selected, or <see langword="null"/> if no option was
         /// selected.</returns>
-        public override async YarnTask<DialogueOption?> RunOptionsAsync(DialogueOption[] dialogueOptions, CancellationToken cancellationToken)
+        public override async YarnTask<DialogueOption?> RunOptionsAsync(DialogueOption[] dialogueOptions, LineCancellationToken cancellationToken)
         {
             // First things first: check to see if we have everything we need to show options.
             if (optionsContainer == null)

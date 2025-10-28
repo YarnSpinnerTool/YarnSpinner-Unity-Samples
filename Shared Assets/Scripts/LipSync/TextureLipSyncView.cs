@@ -173,11 +173,5 @@ namespace Yarn.Unity.Samples
                 debugView.gameObject.SetActive(false);
             }
         }
-
-        public override YarnTask<DialogueOption?> RunOptionsAsync(DialogueOption[] dialogueOptions, CancellationToken cancellationToken)
-        {
-            // The lip sync view doesn't handle options.
-            return DialogueRunner.NoOptionSelected;
-        }
     }
 }

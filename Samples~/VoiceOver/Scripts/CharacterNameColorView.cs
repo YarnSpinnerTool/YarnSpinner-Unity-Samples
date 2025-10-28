@@ -52,10 +52,5 @@ namespace Yarn.Unity.Samples
 
             return YarnTask.CompletedTask;
         }
-
-        public override YarnTask<DialogueOption?> RunOptionsAsync(DialogueOption[] dialogueOptions, CancellationToken cancellationToken)
-        {
-            return YarnTask.FromResult<DialogueOption?>(null);
-        }
     }
 }

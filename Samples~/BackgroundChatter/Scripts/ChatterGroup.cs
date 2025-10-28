@@ -130,18 +130,29 @@ namespace Yarn.Unity.Samples
             }
 
             dialogueRunner.SetProject(dialogue.project!);
-            dialogueRunner.StartDialogue(dialogue.nodeName!);
-
-            return dialogueRunner.DialogueTask;
+            return dialogueRunner.StartDialogue(dialogue.nodeName!);
         }
 
-        public void Interrupt()
+        internal YarnTask ChatterTask
+        {
+            get
+            {
+                if (dialogueRunner == null)
+                {
+                    return YarnTask.CompletedTask;
+                }
+                return dialogueRunner.DialogueTask;
+            }
+        }
+
+        public YarnTask Interrupt()
         {
             if (dialogueRunner != null)
             {
                 // Stop the dialogue immediately.
-                dialogueRunner.Stop();
+                return dialogueRunner.Stop();
             }
+            return YarnTask.CompletedTask;
         }
 
         internal bool IsInStartRange(Vector3 position)
@@ -162,7 +173,7 @@ namespace Yarn.Unity.Samples
             }
         }
 
-        internal void OnPlayerLeftStopRadius()
+        internal async YarnTask OnPlayerLeftStopRadius()
         {
             switch (this.outOfRangeBehaviour)
             {
@@ -173,7 +184,7 @@ namespace Yarn.Unity.Samples
                     // Stop the dialogue runner if it's running.
                     if (dialogueRunner != null && dialogueRunner.IsDialogueRunning)
                     {
-                        dialogueRunner.Stop();
+                        await dialogueRunner.Stop();
                     }
                     break;
                 case OutOfRangeBehaviour.StopAndRunNode:
@@ -183,13 +194,13 @@ namespace Yarn.Unity.Samples
                     {
                         if (dialogueRunner.IsDialogueRunning)
                         {
-                            dialogueRunner.Stop();
+                            await dialogueRunner.Stop();
                         }
 
                         if (outOfRangeDialogue != null && outOfRangeDialogue.IsValid)
                         {
                             dialogueRunner.SetProject(outOfRangeDialogue.project!);
-                            dialogueRunner.StartDialogue(outOfRangeDialogue.nodeName!);
+                            await dialogueRunner.StartDialogue(outOfRangeDialogue.nodeName!);
                         }
                     }
                     break;
