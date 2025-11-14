@@ -85,10 +85,6 @@ namespace Yarn.Unity.Samples
             {
                 SetMouthTexture(texture);
             }
-            else
-            {
-                Debug.LogWarning($"No mouth shape {mouthShape}", this);
-            }
         }
 
         private void SetMouthTexture(Texture2D texture)
