@@ -1,0 +1,20 @@
+{
+    "name": "YarnSpinner.Unity.Samples.NodeInternals",
+    "rootNamespace": "",
+    "references": [
+        "GUID:34aa492b82754644eac2f903cd496268",
+        "GUID:c21a60a15edb64663af9bd55f8834863"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "YarnSpinner.dll",
+        "Yarn.Google.Protobuf.dll"
+    ],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

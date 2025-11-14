@@ -68,6 +68,11 @@
       "path": "Samples~/ReplacementMarkup"
     },
     {
+      "displayName": "Node Internals",
+      "description": "Demonstrates how to explore the internals of Yarn Spinner nodes to get information not otherwise exposed",
+      "path": "Samples~/NodeInternals"
+    },
+    {
       "displayName": "Basic Saliency and Storylets",
       "description": "Demonstrates the creation of pools of lines or nodes which can be drawn from based on current game state to deliver dynamic, contextual content",
       "path": "Samples~/BasicSaliency"

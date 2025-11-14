@@ -209,4 +209,13 @@ SlideImage: advanced-saliency
 
 Capsley: The Advanced Saliency sample demonstrates how you can use storylets and variables together to make dynamic content
 Capsley: Where the characters, world, and scenario change depending on player selections
+
+<<clear_slide>>
+<<start_slide>>
+SlideHeader: Node Internals
+SlideImage: node-internals
+<<end_slide>>
+
+Capsley: The Node Internals sample demonstrates how to access the internals of nodes.
+Capsley: letting you query information that is otherwise not exposed through the default Yarn Spinner interfaces
 ===

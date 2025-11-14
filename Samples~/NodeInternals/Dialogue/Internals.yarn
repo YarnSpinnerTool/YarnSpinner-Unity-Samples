@@ -1,0 +1,97 @@
+﻿title: explainer
+---
+Player: more information?
+Capsley: in this case what we do is get a list of all the commands inside a node.
+Player: why?
+Capsley: imagine you had a command that needs to load a bunch of assets to work
+Capsley: and you don't want those to take a long time to load when the command is reached
+Capsley: so it would be great to have all of those assets loaded ahead of time
+
+-> Go on
+-> Is this the best way?
+    Capsley: depends on what you mean by best
+    <<detour alternate>>
+-> Is this the only way?
+    Capsley: definitely not
+    <<detour alternate>>
+
+Capsley: so what we are going to do is inside commands we are going to grab all the commands
+Capsley: and then we will grab the parameters for each command
+Capsley: and use that to make a list of assets we'd need to load
+
+-> Very Cool
+    Capsley: agreed
+-> How does it work?
+    <<detour details>>
+
+Player: Neat
+===
+
+title: Start
+---
+<<once>>
+    Capsley: Hello this sample shows off how you can explore the internals of Yarn Spinner to extract more information.
+    -> skip explanation
+        Capsley: understood
+    -> Tell me more
+        Capsley: can do, so yes this is for when you want more information from nodes
+        <<detour explainer>>
+<<endonce>>
+
+Capsley: now it's time to see it in action
+
+-> launch with the "preload"
+    <<preload_command_assets>>
+-> launch without the "preload"
+    <<clear_preload>>
+
+<<jump commands>>
+===
+
+title: alternate
+---
+Capsley: arguably a better way to do this is to define the necessary assets in the header of the node
+Capsley: then it's more accessible and easier to access without all the steps we take here
+Capsley: or you could do this entirely outside of Yarn
+Capsley: if you know what assets are needed for the level just make it part of the level load system
+Capsley: that way it also works for assets beyond those that are necessary for your dialogue!
+
+-> If there are other or better ways to do it why do this?
+    Capsley: Well for a start it lets us write this sample
+    Capsley: and this allows your writers to not have to worry about the Unity side of things
+    Capsley: they can just write the commands and have it all work
+    Capsley: it's more friendly at a cost of more upfront work
+-> Makes sense
+===
+
+title: details
+---
+Capsley: this works by grabbing the compiled program out of the Yarn Project
+Capsley: this is essentially just a list of instructions
+Capsley: each instruction means something different but in our case what we want is any RunCommand instruction
+Capsley: from here we then get the text of command and use that to work out what asset to "load"
+Player: why did you say "load" like that?
+Capsley: because we aren't actually going to load anything, just list what we would load
+
+-> Are there any caveats to be wary of?
+    Capsley: well the main thing is this will tell you about all commands in the Yarn
+    Player: All?
+    Capsley: yes so even commands that can't be run because of flow control would still be picked up
+-> Gotcha
+===
+
+title: commands
+---
+Capsley: this node has a lot of commands in it that are intended to simulate a bunch of commands that need to load assets and resources
+<<set_background castle>>
+<<set_music "cool beats to slay dragons to">>
+<<character_avatar Glenn>>
+<<character_avatar Liz>>
+<<character_avatar EvilDave>>
+<<character_avatar RegularDave>>
+Capsley: aaaaaaand done
+Player: but I didn't see anything?
+Capsley: well that's because we aren't actually doing anything, just showing how you'd do it
+Capsley: but if you check the logs you'll see the flow
+Capsley: and check out [link="12eca831686484cacaf0c924b6c8a996"]CommandAssetPreloader[/link] for the details on how it all works.
+===
