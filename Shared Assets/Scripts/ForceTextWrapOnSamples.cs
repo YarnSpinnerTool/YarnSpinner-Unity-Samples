@@ -7,7 +7,7 @@ namespace Yarn.Unity.Samples
     {
         public void OnValidate()
         {
-            var allTexts = FindObjectsOfType<TMP_Text>();
+            var allTexts = FindObjectsByType<TMP_Text>(FindObjectsSortMode.None);
             foreach (var text in allTexts)
             {
                 text.SetTextWrapping(true);
