@@ -3,6 +3,7 @@ Yarn Spinner is licensed to you under the terms found in the file LICENSE.md.
 */
 
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using Yarn.Unity.Attributes;
 
@@ -19,12 +20,21 @@ namespace Yarn.Unity.Samples
         public SpawnPointData[] spawns = Array.Empty<SpawnPointData>();
 
         private GameObject? currentEnvironment;
+
+        // used to reset the characters back to where they came from
+        private List<(GameObject character, Vector3 initialPosition)> characterPositions = new();
+
         public void SpawnLevel()
         {
             if (currentEnvironment != null)
             {
                 Destroy(currentEnvironment);
                 currentEnvironment = null;
+            }
+
+            foreach (var pair in characterPositions)
+            {
+                pair.character.transform.position = pair.initialPosition;
             }
 
             RoomLayout? config = null;
@@ -78,6 +88,20 @@ namespace Yarn.Unity.Samples
             if (runner != null)
             {
                 runner.AddCommandHandler("start_level", SpawnLevel);
+            }
+
+            // we get every character we can
+            // and we keep around their starting position
+            // that way when a level is changed we can reset them all back
+            // otherwise they can stack on top of each other
+            foreach (Character name in Enum.GetValues(typeof(Character)))
+            {
+                var character = GameObject.Find(name.GetBackingValue());
+                if (character.TryGetComponent<SimpleCharacter>(out _))
+                {
+                    // add it to a list of initial positions
+                    characterPositions.Add((character, character.transform.position));
+                }
             }
         }
     }
