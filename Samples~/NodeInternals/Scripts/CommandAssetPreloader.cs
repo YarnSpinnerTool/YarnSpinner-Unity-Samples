@@ -120,12 +120,13 @@ namespace YarnSpinner.Unity.Samples.NodeInternals
         // and then do something with them
         // in this case we don't actually load any assets or 
         [YarnCommand("set_background")]
-        public static void SetBackground(string backgroundAsset)
+        public static async YarnTask SetBackground(string backgroundAsset)
         {
             if (backgrounds.Add(backgroundAsset))
             {
                 Debug.LogWarning($"{backgroundAsset} is not already \"loaded\", pretending to do that now");
                 // perform some long load
+                await YarnTask.Delay(1000);
             }
             else
             {
@@ -136,12 +137,13 @@ namespace YarnSpinner.Unity.Samples.NodeInternals
         }
 
         [YarnCommand("set_music")]
-        public static void SetMusic(string musicAsset)
+        public static async YarnTask SetMusic(string musicAsset)
         {
             if (music.Add(musicAsset))
             {
                 Debug.LogWarning($"{musicAsset} is not already \"loaded\", pretending to do that now");
                 // perform some long load
+                await YarnTask.Delay(1000);
             }
             else
             {
@@ -152,12 +154,13 @@ namespace YarnSpinner.Unity.Samples.NodeInternals
         }
 
         [YarnCommand("character_avatar")]
-        public static void ShowAvatar(string characterName)
+        public static async YarnTask ShowAvatar(string characterName)
         {
             if (avatars.Add(characterName))
             {
                 Debug.LogWarning($"{characterName} is not already \"loaded\", pretending to do that now");
                 // perform some long load
+                await YarnTask.Delay(1000);
             }
             else
             {

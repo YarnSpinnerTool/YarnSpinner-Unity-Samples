@@ -92,6 +92,7 @@ Capsley: this node has a lot of commands in it that are intended to simulate a b
 Capsley: aaaaaaand done
 Player: but I didn't see anything?
 Capsley: well that's because we aren't actually doing anything, just showing how you'd do it
-Capsley: but if you check the logs you'll see the flow
+Capsley: but if the conversation stopped and paused for a long time that was due to the "load", and you can see this in the logs also
+Capsley: and if everything just happened instantly that's because it was already "loaded"
 Capsley: and check out [link="12eca831686484cacaf0c924b6c8a996"]CommandAssetPreloader[/link] for the details on how it all works.
 ===
