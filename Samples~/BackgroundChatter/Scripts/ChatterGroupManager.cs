@@ -78,6 +78,13 @@ namespace Yarn.Unity.Samples
                         continue;
                     }
 
+                    // because of exit play shenanigans we might be leaving play mode
+                    // easiest way to deal with this is just do a quick null check before continuing
+                    if (chatterGroup == null)
+                    {
+                        return;
+                    }
+
                     if (chatterGroup.IsRunning)
                     {
                         // The chatter group is already running. No need to start it.
