@@ -1,4 +1,25 @@
-﻿title: explainer
+﻿title: Start
+---
+<<once>>
+    Capsley: Hello this sample shows off how you can explore the internals of Yarn Spinner to extract more information.
+    -> skip explanation
+        Capsley: understood
+    -> Tell me more
+        Capsley: can do, so yes this is for when you want more information from nodes
+        <<detour explainer>>
+<<endonce>>
+
+Capsley: now it's time to see it in action
+
+-> launch with the "preload"
+    <<preload_command_assets>>
+-> launch without the "preload"
+    <<clear_preload>>
+
+<<jump commands>>
+===
+
+title: explainer
 ---
 Player: more information?
 Capsley: in this case what we do is get a list of all the commands inside a node.
@@ -25,27 +46,6 @@ Capsley: and use that to make a list of assets we'd need to load
     <<detour details>>
 
 Player: Neat
-===
-
-title: Start
----
-<<once>>
-    Capsley: Hello this sample shows off how you can explore the internals of Yarn Spinner to extract more information.
-    -> skip explanation
-        Capsley: understood
-    -> Tell me more
-        Capsley: can do, so yes this is for when you want more information from nodes
-        <<detour explainer>>
-<<endonce>>
-
-Capsley: now it's time to see it in action
-
--> launch with the "preload"
-    <<preload_command_assets>>
--> launch without the "preload"
-    <<clear_preload>>
-
-<<jump commands>>
 ===
 
 title: alternate
