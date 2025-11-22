@@ -18,39 +18,41 @@ namespace Yarn.Unity.Samples
         public Color debuff = Color.red;
         public override ReplacementMarkerResult ProcessReplacementMarker(MarkupAttribute marker, StringBuilder childBuilder, List<MarkupAttribute> childAttributes, string localeCode)
         {
-            bool addedSprite = true;
 
             var start = "<b>[<color=#{0}><sprite=\"effects\" name=\"{1}\">";
             var end = "</color>]</b>";
 
+            string prefix;
+
+            int invisibleCharactersAdded = 0;
+
             switch (marker.Name.ToLower())
             {
                 case "lightning":
-                    childBuilder.Insert(0, string.Format(start, ColorUtility.ToHtmlStringRGB(debuff), "lightning"));
-                    childBuilder.Append(end);
+                    prefix = string.Format(start, ColorUtility.ToHtmlStringRGB(debuff), "lightning");
                     break;
+
                 case "ice":
-                    childBuilder.Insert(0, string.Format(start, ColorUtility.ToHtmlStringRGB(buff), "water"));
-                    childBuilder.Append(end);
+                    prefix = string.Format(start, ColorUtility.ToHtmlStringRGB(buff), "water");
                     break;
+
                 case "heart":
-                    childBuilder.Insert(0, string.Format(start, ColorUtility.ToHtmlStringRGB(buff), "heart"));
-                    childBuilder.Append(end);
+                    prefix = string.Format(start, ColorUtility.ToHtmlStringRGB(buff), "heart");
                     break;
+
                 case "fire":
-                    childBuilder.Insert(0, string.Format(start, ColorUtility.ToHtmlStringRGB(debuff), "fire"));
-                    childBuilder.Append(end);
+                    prefix = string.Format(start, ColorUtility.ToHtmlStringRGB(debuff), "fire");
                     break;
+
                 default:
-                    addedSprite = false;
-                    break;
+                    var diagnostic = new LineParser.MarkupDiagnostic($"was unable to find a matching sprite for {marker.Name}");
+                    return new ReplacementMarkerResult(new List<LineParser.MarkupDiagnostic>() { diagnostic }, 0);
             }
 
-            if (!addedSprite)
-            {
-                var diagnostic = new LineParser.MarkupDiagnostic($"was unable to find a matching sprite for {marker.Name}");
-                return new ReplacementMarkerResult(new List<LineParser.MarkupDiagnostic>() { diagnostic }, 0);
-            }
+            childBuilder.Insert(0, prefix);
+            childBuilder.Append(end);
+
+            invisibleCharactersAdded += (prefix.Length - 1) + (end.Length - 1);
 
             // we now need to move any children attributes down by two characters
             // because we added a [ at the front and sprite
@@ -60,8 +62,7 @@ namespace Yarn.Unity.Samples
                 childAttributes[i] = childAttributes[i].Shift(2);
             }
 
-            // TODO: Calculate the number of invisible characters and return
-            return new ReplacementMarkerResult(0);
+            return new ReplacementMarkerResult(invisibleCharactersAdded);
         }
 
         void Start()
