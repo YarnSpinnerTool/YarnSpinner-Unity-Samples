@@ -4,9 +4,9 @@ Yarn Spinner is licensed to you under the terms found in the file LICENSE.md.
 
 using System.Collections.Generic;
 using System.Text;
+using UnityEngine;
 using Yarn.Markup;
 using Yarn.Unity;
-using UnityEngine;
 
 #nullable enable
 
@@ -23,7 +23,7 @@ namespace Yarn.Unity.Samples
     public class EntityColourer : Yarn.Unity.ReplacementMarkupHandler
     {
         public EntityMap[] entities = System.Array.Empty<EntityMap>();
-        public override List<LineParser.MarkupDiagnostic> ProcessReplacementMarker(MarkupAttribute marker, StringBuilder childBuilder, List<MarkupAttribute> childAttributes, string localeCode)
+        public override ReplacementMarkerResult ProcessReplacementMarker(MarkupAttribute marker, StringBuilder childBuilder, List<MarkupAttribute> childAttributes, string localeCode)
         {
             // this works in one of two ways
             // if we have a name string property we use that
@@ -49,7 +49,8 @@ namespace Yarn.Unity.Samples
                 }
             }
 
-            return ReplacementMarkupHandler.NoDiagnostics;
+            // TODO: Calculate the number of invisible characters and return
+            return new ReplacementMarkerResult(0);
         }
 
         protected void Start()

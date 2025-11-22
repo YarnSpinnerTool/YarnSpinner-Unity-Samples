@@ -5,8 +5,8 @@ Yarn Spinner is licensed to you under the terms found in the file LICENSE.md.
 using System;
 using System.Collections.Generic;
 using System.Text;
-using Yarn.Markup;
 using UnityEngine;
+using Yarn.Markup;
 
 #nullable enable
 
@@ -33,13 +33,13 @@ namespace Yarn.Unity.Samples
         }
 
         private char[] replacementChars = { '?', '^', ';', '*', '&', '#', '!', '@', '<', '_' };
-        public override List<LineParser.MarkupDiagnostic> ProcessReplacementMarker(MarkupAttribute marker, StringBuilder childBuilder, List<MarkupAttribute> childAttributes, string localeCode)
+        public override ReplacementMarkerResult ProcessReplacementMarker(MarkupAttribute marker, StringBuilder childBuilder, List<MarkupAttribute> childAttributes, string localeCode)
         {
             // making sure we have an obscurity integer property
             if (!marker.TryGetProperty("obscurity", out int value))
             {
                 var diagnostic = new LineParser.MarkupDiagnostic("Missing the obscurity property, we cannot continue without it.");
-                return new List<LineParser.MarkupDiagnostic>() { diagnostic };
+                return new ReplacementMarkerResult(new List<LineParser.MarkupDiagnostic>() { diagnostic }, 0);
             }
 
             // we now change how much is obscured based on that property
@@ -70,7 +70,8 @@ namespace Yarn.Unity.Samples
                     }
             }
 
-            return ReplacementMarkupHandler.NoDiagnostics;
+            // TODO: Calculate the number of invisible characters and return
+            return new ReplacementMarkerResult(0);
         }
 
         void Obscure(StringBuilder builder, float obscurityPercentage)
