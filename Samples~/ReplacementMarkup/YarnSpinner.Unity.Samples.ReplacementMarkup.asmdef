@@ -1,5 +1,5 @@
 {
-    "name": "YarnSpinner.Unity.Samples.ReplacementMarkupy",
+    "name": "YarnSpinner.Unity.Samples.ReplacementMarkup",
     "rootNamespace": "",
     "references": [
         "YarnSpinner.Unity",
