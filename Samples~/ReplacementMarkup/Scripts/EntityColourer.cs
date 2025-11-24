@@ -40,17 +40,21 @@ namespace Yarn.Unity.Samples
                 nameText = childBuilder.ToString().ToLower();
             }
 
+            int invisibleCharactersAdded = 0;
+
             foreach (var entity in entities)
             {
                 if (entity.name.ToLower() == nameText)
                 {
-                    childBuilder.Insert(0, $"<color=#{UnityEngine.ColorUtility.ToHtmlStringRGBA(entity.colour)}><b>");
-                    childBuilder.Append("</b></color>");
+                    var prefix = $"<color=#{UnityEngine.ColorUtility.ToHtmlStringRGBA(entity.colour)}><b>";
+                    var suffix = "</b></color>";
+                    childBuilder.Insert(0, prefix);
+                    childBuilder.Append(suffix);
+                    invisibleCharactersAdded += prefix.Length + suffix.Length;
                 }
             }
 
-            // TODO: Calculate the number of invisible characters and return
-            return new ReplacementMarkerResult(0);
+            return new ReplacementMarkerResult(invisibleCharactersAdded);
         }
 
         protected void Start()

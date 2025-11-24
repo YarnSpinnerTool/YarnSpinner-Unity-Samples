@@ -70,7 +70,6 @@ namespace Yarn.Unity.Samples
                     }
             }
 
-            // TODO: Calculate the number of invisible characters and return
             return new ReplacementMarkerResult(0);
         }
 

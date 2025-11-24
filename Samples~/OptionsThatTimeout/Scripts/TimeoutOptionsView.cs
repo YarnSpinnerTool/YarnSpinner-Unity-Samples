@@ -108,7 +108,7 @@ namespace Yarn.Unity.Samples
         /// <remarks>This view does not display lines directly, but instead
         /// stores lines so that when options are run, the last line that ran
         /// before the options appeared can be shown.</remarks>
-        /// <inheritdoc cref="AsyncDialogueViewBase.RunLineAsync"
+        /// <inheritdoc cref="DialoguePresenterBase.RunLineAsync"
         /// path="/param"/>
         /// <returns>A completed task.</returns>
         public override YarnTask RunLineAsync(LocalizedLine line, LineCancellationToken token)
@@ -171,9 +171,9 @@ namespace Yarn.Unity.Samples
         /// Called by a <see cref="DialogueRunner"/> to display a collection of
         /// options to the user. 
         /// </summary>
-        /// <inheritdoc cref="AsyncDialogueViewBase.RunOptionsAsync"
+        /// <inheritdoc cref="DialoguePresenterBase.RunOptionsAsync"
         /// path="/param"/>
-        /// <inheritdoc cref="AsyncDialogueViewBase.RunOptionsAsync"
+        /// <inheritdoc cref="DialoguePresenterBase.RunOptionsAsync"
         /// path="/returns"/>
         public override async YarnTask<DialogueOption?> RunOptionsAsync(DialogueOption[] dialogueOptions, LineCancellationToken cancellationToken)
         {
