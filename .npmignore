@@ -1,0 +1,4 @@
+# Ignore markdown files when packaging for asset stores - they'll be converted
+# into PDFs or other more readable formats.
+*.md
+*.md.meta
