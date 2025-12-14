@@ -135,6 +135,10 @@ namespace Yarn.Unity.Samples
         [Group("Interaction")]
         [ShowIf(nameof(isPlayerControlled))]
         [SerializeField] UnityEvent<Interactable>? onInteracting;
+        [Group("Interaction")]
+        [ShowIf(nameof(isPlayerControlled))]
+        [SerializeField] UnityEvent<Interactable?>? onCurrentInteractableChanged;
+
 
         private List<Interactable> interactables = new();
 
@@ -669,6 +673,11 @@ namespace Yarn.Unity.Samples
                 if (previousInteractable != null) { previousInteractable.IsCurrent = false; }
                 if (nearest.Interactable != null) { nearest.Interactable.IsCurrent = true; }
                 currentInteractable = nearest.Interactable;
+
+                if (previousInteractable != currentInteractable)
+                {
+                    onCurrentInteractableChanged?.Invoke(currentInteractable);
+                }
             }
 
             if (interactInput.WasPressedThisFrame && currentInteractable != null)
@@ -685,6 +694,8 @@ namespace Yarn.Unity.Samples
 
                     interactable.IsCurrent = false;
                     currentInteractable = null;
+
+                    onCurrentInteractableChanged?.Invoke(null);
 
                     onInteracting?.Invoke(interactable);
                     await interactable.Interact(gameObject);

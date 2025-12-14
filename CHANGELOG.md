@@ -8,6 +8,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ### Added
 
+- `SimpleCharacter` now has an event `onCurrentInteractableChanged`, which fires when the current interactable object changes.
+
 ### Changed
 
 ### Removed
