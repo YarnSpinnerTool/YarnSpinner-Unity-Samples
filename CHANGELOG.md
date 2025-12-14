@@ -8,6 +8,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ### Added
 
+### Changed
+
+### Removed
+
+## [3.1.0] 2025-12-02
+
+### Added
+
 - `LinkMarkupHandler` provides a way for TMP links to open content inside of samples
     - Added links throughout various samples in the Yarn.
 - `SetAppearance` to the `CharacterAppearance` class, allowing overriding the default colours on the fly
@@ -24,8 +32,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - NPC in Feature Tour now has the correct node
     - was running a commands explanation
     - now runs a functions explanation
-
-### Removed
 
 ## [3.0.4] 2025-06-27
 
