@@ -9,9 +9,6 @@ namespace Yarn.Unity.Samples
     using TMPro;
     using Yarn.Markup;
 
-#if UNITY_EDITOR
-    using UnityEditor;
-#endif
 #if USE_INPUTSYSTEM
     using UnityEngine.InputSystem;
 #endif
@@ -24,7 +21,6 @@ namespace Yarn.Unity.Samples
         private int yarnLinkIndex = 0;
         private Dictionary<string, (string, bool)> paths = new Dictionary<string, (string, bool)>();
 
-#if UNITY_EDITOR
         void Awake()
         {
             if (runner != null)
@@ -47,11 +43,16 @@ namespace Yarn.Unity.Samples
             // if it's an internal path we should verify it is valid
             if (!external)
             {
-                var path = AssetDatabase.GUIDToAssetPath(value);
+#if UNITY_EDITOR
+                var path = UnityEditor.AssetDatabase.GUIDToAssetPath(value);
                 if (string.IsNullOrEmpty(path))
                 {
                     return new ReplacementMarkerResult(new List<LineParser.MarkupDiagnostic>() { new LineParser.MarkupDiagnostic("The link guid is invalid") }, 0);
                 }
+#else
+
+                return new ReplacementMarkerResult(new List<LineParser.MarkupDiagnostic>() { new LineParser.MarkupDiagnostic("Links to assets are not available in built players") }, 0);
+#endif
             }
 
             var originalLength = childBuilder.Length;
@@ -76,8 +77,8 @@ namespace Yarn.Unity.Samples
             mousePressed = Mouse.current.leftButton.wasReleasedThisFrame;
             mousePosition = Mouse.current.position.value;
 #else
-        mousePressed = Input.GetMouseButtonDown(0);
-        mousePosition = Input.mousePosition;
+            mousePressed = Input.GetMouseButtonDown(0);
+            mousePosition = Input.mousePosition;
 #endif
 
             if (mousePressed)
@@ -103,12 +104,15 @@ namespace Yarn.Unity.Samples
                     }
                     else
                     {
-                        var path = AssetDatabase.GUIDToAssetPath(element.Item1);
-                        AssetDatabase.OpenAsset(AssetDatabase.LoadAssetAtPath<Object>(path));
+#if UNITY_EDITOR
+                        var path = UnityEditor.AssetDatabase.GUIDToAssetPath(element.Item1);
+                        UnityEditor.AssetDatabase.OpenAsset(UnityEditor.AssetDatabase.LoadAssetAtPath<Object>(path));
+#else
+                        Debug.LogError("Links to assets are only available in the Editor.");
+#endif
                     }
                 }
             }
         }
-#endif
     }
 }
