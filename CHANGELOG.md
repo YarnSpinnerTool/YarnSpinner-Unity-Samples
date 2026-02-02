@@ -8,13 +8,19 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ### Added
 
+### Changed
+
+### Removed
+
+## [3.1.1] 2026-02-02
+
+### Added
+
 - `SimpleCharacter` now has an event `onCurrentInteractableChanged`, which fires when the current interactable object changes.
 
 ### Changed
 
 - Fixed an editor build issue.
-
-### Removed
 
 ## [3.1.0] 2025-12-02
 
