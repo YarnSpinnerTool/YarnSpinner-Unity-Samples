@@ -6,22 +6,22 @@
   "excludeFiles": [],
   "localisation": {
     "en": {
-      "assets": "assets-en"
+      "assets": "assets-en/LipSync-en"
     },
     "es": {
       "assets": "es-assets/LipSync-es",
       "strings": "VoiceOver - es.csv"
     },
     "zh-Hans": {
-      "assets": "assets-zh",
+      "assets": "assets-zh/LipSync-zh",
       "strings": "VoiceOver - zh_Hans.csv"
     },
     "pt-BR": {
-      "assets": "assets-pt-BR",
+      "assets": "assets-pt-BR/LipSync-pt-BR",
       "strings": "VoiceOver - pt_BR.csv"
     },
     "de": {
-      "assets": "assets-de",
+      "assets": "assets-de/LipSync-de",
       "strings": "VoiceOver - de.csv"
     }
   },
