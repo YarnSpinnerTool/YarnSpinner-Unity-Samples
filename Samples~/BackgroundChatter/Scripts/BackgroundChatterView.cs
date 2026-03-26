@@ -112,8 +112,17 @@ namespace Yarn.Unity.Samples
             }
             finally
             {
-                text.enabled = false;
+                // Clean up after we're done running the line. (Our text object
+                // may have been deleted in the meantime, so check before using
+                // it.)
+
+                if (text != null)
+                {
+                    text.enabled = false;
+                }
+
                 attachmentTarget = null;
+
             }
         }
 
