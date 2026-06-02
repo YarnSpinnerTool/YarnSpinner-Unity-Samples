@@ -1,11 +1,11 @@
 {
   "name": "dev.yarnspinner.unity.samples",
-  "version": "3.2.0",
+  "version": "3.2.4",
   "displayName": "Yarn Spinner Samples",
   "description": "Example scenes and tutorial content for Yarn Spinner. To install the samples, click on the Samples tab in the Package Manager window.",
   "unity": "2022.3",
   "dependencies": {
-    "dev.yarnspinner.unity": "3.2.0",
+    "dev.yarnspinner.unity": "3.2.4",
     "com.unity.shadergraph": "14.0.0"
   },
   "keywords": [

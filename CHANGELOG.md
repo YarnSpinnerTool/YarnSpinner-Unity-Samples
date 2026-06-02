@@ -12,6 +12,17 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ### Removed
 
+## [3.2.4] 2026-06-02
+
+### Added
+
+- Added a grass tuft and edge prefab
+
+### Changed
+
+- Made the FantasyTown assets use generated lightmap UV coordinates
+- Enabled collision generation on certain FantasyTown assets
+
 ## [3.1.1] 2026-02-02
 
 ### Added
