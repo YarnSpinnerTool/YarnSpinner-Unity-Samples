@@ -26,7 +26,7 @@ namespace Yarn.Unity.Samples
 
         private readonly Dictionary<string, MouthView?> _cachedMouthViews = new();
 
-        public override YarnTask OnDialogueStartedAsync()
+        public override YarnTask OnDialogueStartedAsync(CancellationToken token)
         {
             var keys = new List<string>(_cachedMouthViews.Keys);
 
@@ -42,7 +42,7 @@ namespace Yarn.Unity.Samples
             return YarnTask.CompletedTask;
         }
 
-        public override YarnTask OnDialogueCompleteAsync()
+        public override YarnTask OnDialogueCompleteAsync(CancellationToken token)
         {
             return YarnTask.CompletedTask;
         }

@@ -9,7 +9,8 @@
         "Unity.Addressables",
         "Unity.Addressables.Editor",
         "Unity.TextMeshPro",
-        "Unity.TextMeshPro.Editor"
+        "Unity.TextMeshPro.Editor",
+        "YarnSpinner.Unity"
     ],
     "includePlatforms": [
         "Editor"

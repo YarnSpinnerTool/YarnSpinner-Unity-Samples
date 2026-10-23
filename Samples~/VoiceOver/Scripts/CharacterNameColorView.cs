@@ -25,12 +25,12 @@ namespace Yarn.Unity.Samples
 
         [SerializeField] List<TMP_Text> texts = new();
 
-        public override YarnTask OnDialogueStartedAsync()
+        public override YarnTask OnDialogueStartedAsync(CancellationToken token)
         {
             return YarnTask.CompletedTask;
         }
 
-        public override YarnTask OnDialogueCompleteAsync()
+        public override YarnTask OnDialogueCompleteAsync(CancellationToken token)
         {
             return YarnTask.CompletedTask;
         }

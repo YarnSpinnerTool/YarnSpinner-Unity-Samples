@@ -32,7 +32,10 @@ namespace Yarn.Unity.Samples
         void Start()
         {
             var runner = GameObject.FindAnyObjectByType<Yarn.Unity.DialogueRunner>();
-            runner.AddCommandHandler<string>("move", MoveCharacter);
+            runner.AddCommandHandler<string>("move", (a) =>
+            {
+                return MoveCharacter(a);
+            });
         }
 
         public override void OnLineDisplayBegin(MarkupParseResult line, TMP_Text text)

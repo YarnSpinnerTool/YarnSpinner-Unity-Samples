@@ -1,0 +1,5 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Packages/dev.yarnspinner.unity.samples/Shared%20Assets/Scripts/Editor/SamplesVersionChecker.uss?fileID=7433441132597879392&amp;guid=3954fbb9c36924ad3a84c73c5f05fbec&amp;type=3#SamplesVersionChecker"/>
+    <ui:Label text="Your installed version of Yarn Spinner is too old to use this version of the Sample Package.&#10;This means the samples will not work and may even have compilation errors.&#10;To fix this either upgrade your version of Yarn Spinner to a newer version or downgrade the Samples package to one that matches your Yarn Spinner version." style="flex-grow: 1; flex-wrap: nowrap; white-space: normal;"/>
+    <ui:Button text="Ok" name="close"/>
+</ui:UXML>

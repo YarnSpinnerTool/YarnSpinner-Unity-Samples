@@ -56,13 +56,13 @@ namespace Yarn.Unity.Samples
             }
         }
 
-        public override YarnTask OnDialogueStartedAsync()
+        public override YarnTask OnDialogueStartedAsync(CancellationToken token)
         {
             ClearSlide();
             return YarnTask.CompletedTask;
         }
 
-        public override YarnTask OnDialogueCompleteAsync()
+        public override YarnTask OnDialogueCompleteAsync(CancellationToken token)
         {
             return YarnTask.CompletedTask;
         }

@@ -55,7 +55,7 @@ namespace Yarn.Unity.Samples
         /// when dialogue is complete.
         /// </summary>
         /// <returns>A completed task.</returns>
-        public override YarnTask OnDialogueCompleteAsync()
+        public override YarnTask OnDialogueCompleteAsync(CancellationToken token)
         {
             if (canvasGroup != null)
             {
@@ -88,7 +88,7 @@ namespace Yarn.Unity.Samples
         /// when dialogue begins.
         /// </summary>
         /// <returns>A completed task.</returns>
-        public override YarnTask OnDialogueStartedAsync()
+        public override YarnTask OnDialogueStartedAsync(CancellationToken token)
         {
             if (canvasGroup != null)
             {

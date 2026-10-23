@@ -77,7 +77,7 @@ namespace Yarn.Unity.Samples
             return YarnTask.CompletedTask;
         }
 
-        public override async YarnTask OnDialogueStartedAsync()
+        public override async YarnTask OnDialogueStartedAsync(CancellationToken token)
         {
             // When dialogue starts, check to see if the current dialogue has a
             // 'target:' header. If it does, find a game object with this name,
@@ -144,7 +144,7 @@ namespace Yarn.Unity.Samples
 #endif
         }
 
-        public override YarnTask OnDialogueCompleteAsync()
+        public override YarnTask OnDialogueCompleteAsync(CancellationToken token)
         {
             if (cinemachineTargetCamera != null)
             {

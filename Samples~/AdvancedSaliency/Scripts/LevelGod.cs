@@ -24,24 +24,31 @@ namespace Yarn.Unity.Samples
         // used to reset the characters back to where they came from
         private List<(GameObject character, Vector3 initialPosition)> characterPositions = new();
 
-        public void SpawnLevel()
+        public static void SpawnLevel()
         {
-            if (currentEnvironment != null)
+            var god = FindAnyObjectByType<LevelGod>();
+            if (god == null)
             {
-                Destroy(currentEnvironment);
-                currentEnvironment = null;
+                Debug.LogError("Unable to find the Level God, cannot spawn the level!");
+                return;
             }
 
-            foreach (var pair in characterPositions)
+            if (god.currentEnvironment != null)
+            {
+                Destroy(god.currentEnvironment);
+                god.currentEnvironment = null;
+            }
+
+            foreach (var pair in god.characterPositions)
             {
                 pair.character.transform.position = pair.initialPosition;
             }
 
             RoomLayout? config = null;
 
-            foreach (var spawn in spawns)
+            foreach (var spawn in god.spawns)
             {
-                if (spawn.name == variableStorage.Room)
+                if (spawn.name == god.variableStorage.Room)
                 {
                     config = spawn.data;
                     break;
@@ -50,12 +57,12 @@ namespace Yarn.Unity.Samples
 
             if (config == null)
             {
-                Debug.LogError($"Unable to load a layout configuration for {variableStorage.Room}");
+                Debug.LogError($"Unable to load a layout configuration for {god.variableStorage.Room}");
                 return;
             }
 
-            var primary = GameObject.Find(variableStorage.Primary.GetBackingValue());
-            var secondary = GameObject.Find(variableStorage.Secondary.GetBackingValue());
+            var primary = GameObject.Find(god.variableStorage.Primary.GetBackingValue());
+            var secondary = GameObject.Find(god.variableStorage.Secondary.GetBackingValue());
 
             if (config.primary != null)
             {
@@ -79,7 +86,7 @@ namespace Yarn.Unity.Samples
 
             if (config.environmentPrefab != null)
             {
-                currentEnvironment = Instantiate(config.environmentPrefab);
+                god.currentEnvironment = Instantiate(config.environmentPrefab);
             }
         }
 

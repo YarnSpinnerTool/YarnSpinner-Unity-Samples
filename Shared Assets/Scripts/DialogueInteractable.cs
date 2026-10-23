@@ -162,8 +162,6 @@ namespace Yarn.Unity.Samples
 
             onInteractionStarted?.Invoke();
 
-            await dialogueRunner.StartDialogue(dialogue.nodeName);
-
             if (turnsToInteractor)
             {
                 if (TryGetComponent<SimpleCharacter>(out var character))
@@ -178,7 +176,7 @@ namespace Yarn.Unity.Samples
 
             var destroyCancellation = destroyCancellationToken;
 
-            await dialogueRunner.DialogueTask;
+            await dialogueRunner.RunDialogue(dialogue.nodeName);
 
             if (destroyCancellation.IsCancellationRequested)
             {

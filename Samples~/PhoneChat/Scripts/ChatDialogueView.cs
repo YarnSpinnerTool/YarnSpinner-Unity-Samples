@@ -79,7 +79,7 @@ namespace Yarn.Unity.Samples
         /// </summary>
         /// <returns>A task that completes when the dialogue presenter has
         /// finished preparing for dialogue.</returns>
-        public override YarnTask OnDialogueStartedAsync()
+        public override YarnTask OnDialogueStartedAsync(CancellationToken token)
         {
             // This method doesn't have any work to do, so it immediately
             // returns a completed task.
@@ -91,7 +91,7 @@ namespace Yarn.Unity.Samples
         /// </summary>
         /// <returns>A task that completes when the dialogue presenter has
         /// finished wrapping up dialogue.</returns>
-        public override YarnTask OnDialogueCompleteAsync()
+        public override YarnTask OnDialogueCompleteAsync(CancellationToken token)
         {
             // This method doesn't have any work to do, so it immediately
             // returns a completed task.

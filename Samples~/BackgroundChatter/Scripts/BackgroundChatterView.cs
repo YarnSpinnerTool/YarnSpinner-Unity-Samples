@@ -126,13 +126,13 @@ namespace Yarn.Unity.Samples
             }
         }
 
-        public override YarnTask OnDialogueStartedAsync()
+        public override YarnTask OnDialogueStartedAsync(CancellationToken token)
         {
             // No action required when background dialogue starts
             return YarnTask.CompletedTask;
         }
 
-        public override YarnTask OnDialogueCompleteAsync()
+        public override YarnTask OnDialogueCompleteAsync(CancellationToken token)
         {
             // Ensure that our on-screen text isn't visible (the line-runner should have already done this, but just in case)
             if (text != null)

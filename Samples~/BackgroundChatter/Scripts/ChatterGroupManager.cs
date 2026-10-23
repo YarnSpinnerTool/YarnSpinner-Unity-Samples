@@ -8,10 +8,11 @@ namespace Yarn.Unity.Samples
 {
     using System;
     using System.Collections.Generic;
+    using System.Threading;
     using UnityEngine;
     using UnityEngine.Events;
 
-    public class ChatterGroupManager : MonoBehaviour
+    public class ChatterGroupManager : DialoguePresenterBase
     {
         [SerializeField] Transform? player;
 
@@ -39,15 +40,7 @@ namespace Yarn.Unity.Samples
         {
             if (primaryDialogueRunner != null)
             {
-                primaryDialogueRunner.onDialogueStart?.AddListener(InterruptAllChatter);
-            }
-        }
-
-        public void OnDisable()
-        {
-            if (primaryDialogueRunner != null)
-            {
-                primaryDialogueRunner.onDialogueStart?.RemoveListener(InterruptAllChatter);
+                primaryDialogueRunner.AddPresenter(this);
             }
         }
 
@@ -98,8 +91,7 @@ namespace Yarn.Unity.Samples
                     }
 
                     // Start running chatter.
-                    await chatterGroup.RunChatter();
-                    var runTask = chatterGroup.ChatterTask;
+                    var runTask = chatterGroup.RunChatter(destroyedToken);
                     // Wait until the dialogue is complete, or the player has
                     // left the stop radius.
 
@@ -156,6 +148,22 @@ namespace Yarn.Unity.Samples
                     chatterGroup.Interrupt().Forget();
                 }
             }
+        }
+
+        public override YarnTask RunLineAsync(LocalizedLine line, LineCancellationToken token)
+        {
+            return YarnTask.CompletedTask;
+        }
+
+        public override YarnTask OnDialogueStartedAsync(CancellationToken token)
+        {
+            InterruptAllChatter();
+            return YarnTask.CompletedTask;
+        }
+
+        public override YarnTask OnDialogueCompleteAsync(CancellationToken token)
+        {
+            return YarnTask.CompletedTask;
         }
     }
 }
