@@ -32,10 +32,7 @@ namespace Yarn.Unity.Samples
         void Start()
         {
             var runner = GameObject.FindAnyObjectByType<Yarn.Unity.DialogueRunner>();
-            runner.AddCommandHandler<string>("move", (a) =>
-            {
-                return MoveCharacter(a);
-            });
+            runner.AddCommandHandler<string, CancellationToken>("move", MoveCharacter);
         }
 
         public override void OnLineDisplayBegin(MarkupParseResult line, TMP_Text text)
@@ -70,8 +67,11 @@ namespace Yarn.Unity.Samples
             }
         }
 
-        public async YarnTask MoveCharacter(string endMarker)
+        public static async YarnTask MoveCharacter(string endMarker, CancellationToken cancellationToken)
         {
+            var handler = FindAnyObjectByType<MoveEvent>();
+            var playerCharacter = handler.playerCharacter;
+
             var position = GameObject.Find(endMarker);
             if (position == null)
             {
@@ -81,7 +81,7 @@ namespace Yarn.Unity.Samples
             {
                 return;
             }
-            await playerCharacter.MoveTo(position.transform.position, CancellationToken.None);
+            await playerCharacter.MoveTo(position.transform.position, cancellationToken);
         }
 
         public override void OnLineWillDismiss()
