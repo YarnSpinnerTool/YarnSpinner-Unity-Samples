@@ -589,6 +589,12 @@ namespace Yarn.Unity.Samples
 
             } while (Vector3.Distance(transform.position, position) > 0.05f && !cancellationToken.IsCancellationRequested);
 
+            if (cancellationToken.IsCancellationRequested)
+            {
+                // We were cancelled - skip over the rest of the movement and teleport directly to the position
+                transform.position = position;
+            }
+
             lookTarget = previousLookTarget;
 
             Mode = previousMode;
