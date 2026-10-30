@@ -12,7 +12,8 @@
     "overrideReferences": true,
     "precompiledReferences": [
         "YarnSpinner.dll",
-        "Yarn.Google.Protobuf.dll"
+        "Yarn.Google.Protobuf.dll",
+        "Google.Protobuf.dll"
     ],
     "autoReferenced": true,
     "defineConstraints": [],

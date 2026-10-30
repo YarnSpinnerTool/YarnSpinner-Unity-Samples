@@ -69,6 +69,24 @@ namespace Yarn.Unity.Samples
         /// </summary>
         int ILayoutElement.layoutPriority => 0;
 
+        public float maxWidth
+        {
+            get
+            {
+                var parentRect = RectTransform.parent?.GetComponent<RectTransform>();
+                return parentRect != null ? parentRect.rect.width : minimumWidth;
+            }
+        }
+
+        public float maxHeight
+        {
+            get
+            {
+                var parentRect = RectTransform.parent?.GetComponent<RectTransform>();
+                return parentRect != null ? parentRect.rect.height : minimumHeight;
+            }
+        }
+
         /// <summary>
         /// The default minimum width of the item.
         /// </summary>
