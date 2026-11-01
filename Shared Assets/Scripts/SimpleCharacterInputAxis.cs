@@ -9,6 +9,7 @@ using UnityEngine;
 namespace Yarn.Unity.Samples
 {
 
+    [System.Serializable]
     public abstract class InputAxisBase
     {
 #if USE_INPUTSYSTEM && ENABLE_INPUT_SYSTEM

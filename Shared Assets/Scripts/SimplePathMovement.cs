@@ -17,6 +17,7 @@ namespace Yarn.Unity.Samples
         [SerializeField] Animator? animator = null;
         [SerializeField] string speedParameter = "Speed";
 
+        [NonSerialized]
         public CancellationTokenSource? walkCTS = null;
 
         [YarnCommand("pause_walking")]
