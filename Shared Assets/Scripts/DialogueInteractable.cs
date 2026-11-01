@@ -1,5 +1,11 @@
 #nullable enable
 
+#if UNITY_6000_6_OR_NEWER
+    using Unity.Scripting.LifecycleManagement;
+#else
+    using Yarn.Unity.Shim;
+#endif
+
 namespace Yarn.Unity.Samples
 {
     using UnityEngine;
@@ -28,7 +34,7 @@ namespace Yarn.Unity.Samples
         public virtual bool InteractorShouldTurnToFaceWhenInteracted => false;
     }
 
-    public class DialogueInteractable : Interactable
+    public partial class DialogueInteractable : Interactable
     {
         [SerializeField] DialogueReference dialogue = new();
         [SerializeField] DialogueRunner? dialogueRunner;
@@ -116,6 +122,7 @@ namespace Yarn.Unity.Samples
             PrewarmJIT(dialogueRunner);
         }
 
+        [AutoStaticsCleanup]
         static bool hasPrewarmed;
         static void PrewarmJIT(DialogueRunner? dialogueRunner)
         {

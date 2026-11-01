@@ -1,4 +1,9 @@
 
+#if UNITY_6000_6_OR_NEWER
+    using Unity.Scripting.LifecycleManagement;
+#else
+    using Yarn.Unity.Shim;
+#endif
 namespace Yarn.Unity.Samples.Editor
 {
     using UnityEditor;
@@ -10,6 +15,9 @@ namespace Yarn.Unity.Samples.Editor
     using UnityEditor.Callbacks;
     using System.IO;
     using Yarn.Unity.Editor;
+#if UNITY_6000_7_OR_NEWER
+    using UnityEngine.Assemblies;
+#endif
 
 #nullable enable
 
@@ -90,9 +98,7 @@ namespace Yarn.Unity.Samples.Editor
 
         public static bool CheckAssemblyLoaded(string name)
         {
-            return System.AppDomain.CurrentDomain
-                .GetAssemblies()
-                .Any(assembly => assembly.FullName.Contains(name));
+            return AssemblyUtility.GetAssemblies().Any(assembly => assembly.FullName.Contains(name));
         }
 
         public static void Install(DependencyInstaller dependencyInstaller)
@@ -245,7 +251,8 @@ namespace Yarn.Unity.Samples.Editor
         }
     }
 
-    public static class PackageInstaller
+    [AutoStaticsCleanup]
+    public static partial class PackageInstaller
     {
         static AddRequest? CurrentRequest;
 

@@ -3,6 +3,12 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using System.Reflection;
 
+#if UNITY_6000_6_OR_NEWER
+using Unity.Scripting.LifecycleManagement;
+#else
+using Yarn.Unity.Shim;
+#endif
+
 #nullable enable
 
 namespace Yarn.Unity.Samples.Editor
@@ -46,6 +52,7 @@ namespace Yarn.Unity.Samples.Editor
             };
         }
 
+        [NoAutoStaticsCleanup]
         private static System.Version supportedVersion = new(3,3);
         private static bool ShouldShowSamples()
         {
