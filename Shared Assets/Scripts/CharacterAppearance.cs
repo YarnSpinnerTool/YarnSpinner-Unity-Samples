@@ -15,7 +15,12 @@ namespace Yarn.Unity.Samples
         };
 
         [SerializeField] Mode appearanceMode = Mode.Simple;
+        
+#if UNITY_6000_5_OR_NEWER
+        [SerializeField] Renderer? renderer;
+#else
         [SerializeField] new Renderer? renderer;
+#endif
 
         [ShowIf(nameof(appearanceMode), Mode.Complex)]
         [SerializeField] Color fadeColor = Color.red;

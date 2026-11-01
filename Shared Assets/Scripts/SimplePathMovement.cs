@@ -63,7 +63,7 @@ namespace Yarn.Unity.Samples
             walkCTS?.Cancel();
             walkCTS?.Dispose();
             walkCTS = CancellationTokenSource.CreateLinkedTokenSource(this.destroyCancellationToken);
-            WalkPath(this.path, walkCTS.Token).SuppressCancellationThrow();
+            WalkPath(this.path, walkCTS.Token).Forget();
         }
 
         public void StopWalking()

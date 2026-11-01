@@ -6,7 +6,11 @@ namespace Yarn.Unity.Samples
     [ExecuteAlways]
     public class SimpleFollowCamera : MonoBehaviour
     {
+#if UNITY_6000_5_OR_NEWER
+        [SerializeField] Camera? camera;
+#else
         [SerializeField] new Camera? camera;
+#endif
         [SerializeField] Transform? target;
         [SerializeField] float speed;
         [SerializeField] Vector3 followOffset;
