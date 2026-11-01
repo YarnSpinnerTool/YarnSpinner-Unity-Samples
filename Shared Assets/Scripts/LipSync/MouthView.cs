@@ -37,7 +37,11 @@ namespace Yarn.Unity.Samples
 
         private Texture2D? overrideTexture;
 
+#if UNITY_6000_5_OR_NEWER
+        [SerializeField] Renderer? renderer;
+#else
         [SerializeField] new Renderer? renderer;
+#endif
         private MaterialPropertyBlock? propertyBlock;
 
         LipSyncTextureGroup? currentFacialExpression;
