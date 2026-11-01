@@ -72,7 +72,7 @@ namespace Yarn.Unity.Samples
             }
             else
             {
-                var mouthViews = FindObjectsByType<MouthView>(FindObjectsSortMode.None);
+                var mouthViews = FindObjectWrapper.FindObjectsByType<MouthView>();
                 foreach (var mv in mouthViews)
                 {
                     var mvName = string.IsNullOrEmpty(mv.CharacterName) ? mv.name : mv.CharacterName;

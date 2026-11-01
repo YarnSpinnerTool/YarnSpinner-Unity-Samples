@@ -49,7 +49,7 @@ namespace Yarn.Unity.Samples
 
             // Attempt to find the dialogue runner that includes this presenter
             // in its presenters list.
-            foreach (var runner in FindObjectsByType<DialogueRunner>(FindObjectsInactive.Include, FindObjectsSortMode.None))
+            foreach (var runner in FindObjectWrapper.FindObjectsByType<DialogueRunner>(FindObjectsInactive.Include))
             {
                 foreach (var presenter in runner.DialoguePresenters)
                 {

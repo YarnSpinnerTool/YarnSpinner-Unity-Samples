@@ -619,7 +619,7 @@ namespace Yarn.Unity.Samples
         {
             interactables.Clear();
 
-            interactables.AddRange(FindObjectsByType<Interactable>(FindObjectsInactive.Include, FindObjectsSortMode.None));
+            interactables.AddRange(FindObjectWrapper.FindObjectsByType<Interactable>(FindObjectsInactive.Include));
         }
 
         protected void UpdateInteraction()
