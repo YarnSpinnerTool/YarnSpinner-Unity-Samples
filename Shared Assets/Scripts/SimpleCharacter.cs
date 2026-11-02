@@ -406,6 +406,11 @@ namespace Yarn.Unity.Samples
             // Remember our initial facing rotation
             targetRotation = transform.rotation;
 
+            if (isPlayerControlled && transform.position.y < outOfBoundsYPosition)
+            {
+                Debug.LogWarning("Player-controlled character spawned in an out-of-bounds position! Character doesn't know where to respawn, and won't be controllable!");
+            }
+
             if (!isPlayerControlled && followPath != null && followPath.Count >= 2)
             {
                 // If we have a follow path, start there, and look at the 
