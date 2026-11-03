@@ -1,0 +1,18 @@
+{
+    "name": "YarnSpinner.Unity.Samples.CustomActions",
+    "rootNamespace": "",
+    "references": [
+        "GUID:34aa492b82754644eac2f903cd496268",
+        "GUID:6055be8ebefd69e48b49212b09b47b2f",
+        "GUID:c21a60a15edb64663af9bd55f8834863"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

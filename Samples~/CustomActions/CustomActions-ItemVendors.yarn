@@ -1,0 +1,28 @@
+﻿title: ItemVendorApple
+---
+
+<<if inventory_count("apple") < 10>>
+    <<add_inventory_item apple>>
+<<else>>
+    Player: That's too many apples.
+<<endif>>
+
+===
+title: ItemVendorOrange
+---
+<<if inventory_count("orange") < 10>>
+    <<add_inventory_item orange>>
+<<else>>
+    Player: I've already got enough oranges.
+<<endif>>
+
+===
+title: ItemVendorBlueberry
+---
+<<if inventory_count(FoodType.Blueberry) < 10>>
+    <<add_inventory_item blueberry>>
+<<else>>
+    Player: I don't need that many blueberries.
+<<endif>>
+
+===

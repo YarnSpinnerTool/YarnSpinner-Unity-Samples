@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 2abfbfa9a4c68431fb08351841f30650
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 053561912b1654d80a424bb0696a74ae, type: 3}
+  generateVariablesSourceFile: 0
+  variablesClassName: CustomFunctionsVariables
+  variablesClassNamespace: 
+  variablesClassParent: Yarn.Unity.InMemoryVariableStorage
+  useAddressableAssets: 0
+  unityLocalisationStringTableCollectionGUID: 
+  UseUnityLocalisationSystem: 0
+  useCustomLineTagger: 1
+  lineTaggerClass: Yarn.Compiler.DescriptiveLineTagGenerator

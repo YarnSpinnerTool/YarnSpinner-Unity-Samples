@@ -1,0 +1,19 @@
+{
+  "projectFileVersion": 4,
+  "sourceFiles": [
+    "**/*.yarn"
+  ],
+  "excludeFiles": [
+    "**/*~/*",
+    "./Samples/Yarn Spinner*/*"
+  ],
+  "localisation": {},
+  "baseLanguage": "en",
+  "definitions": [
+    "../../../ProjectSettings/Packages/dev.yarnspinner/YarnSpinner.Unity.Samples.CustomActions.generated.ysls.json",
+    "../../../ProjectSettings/Packages/dev.yarnspinner/YarnSpinner.Unity.Samples.generated.ysls.json"
+  ],
+  "compilerOptions": {
+    "diagnosticsSeverity": {}
+  }
+}

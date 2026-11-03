@@ -1,0 +1,143 @@
+﻿
+
+title: HungryHenry
+---
+
+// Set up some types and variables to store Henry's state
+<<enum FoodType>>
+    <<case None = "none">>
+    <<case Apple = "apple">>
+    <<case Orange = "orange">>
+    <<case Blueberry = "blueberry">>
+<<endenum>>
+
+/// The current type of food that Henry wants
+<<declare $desired_food = FoodType.None>>
+
+/// The type of food that the player has just selected
+<<declare $selected_food = "none">>
+
+/// A temporary variable to store dice rolls in
+<<declare $dice = 0>>
+
+<<once>>
+    // Greet the player
+    HungryHenry: I'm Hungry Henry! You gotta bring me some food!
+<<endonce>>
+
+<<if $desired_food == FoodType.None>>
+    // We don't have a desired food, so pick one
+    <<set $dice = dice(3)>>
+    <<if $dice == 1>>
+        <<set $desired_food = FoodType.Apple>>
+    <<elseif $dice == 2>>
+        <<set $desired_food = FoodType.Orange>>
+    <<elseif $dice == 3>>
+        <<set $desired_food = FoodType.Blueberry>>
+    <<else>>
+        <<set $desired_food = FoodType.None>>
+    <<endif>>
+
+    // Run a line to communicate this to the player
+    => HungryHenry: I want an apple! Deliver one to me! <<if $desired_food is FoodType.Apple>>
+    => HungryHenry: I need blueberries! Bring me some! <<if $desired_food is FoodType.Blueberry>>
+    => HungryHenry: I've got a hankering for oranges! Go get me some! <<if $desired_food is FoodType.Orange>>
+    
+    // Stop here - we'll require the player to talk to Henry again to deliver the food
+    <<stop>>
+<<endif>>
+
+<<if has_any_inventory_items() == false>>
+    // The player doesn't have any inventory items at all, so we'll tell them to do that and stop here.
+    HungryHenry: Come back with some food!
+    <<stop>>
+<<endif>>
+
+<<if has_inventory_item($desired_food)>>
+    // The player has the right kind of item in their inventory - run a line to tell them
+    => HungryHenry: Give me one of those apples! <<if $desired_food is FoodType.Apple>>
+    => HungryHenry: Oooh, a blueberry! That's what I want! <<if $desired_food is FoodType.Blueberry>>
+    => HungryHenry: Yum, you've got an orange! Can I have it? <<if $desired_food is FoodType.Orange>>
+<<else>>
+    // Remind the player what Henry wants
+    => HungryHenry: Have you got any of those apples? <<if $desired_food is FoodType.Apple>>
+    => HungryHenry: I wish I had a blueberry! <<if $desired_food is FoodType.Blueberry>>
+    => HungryHenry: I bet an orange would really hit the spot right now. <<if $desired_food is FoodType.Orange>>
+<<endif>>
+
+// Pick an item from the inventory. The dialogue will pause until this is complete.
+<<set $selected_food = pick_inventory_item()>>
+
+<<if $selected_food is string($desired_food)>>
+    // The player picked the desired item!
+
+    // Remove the item from the inventory
+    <<remove_inventory_item {$selected_food}>>
+
+    HungryHenry: That's it! Thanks!
+    HungryHenry: I'm gonna go eat it!
+
+    // This command will take a few seconds to run. You can skip it by pressing the interact button!
+    <<walk_to_point_and_return "Hungry Henry" Marker>>
+
+    HungryHenry: Thanks!
+
+    // Reset the desired food so that the next time we talk to Henry, he'll pick a new target
+    <<set $desired_food = FoodType.None >>
+
+<<else>>
+    // The player didn't pick the desired item.
+    HungryHenry: That's not what I want!
+    <<stop>>
+<<endif>>
+
+===
+
+title: ExplanationCharacter
+---
+
+<<once>>
+    Capsley: Welcome! This sample demonstrates custom commands, and custom functions!
+    Capsley: Commands let your script tell the game to do something, and functions let your scripts get information from the game!
+<<endonce>>
+Capsley: What would you like to learn about?
+
+<<jump ExplanationCharacter_Hub>>
+
+===
+title: ExplanationCharacter_Hub
+---
+-> What's going on here?
+    Capsley: Standing next to me here is Hungry Henry. He wants to eat some fruit, and you'll need to go get some.
+    Capsley: When you walk up to these three piles of food and interact with them, that fruit will be added to your inventory using a custom command.
+    Capsley: When you talk to Hungry Henry, he'll use custom functions to figure out whether you're holding the item he wants.
+    Capsley: He'll also use custom functions to show your inventory and let you choose an item.
+    Capsley: Finally, he'll use custom commands to remove items from your inventory, as well as to walk off-screen.
+    Capsley: Try pressing the cancel key (Escape on keyboard) when you're picking an inventory item! It'll skip the entire dialogue.
+    Capsley: (It'll also exit this dialogue you're having with me!)
+    Capsley: One more thing! You might also know that you can skip over lines of dialogue by pressing the interact key (Spacebar on keyboard), but did you know..
+    Capsley: You can also skip over long-running commands! Try pressing interact when Hungry Henry walks off!
+-> Commands
+    Capsley: A command is like a stage direction: it tells the game that you want to do something.
+    Capsley: There are a couple of built-in commands. \<\<stop\>\> stops the entire dialogue, and \<\<wait\>\> pauses the dialogue for a number of seconds.
+    Capsley: The real power of commands comes from the fact that you can create your own custom commands.
+    Capsley: These are just C\# methods that have the \[YarnCommand\] attribute on them!
+    Capsley: Commands can take parameters, which let you pass information from the Yarn Spinner script to the method.
+-> Functions
+    Capsley: A function is a way to get information from your game to Yarn Spinner.
+    Capsley: To create a function, make a C\# method that returns a type that Yarn Spinner can handle - that means a string, a number, or a bool.
+    Capsley: Then, add the \[YarnFunction\] attribute to it, and it'll be usable from your script!
+    Capsley: You can use functions for things like finding out how many items of a certain type the player has in their inventory, and lots more!
+-> Long-running actions
+    Capsley: Commands can return void if they apply instantly (like adding an inventory item)...
+    Capsley: ...or they can return an awaitable type (like an Awaitable or a YarnTask) if they need to take a bit of time (like walking around.)
+    Capsley: If a command takes a cancellation token as its last parameter, your code can use it to detect if the player wants it to hurry up!
+    Capsley: Functions can be async too! It works the same way - return an awaitable type and Yarn Spinner will wait until the task is done.
+    Capsley: You can see this in action when you deliver food to Hungry Henry - a custom function pops up the inventory, and waits until the selection is done.
+-> Goodbye
+    <<stop>>
+
+Capsley: What else would you like to learn about?
+<<jump ExplanationCharacter_Hub>>
+
+===

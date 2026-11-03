@@ -33,6 +33,11 @@
       "path": "Samples~/FeatureTour"
     },
     {
+      "displayName": "Custom Actions",
+      "description": "Demonstrates custom commands and functions, which let your script work with your game",
+      "path": "Samples~/CustomActions"
+    },
+    {
       "displayName": "Theming Default Presenters",
       "description": "Demonstrates basic customisation of dialogue views with a custom font, view background, and continue button texture",
       "path": "Samples~/ThemedLinePresenter"
