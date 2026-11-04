@@ -16,6 +16,8 @@ public class CustomFunctions : MonoBehaviour
 
     [SerializeField] SerializableDictionary<string, Sprite> itemSprites = new();
 
+    [SerializeField] AudioSource? audioSource;
+
     private readonly Dictionary<string, int> inventory = new();
 
     bool isSelecting = false;
@@ -164,11 +166,33 @@ public class CustomFunctions : MonoBehaviour
 
         // Walk to the target, pause a moment, and walk back
         await simpleCharacter.MoveTo(destination.position, cancellationToken);
+
+        AudioSource? audioSource = Instance.audioSource;
+        if (audioSource != null && audioSource.resource != null)
+        {
+            audioSource.Play();
+        }
+
         await YarnTask.Delay(System.TimeSpan.FromSeconds(1), cancellationToken).SuppressCancellationThrow();
         await simpleCharacter.MoveTo(originalPosition, cancellationToken);
 
         // Restore our original look direction
         simpleCharacter.SetLookDirection(originalLookDirection);
 
+        // Stop the audio in case it's still going and we got cancelled
+        if (audioSource != null && audioSource.isPlaying)
+        {
+            audioSource.Stop();
+        }
+    }
+
+    [YarnCommand("play_eating_sound")]
+    public static async YarnTask PlayEatingSound(CancellationToken cancellationToken)
+    {
+        if (cancellationToken.IsCancellationRequested)
+        {
+            // Don't do anything if we're already cancelled
+            return;
+        }
     }
 }
