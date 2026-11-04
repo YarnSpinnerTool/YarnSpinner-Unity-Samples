@@ -10,6 +10,8 @@ public class InventoryPanel : MonoBehaviour
 
     public event System.Action<string> OnItemPicked;
 
+    [SerializeField] bool isSelectable;
+
     public void UpdateDisplay(Dictionary<string, int> inventory, SerializableDictionary<string, Sprite> itemSprites)
     {
         foreach (var item in GetComponentsInChildren<InventoryItem>())
@@ -31,7 +33,7 @@ public class InventoryPanel : MonoBehaviour
             }
 
             var newItem = Instantiate(itemPrefab, this.transform);
-            newItem.SetItemInfo(sprite, itemInfo.Value);
+            newItem.SetItemInfo(sprite, itemInfo.Value, isSelectable);
             newItem.SetOnClicked(() => OnItemClicked(itemInfo.Key));
 
             anyVisible = true;

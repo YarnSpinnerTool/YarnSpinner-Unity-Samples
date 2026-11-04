@@ -147,8 +147,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a3134600238a4fb38efc8eb630d306b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: YarnSpinner.Unity.Samples.CustomFunctions::CustomFunctionsVariables
-  showDebug: 0
-  debugTextView: {fileID: 0}
 --- !u!1001 &217718292
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1814,6 +1812,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: YarnSpinner.Unity.Samples.CustomFunctions::InventoryPanel
   itemPrefab: {fileID: 6474803227270017886, guid: 4ea9d318ae1674336898d77aa88bc2a4, type: 3}
+  isSelectable: 0
 --- !u!1001 &1801515897
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2063,6 +2062,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: YarnSpinner.Unity.Samples.CustomFunctions::InventoryPanel
   itemPrefab: {fileID: 6474803227270017886, guid: 4ea9d318ae1674336898d77aa88bc2a4, type: 3}
+  isSelectable: 1
 --- !u!114 &1877761071
 MonoBehaviour:
   m_ObjectHideFlags: 0
