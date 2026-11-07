@@ -9,7 +9,7 @@ public class InventoryItem : MonoBehaviour, IPointerClickHandler, IPointerEnterH
 {
     [SerializeField] Image? image;
     [SerializeField] GameObject? countContainer;
-    [SerializeField] TMPro.TMP_Text countText;
+    [SerializeField] TMPro.TMP_Text? countText;
     private Action? onClicked;
 
     [SerializeField] Image? selectionHover;
