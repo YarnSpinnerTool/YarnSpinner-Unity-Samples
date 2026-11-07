@@ -61,6 +61,11 @@ public class CustomFunctions : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Adds an item to the inventory.
+    /// </summary>
+    /// <param name="name">The type of the item.</param>
+    /// <param name="count">How many to add.</param>
     [YarnCommand("add_inventory_item")]
     public static void AddInventoryItem(string name, int count = 1)
     {
@@ -74,6 +79,11 @@ public class CustomFunctions : MonoBehaviour
         Instance.UpdateInventoryPanels();
     }
 
+    /// <summary>
+    /// Removes an item from the inventory.
+    /// </summary>
+    /// <param name="name">The type of the item.</param>
+    /// <param name="count">How many to remove.</param>
     [YarnCommand("remove_inventory_item")]
     public static void RemoveInventoryItem(string name, int count = 1)
     {
@@ -86,18 +96,32 @@ public class CustomFunctions : MonoBehaviour
         Instance.UpdateInventoryPanels();
     }
 
+    /// <summary>
+    /// Checks to see if the inventory contains any items of the given type.
+    /// </summary>
+    /// <param name="itemName">The name of the item to check for.</param>
+    /// <returns>True if the inventory has any of this item; false otherwise.</returns>
     [YarnFunction("has_inventory_item")]
     public static bool HasInventoryItem([YarnEnumParameter("FoodType")] string itemName)
     {
         return Instance.inventory.TryGetValue(itemName, out var count) && count > 0;
     }
 
+    /// <summary>
+    /// Checks to see if the inventory contains any items at all.
+    /// </summary>
+    /// <returns>True if the inventory contains anything.</returns>
     [YarnFunction("has_any_inventory_items")]
     public static bool HasAnyInventoryItems()
     {
         return Instance.inventory.Any(kv => kv.Value > 0);
     }
 
+    /// <summary>
+    /// Returns the number of items of a given type present in the inventory.
+    /// </summary>
+    /// <param name="itemName">The type of the item to check for.</param>
+    /// <returns>The number of items of that type.</returns>
     [YarnFunction("inventory_count")]
     public static int GetInventoryCount(string itemName)
     {
@@ -106,6 +130,11 @@ public class CustomFunctions : MonoBehaviour
             : 0;
     }
 
+    /// <summary>
+    /// Shows an on-screen UI element for picking a UI element.
+    /// </summary>
+    /// <param name="cancellationToken">A token to signal that picking should be cancelled.</param>
+    /// <returns>The type of the item that the user picked, or "none" if picking was cancelled.</returns>
     [YarnFunction("pick_inventory_item")]
     public static async YarnTask<string> PickInventoryItem(CancellationToken cancellationToken)
     {
@@ -153,7 +182,14 @@ public class CustomFunctions : MonoBehaviour
         }
     }
 
-    [YarnCommand("walk_to_point_and_return")]
+    /// <summary>
+    /// Walks a character to a named location in the scene, plays an eating sound effect, and walks them back.
+    /// </summary>
+    /// <param name="target">The target game object. The target must have a SimpleCharacter component.</param>
+    /// <param name="destination">The location to walk to.</param>
+    /// <param name="cancellationToken">A token that can be used to cancel the entire action.</param>
+    /// <returns>A task that completes when the action is over.</returns>
+    [YarnCommand("walk_to_point_eat_and_return")]
     public static async YarnTask MoveToPointAndReturn(GameObject target, Transform destination, CancellationToken cancellationToken)
     {
         if (target.TryGetComponent<SimpleCharacter>(out var simpleCharacter) == false)
@@ -183,16 +219,6 @@ public class CustomFunctions : MonoBehaviour
         if (audioSource != null && audioSource.isPlaying)
         {
             audioSource.Stop();
-        }
-    }
-
-    [YarnCommand("play_eating_sound")]
-    public static async YarnTask PlayEatingSound(CancellationToken cancellationToken)
-    {
-        if (cancellationToken.IsCancellationRequested)
-        {
-            // Don't do anything if we're already cancelled
-            return;
         }
     }
 }
