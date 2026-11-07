@@ -1,7 +1,6 @@
 {
-  "projectFileVersion": 3,
+  "projectFileVersion": 5,
   "sourceFiles": [
-    "**/*.yarn",
     "**/*.yarn"
   ],
   "excludeFiles": [
@@ -9,6 +8,8 @@
   ],
   "localisation": {},
   "baseLanguage": "en",
-  "compilerOptions": {},
-  "definitionsFiles": []
+  "definitions": [],
+  "compilerOptions": {
+    "diagnosticsSeverity": {}
+  }
 }

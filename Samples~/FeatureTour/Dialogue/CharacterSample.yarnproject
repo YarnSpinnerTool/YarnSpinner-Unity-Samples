@@ -1,5 +1,5 @@
 {
-  "projectFileVersion": 3,
+  "projectFileVersion": 5,
   "sourceFiles": [
     "**/*.yarn"
   ],
@@ -8,6 +8,7 @@
   ],
   "localisation": {},
   "baseLanguage": "en",
-  "compilerOptions": {},
-  "definitionsFiles": []
+  "compilerOptions": {
+    "diagnosticsSeverity": {}
+  }
 }

@@ -1,5 +1,5 @@
 {
-  "projectFileVersion": 2,
+  "projectFileVersion": 5,
   "sourceFiles": [
     "**/*.yarn"
   ],
@@ -26,6 +26,11 @@
     }
   },
   "baseLanguage": "en",
-  "compilerOptions": {},
-  "definitionsFiles": []
+  "definitions": [
+    "${workspaceRoot}/ProjectSettings/Packages/dev.yarnspinner/YarnSpinner.Unity.Samples.VoiceOver.generated.ysls.json",
+    "${workspaceRoot}/ProjectSettings/Packages/dev.yarnspinner/YarnSpinner.Unity.Samples.generated.ysls.json"
+  ],
+  "compilerOptions": {
+    "diagnosticsSeverity": {}
+  }
 }

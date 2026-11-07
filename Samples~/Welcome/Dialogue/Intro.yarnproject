@@ -1,5 +1,5 @@
-﻿{
-  "projectFileVersion": 3,
+{
+  "projectFileVersion": 5,
   "sourceFiles": [
     "**/*.yarn"
   ],
@@ -8,6 +8,10 @@
   ],
   "localisation": {},
   "baseLanguage": "en",
-  "compilerOptions": {},
-  "definitionsFiles": []
+  "compilerOptions": {
+    "diagnosticsSeverity": {}
+  },
+  "definitions": [
+    "${workspaceRoot}/ProjectSettings/Packages/dev.yarnspinner/YarnSpinner.Unity.Samples.Welcome.generated.ysls.json"
+  ]
 }
