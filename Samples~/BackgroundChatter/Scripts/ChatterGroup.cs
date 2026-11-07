@@ -177,7 +177,7 @@ namespace Yarn.Unity.Samples
                         if (outOfRangeDialogue != null && outOfRangeDialogue.IsValid)
                         {
                             dialogueRunner.SetProject(outOfRangeDialogue.project!);
-                            dialogueRunner.StartDialogue(outOfRangeDialogue.nodeName!);
+                            dialogueRunner.RunDialogue(outOfRangeDialogue.nodeName!).Forget();
                         }
                     }
                     break;
