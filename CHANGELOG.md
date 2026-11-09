@@ -10,9 +10,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ### Changed
 
-- Enabled lightmap UVs for all environment models
-
 ### Removed
+
+## [3.3.0] 10 Nov 2026
+
+### Changed 
+
+- Enabled lightmap UVs for all environment models
+- Updated for Yarn Spinner 3.3 and Unity 6.6.
 
 ## [3.2.4] 2026-06-02
 
