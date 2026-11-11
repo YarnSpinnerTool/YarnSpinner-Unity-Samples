@@ -78,7 +78,7 @@ title: HungryHenry
     HungryHenry: I'm gonna go eat it!
 
     // This command will take a few seconds to run. You can skip it by pressing the interact button!
-    <<walk_to_point_and_return "Hungry Henry" Marker>>
+    <<walk_to_point_eat_and_return "Hungry Henry" Marker>>
 
     HungryHenry: Thanks!
 
