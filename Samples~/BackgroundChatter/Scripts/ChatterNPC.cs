@@ -18,7 +18,7 @@ namespace Yarn.Unity.Samples
 
         public static ChatterNPC? FindByName(string name)
         {
-            var allNPCs = FindObjectsByType<ChatterNPC>(FindObjectsInactive.Exclude);
+            var allNPCs = FindObjectWrapper.FindObjectsByType<ChatterNPC>(FindObjectsInactive.Exclude);
 
             foreach (var npc in allNPCs)
             {
